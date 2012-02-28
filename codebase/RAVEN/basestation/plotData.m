@@ -1,0 +1,153 @@
+function plotData(handles)
+
+%% CLEARANCE
+MAX_ALT = 150;
+
+axes(handles.axesLeadAlt);
+plot([1 1],[0 handles.lead_alt],'b','LineWidth',30);
+axis([0.9 1.1 0 MAX_ALT]);
+set(gca,'xtick',[]);
+
+axes(handles.axesFollowerAlt);
+plot([1 1],[0 handles.fol1_alt],'b','LineWidth',30);
+axis([0.9 1.1 0 MAX_ALT]);
+set(gca,'xtick',[]);
+
+%% BATTERY
+MAX_BAT = 13;
+MIN_BAT = 9;
+
+THRESH_YEL = 11;
+THRESH_ORG = 10.5;
+THRESH_RED = 10;
+
+% LEAD
+axes(handles.axesLeadBat);
+if handles.lead_bat > THRESH_YEL
+    % high
+    plot([0 handles.lead_bat],[1 1],'g','LineWidth',30);
+elseif handles.lead_bat > THRESH_ORG
+    % medium
+    plot([0 handles.lead_bat],[1 1],'y','LineWidth',30);
+elseif handles.lead_bat > THRESH_RED
+    % low
+    plot([0 handles.lead_bat],[1 1],'Color',[1,140/255,0],'LineWidth',30);
+else
+    % dangerously low
+    plot([0 handles.lead_bat],[1 1],'r','LineWidth',30);
+end
+hold on;
+fontDisplayCoord = MIN_BAT+(handles.lead_bat - MIN_BAT)/2;
+text(fontDisplayCoord,1,num2str(handles.lead_bat),'FontSize',14);
+axis([MIN_BAT MAX_BAT 0.9 1.1]);
+set(gca,'ytick',[]);
+set(gca,'xtick',[9,9.5,10,10.5,11,11.5,12,12.5,13]);
+hold off;
+
+% FOLLOWER 1
+axes(handles.axesFollowerBat);
+if handles.fol1_bat > THRESH_YEL
+    % high
+    plot([0 handles.fol1_bat],[1 1],'g','LineWidth',30);
+elseif handles.fol1_bat > THRESH_ORG
+    % medium
+    plot([0 handles.fol1_bat],[1 1],'y','LineWidth',30);
+elseif handles.fol1_bat > THRESH_RED
+    % low
+    plot([0 handles.fol1_bat],[1 1],'o','LineWidth',30);
+else
+    % dangerously low
+    plot([0 handles.fol1_bat],[1 1],'r','LineWidth',30);
+end
+hold on;
+fontDisplayCoord = MIN_BAT+(handles.fol1_bat - MIN_BAT)/2;
+text(fontDisplayCoord,1,num2str(handles.fol1_bat),'FontSize',14);
+axis([MIN_BAT MAX_BAT 0.9 1.1]);
+set(gca,'ytick',[]);
+set(gca,'xtick',[9,9.5,10,10.5,11,11.5,12,12.5,13]);
+hold off;
+
+%% YAW
+
+axes(handles.axesLeadYaw);
+u = cos(pi/2 - pi*handles.lead_yaw/180);
+v = sin(pi/2 - pi*handles.lead_yaw/180);
+quiver(0,0,u,v,'LineWidth',3,'MaxHeadSize',1);
+axis([-1 1 -1 1]);
+set(gca,'xtick',[]);
+set(gca,'ytick',[]);
+
+axes(handles.axesFollowerYaw);
+u = cos(pi/2 - pi*handles.fol1_yaw/180);
+v = sin(pi/2 - pi*handles.fol1_yaw/180);
+quiver(0,0,u,v,'LineWidth',3,'MaxHeadSize',1);
+axis([-1 1 -1 1]);
+set(gca,'xtick',[]);
+set(gca,'ytick',[]);
+
+%% ROLL / PITCH
+len45 = sqrt(2)/2;
+
+phi = pi*handles.lead_roll/180;
+theta = pi*handles.lead_pitch/180;
+psi = 0;%pi*handles.lead_yaw/180;
+
+BRW_lead = [ cos(psi)*cos(theta) - sin(phi)*sin(psi)*sin(theta), cos(theta)*sin(psi) + cos(psi)*sin(phi)*sin(theta), -cos(phi)*sin(theta);...
+    -cos(phi)*sin(psi),  cos(phi)*cos(psi),  sin(phi);...
+    cos(psi)*sin(theta) + cos(theta)*sin(phi)*sin(psi), sin(psi)*sin(theta) - cos(psi)*cos(theta)*sin(phi),  cos(phi)*cos(theta)];
+
+WRB_lead = BRW_lead';
+frontMarker1 = [-1 0 0]*WRB_lead;
+front1 = [len45 -len45 0]*WRB_lead;
+back1 = [-len45 len45 0]*WRB_lead;
+left1 = [-len45 -len45 0]*WRB_lead;
+right1 = [len45 len45 0]*WRB_lead;
+
+phi = pi*handles.fol1_roll/180;
+theta = pi*handles.fol1_pitch/180;
+psi = 0;
+
+BRW_fol1 = [ cos(psi)*cos(theta) - sin(phi)*sin(psi)*sin(theta), cos(theta)*sin(psi) + cos(psi)*sin(phi)*sin(theta), -cos(phi)*sin(theta);...
+    -cos(phi)*sin(psi),  cos(phi)*cos(psi),  sin(phi);...
+    cos(psi)*sin(theta) + cos(theta)*sin(phi)*sin(psi), sin(psi)*sin(theta) - cos(psi)*cos(theta)*sin(phi),  cos(phi)*cos(theta)];
+
+WRB_fol1 = BRW_fol1';
+frontMarker2 = [-1 0 0]*WRB_fol1;
+front2 = [len45 -len45 0]*WRB_fol1;
+back2 = [-len45 len45 0]*WRB_fol1;
+left2 = [-len45 -len45 0]*WRB_fol1;
+right2 = [len45 len45 0]*WRB_fol1;
+
+axes(handles.axesLeadPitchRoll);
+plot3([front1(1) back1(1)],[front1(2) back1(2)],[front1(3) back1(3)],'k','LineWidth',3);
+hold on;
+plot3([left1(1) right1(1)],[left1(2) right1(2)],[left1(3) right1(3)],'b','LineWidth',3);
+text(frontMarker1(1),frontMarker1(2),frontMarker1(3),'F','FontSize',12);
+campos('manual');
+campos([1 1 1]);
+camtarget([0 0 0]);
+axis([-1 1 -1 1 -1 1]);
+set(gca,'xtick',[]);
+set(gca,'ytick',[]);
+set(gca,'ztick',[]);
+hold off;
+
+
+axes(handles.axesFollowerPitchRoll);
+plot3([front2(1) back2(1)],[front2(2) back2(2)],[front2(3) back2(3)],'k','LineWidth',3);
+hold on;
+plot3([left2(1) right2(1)],[left2(2) right2(2)],[left2(3) right2(3)],'b','LineWidth',3);
+text(frontMarker2(1),frontMarker2(2),frontMarker2(3),'F','FontSize',12);
+campos('manual');
+campos([1 1 1]);
+camtarget([0 0 0]);
+axis([-1 1 -1 1 -1 1]);
+set(gca,'xtick',[]);
+set(gca,'ytick',[]);
+set(gca,'ztick',[]);
+hold off;
+
+
+%% MAP
+
+end

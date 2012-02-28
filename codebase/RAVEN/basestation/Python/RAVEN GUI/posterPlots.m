@@ -1,0 +1,51 @@
+clc; close all; hold off;
+%% PARSE TEXT FILE
+dataIn = textread('fake_flying2.csv', '', 'delimiter', ',', ... 
+                'emptyvalue', NaN);
+            
+%% DEFINE FILTER
+yaw = dataIn(:,2);
+pitch = dataIn(:,3);
+roll = dataIn(:,4);
+disp_x = dataIn(:,9);
+disp_y = dataIn(:,10);
+disp_z = dataIn(:,11);
+
+t = 1:length(yaw);
+t = t./20;
+%plot(t,yaw,'-r','LineWidth',2);
+%hold on;
+%plot(t,pitch,'b','LineWidth',2);
+%plot(t,roll,'g','LineWidth',2);
+
+xlabel('Time (sec)');
+ylabel('Angle (degrees)');
+title('Following Angle Response');
+ylim([-40 40]);
+
+
+%% Angle Response
+
+disp_x = disp_x(300:700);
+t = 1:length(disp_x);
+t = t./20;
+
+pitch_des = 0.5*(disp_x-130);
+for i = 1:length(pitch_des)
+    if pitch_des(i) > 20
+        pitch_des(i) = 20;
+    elseif pitch_des(i) < -20
+        pitch_des(i) = -20;
+    end
+end
+
+hold on;
+plot(t,disp_x,'-r','LineWidth',2);
+plot(t,pitch_des,'b','LineWidth',2);
+plot([0 max(t)],[130 130], 'k', 'LineWidth',2);
+
+xlabel('Time (sec)');
+ylabel('Amplitude');
+title('Follower PID Response');
+ylim([-40 250]);
+legend('Perceived X Displacement','Desired Pitch Angle');

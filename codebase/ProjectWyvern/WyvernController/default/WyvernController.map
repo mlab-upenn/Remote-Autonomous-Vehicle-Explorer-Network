@@ -1,0 +1,475 @@
+Archive member included because of file (symbol)
+
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
+                              WyvernController.o (__divmodhi4)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o (exit)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                              WyvernController.o (__do_copy_data)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                              WyvernController.o (__do_clear_bss)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o) (__udivmodhi4)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(itoa.o)
+                              WyvernController.o (itoa)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strrev.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(itoa.o) (strrev)
+
+Allocating common symbols
+Common symbol       size              file
+
+PACKET_SIZE         0x1               WyvernController.o
+incoming            0x17              WyvernController.o
+str                 0x14              WyvernController.o
+outgoing            0x9               WyvernController.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+LOAD WyvernController.o
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000     0x100c
+ *(.vectors)
+ .vectors       0x00000000       0xac c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+                0x000000ac                . = ALIGN (0x2)
+                0x000000ac                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x000000ac        0x0 linker stubs
+ *(.trampolines*)
+                0x000000ac                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x000000ac                __ctors_start = .
+ *(.ctors)
+                0x000000ac                __ctors_end = .
+                0x000000ac                __dtors_start = .
+ *(.dtors)
+                0x000000ac                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x000000ac        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+                0x000000ac                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x000000ac        0xc c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x000000b8       0x16 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                0x000000b8                __do_copy_data
+ .init4         0x000000ce       0x10 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                0x000000ce                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x000000de        0x8 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+ *(.init9)
+ *(.text)
+ .text          0x000000e6        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+                0x000000e6                __vector_38
+                0x000000e6                __vector_22
+                0x000000e6                __vector_28
+                0x000000e6                __vector_1
+                0x000000e6                __vector_32
+                0x000000e6                __vector_34
+                0x000000e6                __vector_24
+                0x000000e6                __vector_12
+                0x000000e6                __bad_interrupt
+                0x000000e6                __vector_6
+                0x000000e6                __vector_31
+                0x000000e6                __vector_35
+                0x000000e6                __vector_39
+                0x000000e6                __vector_3
+                0x000000e6                __vector_23
+                0x000000e6                __vector_30
+                0x000000e6                __vector_11
+                0x000000e6                __vector_13
+                0x000000e6                __vector_17
+                0x000000e6                __vector_19
+                0x000000e6                __vector_7
+                0x000000e6                __vector_41
+                0x000000e6                __vector_27
+                0x000000e6                __vector_5
+                0x000000e6                __vector_33
+                0x000000e6                __vector_37
+                0x000000e6                __vector_4
+                0x000000e6                __vector_2
+                0x000000e6                __vector_21
+                0x000000e6                __vector_15
+                0x000000e6                __vector_36
+                0x000000e6                __vector_29
+                0x000000e6                __vector_40
+                0x000000e6                __vector_8
+                0x000000e6                __vector_14
+                0x000000e6                __vector_10
+                0x000000e6                __vector_16
+                0x000000e6                __vector_18
+                0x000000e6                __vector_20
+                0x000000e6                __vector_42
+ .text          0x000000ea      0xe6e WyvernController.o
+                0x00000216                TransmitByte
+                0x000004b2                RFstartReceiving
+                0x00000368                set_duty
+                0x00000492                RFflushTXBuffer
+                0x0000026c                uart_available
+                0x00000620                RFtransmit
+                0x00000420                RFfillTransferBuffer
+                0x00000b04                init_wyvern
+                0x00000928                printEmpty
+                0x00000628                RFRXdataReady
+                0x00000126                init_uart
+                0x00000452                RFreadReg
+                0x000000ea                clockSet
+                0x00000240                TransmitString
+                0x0000015a                __vector_25
+                0x000001f6                ReceiveByte
+                0x0000025a                DataInReceiveBuffer
+                0x000004e6                RFtransmitUntil
+                0x0000082c                get_adc
+                0x00000662                RFRXbufferEmpty
+                0x00000484                RFsetRxAddr
+                0x00000292                init_pwm
+                0x0000080c                init_adc
+                0x00000eb2                main
+                0x00000c4e                controllerCommand
+                0x00000b54                controllerTransmit
+                0x00000aac                __vector_9
+                0x000008be                get_ucTemp
+                0x000004e2                RFstopReceiving
+                0x000003f0                RFwriteReg
+                0x00000952                printMenu
+                0x000001a4                __vector_26
+                0x0000069e                RFreadRXFIFO
+                0x00000c0a                TransmitInt
+                0x00000776                RFsetup
+                0x000000fe                init_uc
+                0x00000288                uart_flush
+                0x000004a2                RFflushRXBuffer
+                0x00000b64                getJoystick
+                0x000000f6                disableJTAG
+                0x00000712                RFRXbufferFull
+                0x000003c8                SPIsetup
+                0x00000746                RFreceive
+ .text          0x00000f58        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
+ .text          0x00000f58        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text          0x00000f58        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text          0x00000f58        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text          0x00000f58        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .text          0x00000f58        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(itoa.o)
+ .text          0x00000f58        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strrev.o)
+                0x00000f58                . = ALIGN (0x2)
+ *(.text.*)
+ .text.libgcc   0x00000f58       0x26 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
+                0x00000f58                __divmodhi4
+                0x00000f58                _div
+ .text.libgcc   0x00000f7e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00000f7e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000f7e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00000f7e       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                0x00000f7e                __udivmodhi4
+ .text.avr-libc
+                0x00000fa6       0x42 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(itoa.o)
+                0x00000fa6                itoa
+ .text.avr-libc
+                0x00000fe8       0x20 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strrev.o)
+                0x00000fe8                strrev
+                0x00001008                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00001008        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x00001008                exit
+                0x00001008                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00001008        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ *(.fini0)
+                0x0000100c                _etext = .
+
+.data           0x00800100      0x2c6 load address 0x0000100c
+                0x00800100                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800100        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+ .data          0x00800100      0x2c6 WyvernController.o
+                0x008003b7                baud
+                0x008003c0                wyv00
+                0x008003c5                menuScreen
+                0x008003b9                PWM_PERIOD
+                0x008003bb                local
+ .data          0x008003c6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
+ .data          0x008003c6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .data          0x008003c6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .data          0x008003c6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .data          0x008003c6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .data          0x008003c6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(itoa.o)
+ .data          0x008003c6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strrev.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x008003c6                . = ALIGN (0x2)
+                0x008003c6                _edata = .
+                0x008003c6                PROVIDE (__data_end, .)
+
+.bss            0x008003c6      0x43c
+                0x008003c6                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x008003c6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+ .bss           0x008003c6      0x407 WyvernController.o
+                0x008003c6                overflowcounter
+                0x008003c8                printData
+ .bss           0x008007cd        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
+ .bss           0x008007cd        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .bss           0x008007cd        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .bss           0x008007cd        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x008007cd        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .bss           0x008007cd        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(itoa.o)
+ .bss           0x008007cd        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strrev.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x008007cd       0x35 WyvernController.o
+                0x008007cd                PACKET_SIZE
+                0x008007ce                incoming
+                0x008007e5                str
+                0x008007f9                outgoing
+                0x00800802                PROVIDE (__bss_end, .)
+                0x0000100c                __data_load_start = LOADADDR (.data)
+                0x000012d2                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x00800802        0x0
+                0x00800802                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x00800802                PROVIDE (__noinit_end, .)
+                0x00800802                _end = .
+                0x00800802                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0x20
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 WyvernController.o
+
+.debug_pubnames
+                0x00000000      0x365
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000      0x365 WyvernController.o
+
+.debug_info     0x00000000      0xd30
+ *(.debug_info)
+ .debug_info    0x00000000      0xd30 WyvernController.o
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0x3e7
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x3e7 WyvernController.o
+
+.debug_line     0x00000000     0x107b
+ *(.debug_line)
+ .debug_line    0x00000000     0x107b WyvernController.o
+
+.debug_frame    0x00000000      0x2c0
+ *(.debug_frame)
+ .debug_frame   0x00000000      0x2c0 WyvernController.o
+
+.debug_str      0x00000000      0x4b5
+ *(.debug_str)
+ .debug_str     0x00000000      0x4b5 WyvernController.o
+                                0x50c (size before relaxing)
+
+.debug_loc      0x00000000      0x511
+ *(.debug_loc)
+ .debug_loc     0x00000000      0x511 WyvernController.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(WyvernController.elf elf32-avr)
+LOAD linker stubs
+
+.debug_ranges   0x00000000       0xf0
+ .debug_ranges  0x00000000       0xf0 WyvernController.o

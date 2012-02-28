@@ -1,0 +1,1867 @@
+
+WyvernController.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000028  00800100  00000898  0000092c  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000898  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000019  00800128  00800128  00000954  2**0
+                  ALLOC
+  3 .debug_aranges 00000020  00000000  00000000  00000954  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 0000028b  00000000  00000000  00000974  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000099d  00000000  00000000  00000bff  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 0000031f  00000000  00000000  0000159c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000a3d  00000000  00000000  000018bb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000220  00000000  00000000  000022f8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000394  00000000  00000000  00002518  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000040f  00000000  00000000  000028ac  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 000000a8  00000000  00000000  00002cbb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 56 00 	jmp	0xac	; 0xac <__ctors_end>
+   4:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+   8:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+   c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  10:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  14:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  18:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  1c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  20:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  24:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  28:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  2c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  30:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  34:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  38:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  3c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  40:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  44:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  48:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  4c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  50:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  54:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  58:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  5c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  60:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  64:	0c 94 a9 00 	jmp	0x152	; 0x152 <__vector_25>
+  68:	0c 94 cc 00 	jmp	0x198	; 0x198 <__vector_26>
+  6c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  70:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  74:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  78:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  7c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  80:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  84:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  88:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  8c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  90:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  94:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  98:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  9c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  a0:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  a4:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+  a8:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+
+000000ac <__ctors_end>:
+  ac:	11 24       	eor	r1, r1
+  ae:	1f be       	out	0x3f, r1	; 63
+  b0:	cf ef       	ldi	r28, 0xFF	; 255
+  b2:	da e0       	ldi	r29, 0x0A	; 10
+  b4:	de bf       	out	0x3e, r29	; 62
+  b6:	cd bf       	out	0x3d, r28	; 61
+
+000000b8 <__do_copy_data>:
+  b8:	11 e0       	ldi	r17, 0x01	; 1
+  ba:	a0 e0       	ldi	r26, 0x00	; 0
+  bc:	b1 e0       	ldi	r27, 0x01	; 1
+  be:	e8 e9       	ldi	r30, 0x98	; 152
+  c0:	f8 e0       	ldi	r31, 0x08	; 8
+  c2:	02 c0       	rjmp	.+4      	; 0xc8 <.do_copy_data_start>
+
+000000c4 <.do_copy_data_loop>:
+  c4:	05 90       	lpm	r0, Z+
+  c6:	0d 92       	st	X+, r0
+
+000000c8 <.do_copy_data_start>:
+  c8:	a8 32       	cpi	r26, 0x28	; 40
+  ca:	b1 07       	cpc	r27, r17
+  cc:	d9 f7       	brne	.-10     	; 0xc4 <.do_copy_data_loop>
+
+000000ce <__do_clear_bss>:
+  ce:	11 e0       	ldi	r17, 0x01	; 1
+  d0:	a8 e2       	ldi	r26, 0x28	; 40
+  d2:	b1 e0       	ldi	r27, 0x01	; 1
+  d4:	01 c0       	rjmp	.+2      	; 0xd8 <.do_clear_bss_start>
+
+000000d6 <.do_clear_bss_loop>:
+  d6:	1d 92       	st	X+, r1
+
+000000d8 <.do_clear_bss_start>:
+  d8:	a1 34       	cpi	r26, 0x41	; 65
+  da:	b1 07       	cpc	r27, r17
+  dc:	e1 f7       	brne	.-8      	; 0xd6 <.do_clear_bss_loop>
+  de:	0e 94 04 04 	call	0x808	; 0x808 <main>
+  e2:	0c 94 4a 04 	jmp	0x894	; 0x894 <_exit>
+
+000000e6 <__bad_interrupt>:
+  e6:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ea <clockSet>:
+Purpose:  Sets clock to 8MHz
+Input:    None
+Returns:  None
+**************************************************************************/
+void clockSet(){
+	CLKPR = (1<<CLKPCE);
+  ea:	e1 e6       	ldi	r30, 0x61	; 97
+  ec:	f0 e0       	ldi	r31, 0x00	; 0
+  ee:	80 e8       	ldi	r24, 0x80	; 128
+  f0:	80 83       	st	Z, r24
+	CLKPR = 0;
+  f2:	10 82       	st	Z, r1
+}
+  f4:	08 95       	ret
+
+000000f6 <disableJTAG>:
+		  fortunately, all the other bits in MCUCR should be 0, so this is fine
+Input:    None
+Returns:  None
+**************************************************************************/
+void disableJTAG(){
+	MCUCR = (1 << JTD);
+  f6:	80 e8       	ldi	r24, 0x80	; 128
+  f8:	85 bf       	out	0x35, r24	; 53
+	MCUCR = (1 << JTD);
+  fa:	85 bf       	out	0x35, r24	; 53
+}
+  fc:	08 95       	ret
+
+000000fe <init_uc>:
+Purpose:  Sets clock to 8MHz
+Input:    None
+Returns:  None
+**************************************************************************/
+void clockSet(){
+	CLKPR = (1<<CLKPCE);
+  fe:	e1 e6       	ldi	r30, 0x61	; 97
+ 100:	f0 e0       	ldi	r31, 0x00	; 0
+ 102:	80 e8       	ldi	r24, 0x80	; 128
+ 104:	80 83       	st	Z, r24
+	CLKPR = 0;
+ 106:	10 82       	st	Z, r1
+**************************************************************************/
+void init_uc(){
+	// Set system clock to 8MHzs
+	clockSet();
+	// Set up LED Ports
+	set(DDRE,2);
+ 108:	6a 9a       	sbi	0x0d, 2	; 13
+	set(DDRE,6);
+ 10a:	6e 9a       	sbi	0x0d, 6	; 13
+	set(DDRF,0);
+ 10c:	80 9a       	sbi	0x10, 0	; 16
+	set(DDRF,1);
+ 10e:	81 9a       	sbi	0x10, 1	; 16
+	set(PORTE,2);
+ 110:	72 9a       	sbi	0x0e, 2	; 14
+	set(PORTE,6);
+ 112:	76 9a       	sbi	0x0e, 6	; 14
+	set(PORTF,0);
+ 114:	88 9a       	sbi	0x11, 0	; 17
+	set(PORTF,1);
+ 116:	89 9a       	sbi	0x11, 1	; 17
+		  fortunately, all the other bits in MCUCR should be 0, so this is fine
+Input:    None
+Returns:  None
+**************************************************************************/
+void disableJTAG(){
+	MCUCR = (1 << JTD);
+ 118:	85 bf       	out	0x35, r24	; 53
+	MCUCR = (1 << JTD);
+ 11a:	85 bf       	out	0x35, r24	; 53
+	set(PORTE,6);
+	set(PORTF,0);
+	set(PORTF,1);
+	// Enable Pins F4-F7
+	disableJTAG();
+}
+ 11c:	08 95       	ret
+
+0000011e <init_uart>:
+**************************************************************************/
+void init_uart(void)
+{
+	//UCSR1A |= 0x02;  // Uncomment to set U2X1 = 1
+	// Set baudrate
+	UBRR1L = baud;
+ 11e:	80 91 19 01 	lds	r24, 0x0119
+ 122:	80 93 cc 00 	sts	0x00CC, r24
+	// Enable Rx and Tx
+	UCSR1B |=(1<<RXEN1)|(1<<TXEN1);
+ 126:	e9 ec       	ldi	r30, 0xC9	; 201
+ 128:	f0 e0       	ldi	r31, 0x00	; 0
+ 12a:	80 81       	ld	r24, Z
+ 12c:	88 61       	ori	r24, 0x18	; 24
+ 12e:	80 83       	st	Z, r24
+	// Set to 8 bit tranmission, 1 stop bit
+	UCSR1C |=(1<<UMSEL11)|(1<<UCSZ10)|(1<<UCSZ11);
+ 130:	aa ec       	ldi	r26, 0xCA	; 202
+ 132:	b0 e0       	ldi	r27, 0x00	; 0
+ 134:	8c 91       	ld	r24, X
+ 136:	86 68       	ori	r24, 0x86	; 134
+ 138:	8c 93       	st	X, r24
+	// Enable USART Receive Complete Interrupt
+	UCSR1B |=(1<<RXCIE1);
+ 13a:	80 81       	ld	r24, Z
+ 13c:	80 68       	ori	r24, 0x80	; 128
+ 13e:	80 83       	st	Z, r24
+	// Flush receive buffer
+	UART_RxTail = 0;
+ 140:	10 92 31 01 	sts	0x0131, r1
+	UART_RxHead = 0;
+ 144:	10 92 30 01 	sts	0x0130, r1
+	UART_TxTail = 0;
+ 148:	10 92 3b 01 	sts	0x013B, r1
+	UART_TxHead = 0;
+ 14c:	10 92 3a 01 	sts	0x013A, r1
+}
+ 150:	08 95       	ret
+
+00000152 <__vector_25>:
+		  Interrupt Vector 26
+Input:    N/A
+Returns:  N/A
+**************************************************************************/
+ISR(USART1_RX_vect)
+{
+ 152:	1f 92       	push	r1
+ 154:	0f 92       	push	r0
+ 156:	0f b6       	in	r0, 0x3f	; 63
+ 158:	0f 92       	push	r0
+ 15a:	11 24       	eor	r1, r1
+ 15c:	2f 93       	push	r18
+ 15e:	8f 93       	push	r24
+ 160:	9f 93       	push	r25
+ 162:	ef 93       	push	r30
+ 164:	ff 93       	push	r31
+	unsigned char data;
+	unsigned char tmphead;
+	// Read the received data
+	data = UDR1;
+ 166:	90 91 ce 00 	lds	r25, 0x00CE
+	/// Calculate buffer index
+	tmphead = ( UART_RxHead + 1 ) & UART_RX_BUFFER_MASK;
+ 16a:	80 91 30 01 	lds	r24, 0x0130
+ 16e:	8f 5f       	subi	r24, 0xFF	; 255
+ 170:	87 70       	andi	r24, 0x07	; 7
+	// Store new index
+	UART_RxHead = tmphead;
+ 172:	80 93 30 01 	sts	0x0130, r24
+	if ( tmphead == UART_RxTail )
+ 176:	20 91 31 01 	lds	r18, 0x0131
+	{
+		//ERROR! Receive buffer overflow
+	}
+	// Store received data in buffer
+	UART_RxBuf[tmphead] = data;
+ 17a:	e8 e2       	ldi	r30, 0x28	; 40
+ 17c:	f1 e0       	ldi	r31, 0x01	; 1
+ 17e:	e8 0f       	add	r30, r24
+ 180:	f1 1d       	adc	r31, r1
+ 182:	90 83       	st	Z, r25
+}
+ 184:	ff 91       	pop	r31
+ 186:	ef 91       	pop	r30
+ 188:	9f 91       	pop	r25
+ 18a:	8f 91       	pop	r24
+ 18c:	2f 91       	pop	r18
+ 18e:	0f 90       	pop	r0
+ 190:	0f be       	out	0x3f, r0	; 63
+ 192:	0f 90       	pop	r0
+ 194:	1f 90       	pop	r1
+ 196:	18 95       	reti
+
+00000198 <__vector_26>:
+		  Interrupt Vector 27
+Input:    N/A
+Returns:  N/A
+**************************************************************************/
+ISR(USART1_UDRE_vect)
+{
+ 198:	1f 92       	push	r1
+ 19a:	0f 92       	push	r0
+ 19c:	0f b6       	in	r0, 0x3f	; 63
+ 19e:	0f 92       	push	r0
+ 1a0:	11 24       	eor	r1, r1
+ 1a2:	8f 93       	push	r24
+ 1a4:	9f 93       	push	r25
+ 1a6:	ef 93       	push	r30
+ 1a8:	ff 93       	push	r31
+	unsigned char tmptail;
+	// Check if all data is transmitted
+	if ( UART_TxHead != UART_TxTail )
+ 1aa:	90 91 3a 01 	lds	r25, 0x013A
+ 1ae:	80 91 3b 01 	lds	r24, 0x013B
+ 1b2:	98 17       	cp	r25, r24
+ 1b4:	69 f0       	breq	.+26     	; 0x1d0 <__vector_26+0x38>
+	{
+		// Calculate buffer index
+		tmptail = ( UART_TxTail + 1 ) & UART_TX_BUFFER_MASK;
+ 1b6:	e0 91 3b 01 	lds	r30, 0x013B
+ 1ba:	ef 5f       	subi	r30, 0xFF	; 255
+ 1bc:	e7 70       	andi	r30, 0x07	; 7
+		// Store new index
+		UART_TxTail = tmptail;
+ 1be:	e0 93 3b 01 	sts	0x013B, r30
+		// Start transmition
+		UDR1 = UART_TxBuf[tmptail];
+ 1c2:	f0 e0       	ldi	r31, 0x00	; 0
+ 1c4:	ee 5c       	subi	r30, 0xCE	; 206
+ 1c6:	fe 4f       	sbci	r31, 0xFE	; 254
+ 1c8:	80 81       	ld	r24, Z
+ 1ca:	80 93 ce 00 	sts	0x00CE, r24
+ 1ce:	05 c0       	rjmp	.+10     	; 0x1da <__vector_26+0x42>
+	}
+	else
+	{
+		// Disable UDRE interrupt
+		UCSR1B &= ~(1<<UDRIE);
+ 1d0:	80 91 c9 00 	lds	r24, 0x00C9
+ 1d4:	8f 7d       	andi	r24, 0xDF	; 223
+ 1d6:	80 93 c9 00 	sts	0x00C9, r24
+	}
+}
+ 1da:	ff 91       	pop	r31
+ 1dc:	ef 91       	pop	r30
+ 1de:	9f 91       	pop	r25
+ 1e0:	8f 91       	pop	r24
+ 1e2:	0f 90       	pop	r0
+ 1e4:	0f be       	out	0x3f, r0	; 63
+ 1e6:	0f 90       	pop	r0
+ 1e8:	1f 90       	pop	r1
+ 1ea:	18 95       	reti
+
+000001ec <ReceiveByte>:
+**************************************************************************/
+unsigned char ReceiveByte(void)
+{
+	unsigned char tmptail;
+	// Wait for incoming data
+	while ( UART_RxHead == UART_RxTail );
+ 1ec:	90 91 30 01 	lds	r25, 0x0130
+ 1f0:	80 91 31 01 	lds	r24, 0x0131
+ 1f4:	98 17       	cp	r25, r24
+ 1f6:	d1 f3       	breq	.-12     	; 0x1ec <ReceiveByte>
+	// Calculate buffer index
+	tmptail = ( UART_RxTail + 1 ) & UART_RX_BUFFER_MASK;
+ 1f8:	e0 91 31 01 	lds	r30, 0x0131
+ 1fc:	ef 5f       	subi	r30, 0xFF	; 255
+ 1fe:	e7 70       	andi	r30, 0x07	; 7
+	// Store new index
+	UART_RxTail = tmptail;
+ 200:	e0 93 31 01 	sts	0x0131, r30
+ 204:	f0 e0       	ldi	r31, 0x00	; 0
+ 206:	e8 5d       	subi	r30, 0xD8	; 216
+ 208:	fe 4f       	sbci	r31, 0xFE	; 254
+	 // Return data
+	return UART_RxBuf[tmptail];
+}
+ 20a:	80 81       	ld	r24, Z
+ 20c:	08 95       	ret
+
+0000020e <TransmitByte>:
+		  Waits for free space if no room in buffer
+Input:    Data to transmit
+Returns:  None
+**************************************************************************/
+void TransmitByte(unsigned char data)
+{
+ 20e:	28 2f       	mov	r18, r24
+	unsigned char tmphead;
+	tmphead=0;
+	// Calculate buffer index
+	tmphead = ( UART_TxHead + 1 ) & UART_TX_BUFFER_MASK;
+ 210:	90 91 3a 01 	lds	r25, 0x013A
+ 214:	9f 5f       	subi	r25, 0xFF	; 255
+ 216:	97 70       	andi	r25, 0x07	; 7
+	// Wait for free space in buffer
+	while ( tmphead == UART_TxTail );
+ 218:	80 91 3b 01 	lds	r24, 0x013B
+ 21c:	98 17       	cp	r25, r24
+ 21e:	e1 f3       	breq	.-8      	; 0x218 <TransmitByte+0xa>
+	// Store data in buffer
+	UART_TxBuf[tmphead] = data;
+ 220:	e9 2f       	mov	r30, r25
+ 222:	f0 e0       	ldi	r31, 0x00	; 0
+ 224:	ee 5c       	subi	r30, 0xCE	; 206
+ 226:	fe 4f       	sbci	r31, 0xFE	; 254
+ 228:	20 83       	st	Z, r18
+	// Store new index
+	UART_TxHead = tmphead;
+ 22a:	90 93 3a 01 	sts	0x013A, r25
+	// Enable UDRE interrupt
+	UCSR1B |= (1<<UDRIE1);
+ 22e:	80 91 c9 00 	lds	r24, 0x00C9
+ 232:	80 62       	ori	r24, 0x20	; 32
+ 234:	80 93 c9 00 	sts	0x00C9, r24
+}
+ 238:	08 95       	ret
+
+0000023a <TransmitString>:
+Purpose:  transmit string to UART
+Input:    string to be transmitted
+Returns:  none
+**************************************************************************/
+void TransmitString(const char *s )
+{
+ 23a:	cf 93       	push	r28
+ 23c:	df 93       	push	r29
+ 23e:	ec 01       	movw	r28, r24
+ 240:	03 c0       	rjmp	.+6      	; 0x248 <TransmitString+0xe>
+    while (*s)
+      TransmitByte(*s++);
+ 242:	21 96       	adiw	r28, 0x01	; 1
+ 244:	0e 94 07 01 	call	0x20e	; 0x20e <TransmitByte>
+Input:    string to be transmitted
+Returns:  none
+**************************************************************************/
+void TransmitString(const char *s )
+{
+    while (*s)
+ 248:	88 81       	ld	r24, Y
+ 24a:	88 23       	and	r24, r24
+ 24c:	d1 f7       	brne	.-12     	; 0x242 <TransmitString+0x8>
+      TransmitByte(*s++);
+}
+ 24e:	df 91       	pop	r29
+ 250:	cf 91       	pop	r28
+ 252:	08 95       	ret
+
+00000254 <DataInReceiveBuffer>:
+Input:    None
+Returns:  Return 0 (FALSE) if Rx buffer is empty
+**************************************************************************/
+unsigned char DataInReceiveBuffer(void)
+{
+	return ( UART_RxHead != UART_RxTail );
+ 254:	90 91 30 01 	lds	r25, 0x0130
+ 258:	80 91 31 01 	lds	r24, 0x0131
+ 25c:	20 e0       	ldi	r18, 0x00	; 0
+ 25e:	98 13       	cpse	r25, r24
+ 260:	21 e0       	ldi	r18, 0x01	; 1
+}
+ 262:	82 2f       	mov	r24, r18
+ 264:	08 95       	ret
+
+00000266 <uart_available>:
+Input:    None
+Returns:  Integer number of bytes in the receive buffer
+**************************************************************************/
+int uart_available(void)
+{
+        return (UART_RX_BUFFER_MASK + UART_RxHead - UART_RxTail) % UART_RX_BUFFER_MASK;
+ 266:	80 91 30 01 	lds	r24, 0x0130
+ 26a:	20 91 31 01 	lds	r18, 0x0131
+ 26e:	90 e0       	ldi	r25, 0x00	; 0
+ 270:	07 96       	adiw	r24, 0x07	; 7
+ 272:	82 1b       	sub	r24, r18
+ 274:	91 09       	sbc	r25, r1
+ 276:	67 e0       	ldi	r22, 0x07	; 7
+ 278:	70 e0       	ldi	r23, 0x00	; 0
+ 27a:	0e 94 23 04 	call	0x846	; 0x846 <__divmodhi4>
+}
+ 27e:	08 95       	ret
+
+00000280 <uart_flush>:
+Input:    None
+Returns:  None
+**************************************************************************/
+void uart_flush(void)
+{
+        UART_RxHead = UART_RxTail;
+ 280:	80 91 31 01 	lds	r24, 0x0131
+ 284:	80 93 30 01 	sts	0x0130, r24
+}
+ 288:	08 95       	ret
+
+0000028a <init_pwm>:
+Returns:  None
+**************************************************************************/
+void init_pwm(void){
+	//////// SET TIME PRESCALER ////////
+	// Timer 1 - use system clock (system_clock/1)
+	clear(TCCR1B,CS10);
+ 28a:	e1 e8       	ldi	r30, 0x81	; 129
+ 28c:	f0 e0       	ldi	r31, 0x00	; 0
+ 28e:	80 81       	ld	r24, Z
+ 290:	8e 7f       	andi	r24, 0xFE	; 254
+ 292:	80 83       	st	Z, r24
+	set(TCCR1B,CS11);
+ 294:	80 81       	ld	r24, Z
+ 296:	82 60       	ori	r24, 0x02	; 2
+ 298:	80 83       	st	Z, r24
+	clear(TCCR1B,CS12);
+ 29a:	80 81       	ld	r24, Z
+ 29c:	8b 7f       	andi	r24, 0xFB	; 251
+ 29e:	80 83       	st	Z, r24
+
+	// Timer 3 - use system clock (system_clock/1)
+	clear(TCCR3B,CS30);
+ 2a0:	a1 e9       	ldi	r26, 0x91	; 145
+ 2a2:	b0 e0       	ldi	r27, 0x00	; 0
+ 2a4:	8c 91       	ld	r24, X
+ 2a6:	8e 7f       	andi	r24, 0xFE	; 254
+ 2a8:	8c 93       	st	X, r24
+	set(TCCR3B,CS31);
+ 2aa:	8c 91       	ld	r24, X
+ 2ac:	82 60       	ori	r24, 0x02	; 2
+ 2ae:	8c 93       	st	X, r24
+	clear(TCCR3B,CS32);
+ 2b0:	8c 91       	ld	r24, X
+ 2b2:	8b 7f       	andi	r24, 0xFB	; 251
+ 2b4:	8c 93       	st	X, r24
+
+	//////// SET PWM MODE ////////
+	// Timer 1 - UP to ICR1 PWM Mode (Mode 14 - 16bit 65535)
+	set(TCCR1B,WGM13);
+ 2b6:	80 81       	ld	r24, Z
+ 2b8:	80 61       	ori	r24, 0x10	; 16
+ 2ba:	80 83       	st	Z, r24
+	set(TCCR1B,WGM12);
+ 2bc:	80 81       	ld	r24, Z
+ 2be:	88 60       	ori	r24, 0x08	; 8
+ 2c0:	80 83       	st	Z, r24
+	set(TCCR1A,WGM11);
+ 2c2:	e0 e8       	ldi	r30, 0x80	; 128
+ 2c4:	f0 e0       	ldi	r31, 0x00	; 0
+ 2c6:	80 81       	ld	r24, Z
+ 2c8:	82 60       	ori	r24, 0x02	; 2
+ 2ca:	80 83       	st	Z, r24
+	clear(TCCR1A,WGM10);
+ 2cc:	80 81       	ld	r24, Z
+ 2ce:	8e 7f       	andi	r24, 0xFE	; 254
+ 2d0:	80 83       	st	Z, r24
+	ICR1 = PWM_PERIOD;
+ 2d2:	20 91 1b 01 	lds	r18, 0x011B
+ 2d6:	30 91 1c 01 	lds	r19, 0x011C
+ 2da:	30 93 87 00 	sts	0x0087, r19
+ 2de:	20 93 86 00 	sts	0x0086, r18
+
+	// Timer 1 Channel A - clear at OCR1A, set at rollover
+	set(TCCR1A,COM1A1);
+ 2e2:	80 81       	ld	r24, Z
+ 2e4:	80 68       	ori	r24, 0x80	; 128
+ 2e6:	80 83       	st	Z, r24
+	clear(TCCR1A,COM1A0);
+ 2e8:	80 81       	ld	r24, Z
+ 2ea:	8f 7b       	andi	r24, 0xBF	; 191
+ 2ec:	80 83       	st	Z, r24
+	OCR1A = 0;
+ 2ee:	10 92 89 00 	sts	0x0089, r1
+ 2f2:	10 92 88 00 	sts	0x0088, r1
+
+	// Timer 1 Channel B - clear at OCR1B, set at rollover
+	set(TCCR1A,COM1B1);
+ 2f6:	80 81       	ld	r24, Z
+ 2f8:	80 62       	ori	r24, 0x20	; 32
+ 2fa:	80 83       	st	Z, r24
+	clear(TCCR1A,COM1B0);
+ 2fc:	80 81       	ld	r24, Z
+ 2fe:	8f 7e       	andi	r24, 0xEF	; 239
+ 300:	80 83       	st	Z, r24
+	OCR1B = 0;
+ 302:	10 92 8b 00 	sts	0x008B, r1
+ 306:	10 92 8a 00 	sts	0x008A, r1
+
+	// Timer 1 Channel C - clear at OCR1C, set at rollover
+	set(TCCR1A,COM1C1);
+ 30a:	80 81       	ld	r24, Z
+ 30c:	88 60       	ori	r24, 0x08	; 8
+ 30e:	80 83       	st	Z, r24
+	clear(TCCR1A,COM1C0);
+ 310:	80 81       	ld	r24, Z
+ 312:	8b 7f       	andi	r24, 0xFB	; 251
+ 314:	80 83       	st	Z, r24
+	OCR1C = 0;
+ 316:	10 92 8d 00 	sts	0x008D, r1
+ 31a:	10 92 8c 00 	sts	0x008C, r1
+
+	// Timer 3 - UP to ICR3 PWM Mode (Mode 14 - 16bit 65535)
+	set(TCCR3B,WGM33);
+ 31e:	8c 91       	ld	r24, X
+ 320:	80 61       	ori	r24, 0x10	; 16
+ 322:	8c 93       	st	X, r24
+	set(TCCR3B,WGM32);
+ 324:	8c 91       	ld	r24, X
+ 326:	88 60       	ori	r24, 0x08	; 8
+ 328:	8c 93       	st	X, r24
+	set(TCCR3A,WGM31);
+ 32a:	e0 e9       	ldi	r30, 0x90	; 144
+ 32c:	f0 e0       	ldi	r31, 0x00	; 0
+ 32e:	80 81       	ld	r24, Z
+ 330:	82 60       	ori	r24, 0x02	; 2
+ 332:	80 83       	st	Z, r24
+	clear(TCCR3A,WGM30);
+ 334:	80 81       	ld	r24, Z
+ 336:	8e 7f       	andi	r24, 0xFE	; 254
+ 338:	80 83       	st	Z, r24
+	ICR3 = PWM_PERIOD;
+ 33a:	30 93 97 00 	sts	0x0097, r19
+ 33e:	20 93 96 00 	sts	0x0096, r18
+
+	// Timer 3 Channel A - clear at OCR3A, set at rollover
+	set(TCCR3A,COM3A1);
+ 342:	80 81       	ld	r24, Z
+ 344:	80 68       	ori	r24, 0x80	; 128
+ 346:	80 83       	st	Z, r24
+	clear(TCCR3A,COM3A0);
+ 348:	80 81       	ld	r24, Z
+ 34a:	8f 7b       	andi	r24, 0xBF	; 191
+ 34c:	80 83       	st	Z, r24
+	OCR3A = 0;
+ 34e:	10 92 99 00 	sts	0x0099, r1
+ 352:	10 92 98 00 	sts	0x0098, r1
+
+	// Enable Timer 1 (B5,B6,B7) and Timer 3 (C6) Output
+	set(DDRB,5);
+ 356:	25 9a       	sbi	0x04, 5	; 4
+	set(DDRB,6);
+ 358:	26 9a       	sbi	0x04, 6	; 4
+	set(DDRB,7);
+ 35a:	27 9a       	sbi	0x04, 7	; 4
+	set(DDRC,6);
+ 35c:	3e 9a       	sbi	0x07, 6	; 7
+}
+ 35e:	08 95       	ret
+
+00000360 <set_duty>:
+		  Auto corrects for invalid input (if >PWM_PERIOD, sets to PWM_PERIOD)
+			-This correction will be handled earlier during motor speed calculations
+Input:    motor number, duty value
+Returns:  None
+**************************************************************************/
+void set_duty(unsigned int motornum,unsigned int duty){
+ 360:	ac 01       	movw	r20, r24
+ 362:	e0 91 1b 01 	lds	r30, 0x011B
+ 366:	f0 91 1c 01 	lds	r31, 0x011C
+ 36a:	cb 01       	movw	r24, r22
+ 36c:	e6 17       	cp	r30, r22
+ 36e:	f7 07       	cpc	r31, r23
+ 370:	08 f4       	brcc	.+2      	; 0x374 <set_duty+0x14>
+ 372:	cf 01       	movw	r24, r30
+	if(duty>PWM_PERIOD) {
+		duty = PWM_PERIOD;
+	}
+	switch(motornum){
+ 374:	42 30       	cpi	r20, 0x02	; 2
+ 376:	51 05       	cpc	r21, r1
+ 378:	99 f0       	breq	.+38     	; 0x3a0 <set_duty+0x40>
+ 37a:	43 30       	cpi	r20, 0x03	; 3
+ 37c:	51 05       	cpc	r21, r1
+ 37e:	20 f4       	brcc	.+8      	; 0x388 <set_duty+0x28>
+ 380:	41 30       	cpi	r20, 0x01	; 1
+ 382:	51 05       	cpc	r21, r1
+ 384:	d9 f4       	brne	.+54     	; 0x3bc <set_duty+0x5c>
+ 386:	07 c0       	rjmp	.+14     	; 0x396 <set_duty+0x36>
+ 388:	43 30       	cpi	r20, 0x03	; 3
+ 38a:	51 05       	cpc	r21, r1
+ 38c:	71 f0       	breq	.+28     	; 0x3aa <set_duty+0x4a>
+ 38e:	44 30       	cpi	r20, 0x04	; 4
+ 390:	51 05       	cpc	r21, r1
+ 392:	a1 f4       	brne	.+40     	; 0x3bc <set_duty+0x5c>
+ 394:	0f c0       	rjmp	.+30     	; 0x3b4 <set_duty+0x54>
+		case 1:
+			OCR1A = duty;
+ 396:	90 93 89 00 	sts	0x0089, r25
+ 39a:	80 93 88 00 	sts	0x0088, r24
+ 39e:	08 95       	ret
+			break;
+		case 2:
+			OCR1B = duty;
+ 3a0:	90 93 8b 00 	sts	0x008B, r25
+ 3a4:	80 93 8a 00 	sts	0x008A, r24
+ 3a8:	08 95       	ret
+			break;
+		case 3:
+			OCR1C = duty;
+ 3aa:	90 93 8d 00 	sts	0x008D, r25
+ 3ae:	80 93 8c 00 	sts	0x008C, r24
+ 3b2:	08 95       	ret
+			break;
+		case 4:
+			OCR3A = duty;
+ 3b4:	90 93 99 00 	sts	0x0099, r25
+ 3b8:	80 93 98 00 	sts	0x0098, r24
+ 3bc:	08 95       	ret
+
+000003be <SPIsetup>:
+#define CONFIG_VAL (1<<EN_CRC) | (1<<MASK_TX_DS) | (1<<MASK_MAX_RT)
+
+// set up the spi port in master mode with the polarity options (etc.) that the 24L01 requires. Also set DDR of the CE pin of rf module.
+void SPIsetup(){
+	//Make sure Power Save didn't turn SPI off
+ 	PRR0 &= ~(1 << PRSPI);
+ 3be:	80 91 64 00 	lds	r24, 0x0064
+ 3c2:	8b 7f       	andi	r24, 0xFB	; 251
+ 3c4:	80 93 64 00 	sts	0x0064, r24
+
+	// Set MOSI and SCK and SS output, all others input. SS MUST be config. to output 
+	// Also configure the CE pin of the rf module as an output
+	DDR_SPI |= (1 << DD_MOSI) | (1<<DD_SCK) | (1<<DD_SS);
+ 3c8:	84 b1       	in	r24, 0x04	; 4
+ 3ca:	87 60       	ori	r24, 0x07	; 7
+ 3cc:	84 b9       	out	0x04, r24	; 4
+
+	// Enable SPI, Master, set clock rate sys_clk/128
+	SPCR = (1<<SPE) | (1<<MSTR) | (1<<SPR1) | (1<<SPR0);
+ 3ce:	83 e5       	ldi	r24, 0x53	; 83
+ 3d0:	8c bd       	out	0x2c, r24	; 44
+ 3d2:	80 ed       	ldi	r24, 0xD0	; 208
+ 3d4:	97 e0       	ldi	r25, 0x07	; 7
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+ 3d6:	28 ec       	ldi	r18, 0xC8	; 200
+ 3d8:	30 e0       	ldi	r19, 0x00	; 0
+ 3da:	f9 01       	movw	r30, r18
+ 3dc:	31 97       	sbiw	r30, 0x01	; 1
+ 3de:	f1 f7       	brne	.-4      	; 0x3dc <SPIsetup+0x1e>
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 3e0:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 3e2:	d9 f7       	brne	.-10     	; 0x3da <SPIsetup+0x1c>
+
+	//PAUSE to let the wireless chip go through initialization 
+	_delay_ms(200);
+}
+ 3e4:	08 95       	ret
+
+000003e6 <RFwriteReg>:
+// writeDat - the storage container for the data we plan on writing
+// numBytes - the number of bytes to write. !! The writeDat storage container must be at least this size in bytes (char's)
+void RFwriteReg(char writeReg, char* writeDat, int numBytes){
+
+	// turn the CS channel low to begin transmission
+	PORT_CS &= ~(1<<P_RF_CS);
+ 3e6:	47 98       	cbi	0x08, 7	; 8
+
+	// send 1 byte out the spi port to request write of writeReg
+	// in order to do this we add 0x20 to our write register as per the format of the 23L01 datasheet
+	SPDR = W_REGISTER + writeReg;
+ 3e8:	80 5e       	subi	r24, 0xE0	; 224
+ 3ea:	8e bd       	out	0x2e, r24	; 46
+
+	// wait for transmission to finish
+	while(!(SPSR & (1<<SPIF) ) );
+ 3ec:	0d b4       	in	r0, 0x2d	; 45
+ 3ee:	07 fe       	sbrs	r0, 7
+ 3f0:	fd cf       	rjmp	.-6      	; 0x3ec <RFwriteReg+0x6>
+ 3f2:	20 e0       	ldi	r18, 0x00	; 0
+ 3f4:	30 e0       	ldi	r19, 0x00	; 0
+ 3f6:	0a c0       	rjmp	.+20     	; 0x40c <RFwriteReg+0x26>
+	// write the number of bytes we want from writeDat
+	int i;
+	for(i = 0; i < numBytes; i++)
+	{
+		// send 1 byte out the spi port. this is the data we want to write to the RF chip
+		SPDR = writeDat[i];
+ 3f8:	fb 01       	movw	r30, r22
+ 3fa:	e2 0f       	add	r30, r18
+ 3fc:	f3 1f       	adc	r31, r19
+ 3fe:	80 81       	ld	r24, Z
+ 400:	8e bd       	out	0x2e, r24	; 46
+
+		// wait for transmission to finish
+		while(!(SPSR & (1<<SPIF) ) );
+ 402:	0d b4       	in	r0, 0x2d	; 45
+ 404:	07 fe       	sbrs	r0, 7
+ 406:	fd cf       	rjmp	.-6      	; 0x402 <RFwriteReg+0x1c>
+	// wait for transmission to finish
+	while(!(SPSR & (1<<SPIF) ) );
+
+	// write the number of bytes we want from writeDat
+	int i;
+	for(i = 0; i < numBytes; i++)
+ 408:	2f 5f       	subi	r18, 0xFF	; 255
+ 40a:	3f 4f       	sbci	r19, 0xFF	; 255
+ 40c:	24 17       	cp	r18, r20
+ 40e:	35 07       	cpc	r19, r21
+ 410:	9c f3       	brlt	.-26     	; 0x3f8 <RFwriteReg+0x12>
+		// wait for transmission to finish
+		while(!(SPSR & (1<<SPIF) ) );
+	}
+
+	// turn the CS channel high to end transmission
+	PORT_CS |= (1<<P_RF_CS);
+ 412:	47 9a       	sbi	0x08, 7	; 8
+}
+ 414:	08 95       	ret
+
+00000416 <RFfillTransferBuffer>:
+
+
+// function to fill the transfer (TX) buffer with data we wish to transmit wirelessly
+// txDat - an appropriately sized storage container containing the data we plan on pushing into the TX register
+// numBytes - the number of bytes to push in back. !! The txDat storage container must be at least this size in bytes (char's)
+void RFfillTransferBuffer( char* txDat, int numBytes ){
+ 416:	ac 01       	movw	r20, r24
+	// turn the CS channel low to begin transmission
+	PORT_CS &= ~(1<<P_RF_CS);
+ 418:	47 98       	cbi	0x08, 7	; 8
+
+	// send 1 byte out the spi port that indicates we want to fill the TX buffer
+	SPDR = W_TX_PAYLOAD;
+ 41a:	80 ea       	ldi	r24, 0xA0	; 160
+ 41c:	8e bd       	out	0x2e, r24	; 46
+
+	// wait for transmission to finish
+	while(!(SPSR & (1<<SPIF) ) );
+ 41e:	0d b4       	in	r0, 0x2d	; 45
+ 420:	07 fe       	sbrs	r0, 7
+ 422:	fd cf       	rjmp	.-6      	; 0x41e <RFfillTransferBuffer+0x8>
+ 424:	20 e0       	ldi	r18, 0x00	; 0
+ 426:	30 e0       	ldi	r19, 0x00	; 0
+ 428:	0a c0       	rjmp	.+20     	; 0x43e <RFfillTransferBuffer+0x28>
+	// write the number of bytes we want to write out to the TX buffer
+	int i;
+	for(i = 0; i < numBytes; i++)
+	{
+		// send 1 byte out the spi port. this is the data we want to write to the RF chip
+		SPDR = txDat[i];
+ 42a:	fa 01       	movw	r30, r20
+ 42c:	e2 0f       	add	r30, r18
+ 42e:	f3 1f       	adc	r31, r19
+ 430:	80 81       	ld	r24, Z
+ 432:	8e bd       	out	0x2e, r24	; 46
+
+		// wait for transmission to finish
+		while(!(SPSR & (1<<SPIF) ) );
+ 434:	0d b4       	in	r0, 0x2d	; 45
+ 436:	07 fe       	sbrs	r0, 7
+ 438:	fd cf       	rjmp	.-6      	; 0x434 <RFfillTransferBuffer+0x1e>
+	// wait for transmission to finish
+	while(!(SPSR & (1<<SPIF) ) );
+
+	// write the number of bytes we want to write out to the TX buffer
+	int i;
+	for(i = 0; i < numBytes; i++)
+ 43a:	2f 5f       	subi	r18, 0xFF	; 255
+ 43c:	3f 4f       	sbci	r19, 0xFF	; 255
+ 43e:	26 17       	cp	r18, r22
+ 440:	37 07       	cpc	r19, r23
+ 442:	9c f3       	brlt	.-26     	; 0x42a <RFfillTransferBuffer+0x14>
+		// wait for transmission to finish
+		while(!(SPSR & (1<<SPIF) ) );
+	}
+
+	// turn the CS channel high to end transmission
+	PORT_CS |= (1<<P_RF_CS);
+ 444:	47 9a       	sbi	0x08, 7	; 8
+}
+ 446:	08 95       	ret
+
+00000448 <RFreadReg>:
+// retDat - an appropriately sized storage container for the data we plan on getting back
+// numBytes - the number of bytes to read back. !! The retDat storage container must be at least this size in bytes (char's)
+void RFreadReg(char readReg, char* retDat, int numBytes){
+
+	// turn the CS channel low to begin transmission
+	PORT_CS &= ~(1<<P_RF_CS);
+ 448:	47 98       	cbi	0x08, 7	; 8
+
+	// send 1 byte out the spi port to request write of writeReg
+	SPDR = R_REGISTER + readReg;
+ 44a:	8e bd       	out	0x2e, r24	; 46
+
+	// wait for transmission to finish
+	while(!(SPSR & (1<<SPIF) ) );
+ 44c:	0d b4       	in	r0, 0x2d	; 45
+ 44e:	07 fe       	sbrs	r0, 7
+ 450:	fd cf       	rjmp	.-6      	; 0x44c <RFreadReg+0x4>
+ 452:	20 e0       	ldi	r18, 0x00	; 0
+ 454:	30 e0       	ldi	r19, 0x00	; 0
+
+	// read the number of bytes we intend to receive into retDat
+	int i;
+	for(i = 0; i < numBytes; i++){
+		// send 1 byte out the spi port. this is a dummy send just to read the incoming MISO data from our read request above
+		SPDR = 0xFF;
+ 456:	9f ef       	ldi	r25, 0xFF	; 255
+ 458:	0b c0       	rjmp	.+22     	; 0x470 <RFreadReg+0x28>
+ 45a:	9e bd       	out	0x2e, r25	; 46
+
+		// wait for transmission to finish
+		while(!(SPSR & (1<<SPIF) ) );
+ 45c:	0d b4       	in	r0, 0x2d	; 45
+ 45e:	07 fe       	sbrs	r0, 7
+ 460:	fd cf       	rjmp	.-6      	; 0x45c <RFreadReg+0x14>
+
+		// read off the contents of our return data that is in SPDR (the value we requested to read). This came from MISO
+		retDat[i] = SPDR;
+ 462:	8e b5       	in	r24, 0x2e	; 46
+ 464:	fb 01       	movw	r30, r22
+ 466:	e2 0f       	add	r30, r18
+ 468:	f3 1f       	adc	r31, r19
+ 46a:	80 83       	st	Z, r24
+	// wait for transmission to finish
+	while(!(SPSR & (1<<SPIF) ) );
+
+	// read the number of bytes we intend to receive into retDat
+	int i;
+	for(i = 0; i < numBytes; i++){
+ 46c:	2f 5f       	subi	r18, 0xFF	; 255
+ 46e:	3f 4f       	sbci	r19, 0xFF	; 255
+ 470:	24 17       	cp	r18, r20
+ 472:	35 07       	cpc	r19, r21
+ 474:	94 f3       	brlt	.-28     	; 0x45a <RFreadReg+0x12>
+		// read off the contents of our return data that is in SPDR (the value we requested to read). This came from MISO
+		retDat[i] = SPDR;
+	}
+
+	// turn the CS channel high to end transmission
+	PORT_CS |= (1<<P_RF_CS);
+ 476:	47 9a       	sbi	0x08, 7	; 8
+}
+ 478:	08 95       	ret
+
+0000047a <RFsetRxAddr>:
+
+
+// put the chip into receiving mode
+void RFsetRxAddr(char * recvAddr, int numBytes){
+ 47a:	9c 01       	movw	r18, r24
+ 47c:	ab 01       	movw	r20, r22
+	RFwriteReg(RX_ADDR_P1,recvAddr,numBytes);
+ 47e:	8b e0       	ldi	r24, 0x0B	; 11
+ 480:	b9 01       	movw	r22, r18
+ 482:	0e 94 f3 01 	call	0x3e6	; 0x3e6 <RFwriteReg>
+}
+ 486:	08 95       	ret
+
+00000488 <RFflushTXBuffer>:
+
+// flush the tx buffer
+void RFflushTXBuffer(){
+
+	// turn the CS channel low to begin transmission
+	PORT_CS &= ~(1<<P_RF_CS);
+ 488:	47 98       	cbi	0x08, 7	; 8
+
+	// send 1 byte out the spi port to request write of writeReg
+	SPDR = FLUSH_TX;
+ 48a:	81 ee       	ldi	r24, 0xE1	; 225
+ 48c:	8e bd       	out	0x2e, r24	; 46
+
+	// wait for transmission to finish
+	while(!(SPSR & (1<<SPIF) ) );
+ 48e:	0d b4       	in	r0, 0x2d	; 45
+ 490:	07 fe       	sbrs	r0, 7
+ 492:	fd cf       	rjmp	.-6      	; 0x48e <RFflushTXBuffer+0x6>
+
+	// turn the CS channel high to end transmission
+	PORT_CS |= (1<<P_RF_CS);
+ 494:	47 9a       	sbi	0x08, 7	; 8
+}
+ 496:	08 95       	ret
+
+00000498 <RFflushRXBuffer>:
+
+// flush the rx buffer
+void RFflushRXBuffer(){
+
+	// turn the CS channel low to begin transmission
+	PORT_CS &= ~(1<<P_RF_CS);
+ 498:	47 98       	cbi	0x08, 7	; 8
+
+	// send 1 byte out the spi port to request write of writeReg
+	SPDR = FLUSH_RX;
+ 49a:	82 ee       	ldi	r24, 0xE2	; 226
+ 49c:	8e bd       	out	0x2e, r24	; 46
+
+	// wait for transmission to finish
+	while(!(SPSR & (1<<SPIF) ) );
+ 49e:	0d b4       	in	r0, 0x2d	; 45
+ 4a0:	07 fe       	sbrs	r0, 7
+ 4a2:	fd cf       	rjmp	.-6      	; 0x49e <RFflushRXBuffer+0x6>
+
+	// turn the CS channel high to end transmission
+	PORT_CS |= (1<<P_RF_CS);
+ 4a4:	47 9a       	sbi	0x08, 7	; 8
+}
+ 4a6:	08 95       	ret
+
+000004a8 <RFstartReceiving>:
+
+// put the chip into receiving mode
+void RFstartReceiving(){
+ 4a8:	df 93       	push	r29
+ 4aa:	cf 93       	push	r28
+ 4ac:	0f 92       	push	r0
+ 4ae:	cd b7       	in	r28, 0x3d	; 61
+ 4b0:	de b7       	in	r29, 0x3e	; 62
+
+	char writeDat[1] = { CONFIG_VAL | (1<<PWR_UP) | (1<<PRIM_RX) };
+ 4b2:	8b e3       	ldi	r24, 0x3B	; 59
+ 4b4:	89 83       	std	Y+1, r24	; 0x01
+
+	// turn the PWR_UP and PRIM_RX bits high
+	RFwriteReg( CONFIG, writeDat, 1);
+ 4b6:	80 e0       	ldi	r24, 0x00	; 0
+ 4b8:	be 01       	movw	r22, r28
+ 4ba:	6f 5f       	subi	r22, 0xFF	; 255
+ 4bc:	7f 4f       	sbci	r23, 0xFF	; 255
+ 4be:	41 e0       	ldi	r20, 0x01	; 1
+ 4c0:	50 e0       	ldi	r21, 0x00	; 0
+ 4c2:	0e 94 f3 01 	call	0x3e6	; 0x3e6 <RFwriteReg>
+ 4c6:	80 ea       	ldi	r24, 0xA0	; 160
+ 4c8:	9f e0       	ldi	r25, 0x0F	; 15
+ 4ca:	01 97       	sbiw	r24, 0x01	; 1
+ 4cc:	f1 f7       	brne	.-4      	; 0x4ca <RFstartReceiving+0x22>
+
+	// wait a millisecond 
+	_delay_ms(2);
+
+	// turn pin CE high
+	PORT_CE |= (1<<P_RF_CE);
+ 4ce:	28 9a       	sbi	0x05, 0	; 5
+}
+ 4d0:	0f 90       	pop	r0
+ 4d2:	cf 91       	pop	r28
+ 4d4:	df 91       	pop	r29
+ 4d6:	08 95       	ret
+
+000004d8 <RFstopReceiving>:
+
+// take the chip out of receiving mode
+void RFstopReceiving(){
+
+	// turn pin CE low
+	PORT_CE &= ~(1<<P_RF_CE);
+ 4d8:	28 98       	cbi	0x05, 0	; 5
+}
+ 4da:	08 95       	ret
+
+000004dc <RFtransmitUntil>:
+
+// transmit txDat wirelessly and repeat until we receive verification that the packet was received. Returns chip to receive state when done
+char RFtransmitUntil( char* txDat, char* destAddr, char txTries){
+ 4dc:	2f 92       	push	r2
+ 4de:	3f 92       	push	r3
+ 4e0:	4f 92       	push	r4
+ 4e2:	5f 92       	push	r5
+ 4e4:	6f 92       	push	r6
+ 4e6:	7f 92       	push	r7
+ 4e8:	8f 92       	push	r8
+ 4ea:	9f 92       	push	r9
+ 4ec:	af 92       	push	r10
+ 4ee:	bf 92       	push	r11
+ 4f0:	cf 92       	push	r12
+ 4f2:	df 92       	push	r13
+ 4f4:	ef 92       	push	r14
+ 4f6:	ff 92       	push	r15
+ 4f8:	0f 93       	push	r16
+ 4fa:	1f 93       	push	r17
+ 4fc:	df 93       	push	r29
+ 4fe:	cf 93       	push	r28
+ 500:	00 d0       	rcall	.+0      	; 0x502 <RFtransmitUntil+0x26>
+ 502:	00 d0       	rcall	.+0      	; 0x504 <RFtransmitUntil+0x28>
+ 504:	cd b7       	in	r28, 0x3d	; 61
+ 506:	de b7       	in	r29, 0x3e	; 62
+ 508:	5c 01       	movw	r10, r24
+ 50a:	6b 01       	movw	r12, r22
+ 50c:	4c 83       	std	Y+4, r20	; 0x04
+
+	char txAttempt = 0;
+	char success = 0;
+	char tempWrite[1] = { 0x00 };
+ 50e:	19 82       	std	Y+1, r1	; 0x01
+
+// take the chip out of receiving mode
+void RFstopReceiving(){
+
+	// turn pin CE low
+	PORT_CE &= ~(1<<P_RF_CE);
+ 510:	28 98       	cbi	0x05, 0	; 5
+ 512:	00 e0       	ldi	r16, 0x00	; 0
+
+		RFflushTXBuffer();
+		
+		// clear the TX transmission bit
+		tempWrite[0] = (1<<TX_DS);
+		RFwriteReg(STATUS, tempWrite, 1);
+ 514:	7e 01       	movw	r14, r28
+ 516:	08 94       	sec
+ 518:	e1 1c       	adc	r14, r1
+ 51a:	f1 1c       	adc	r15, r1
+
+		// setup our write data to configure the chip into TX mode
+		char writeDat[1] = { CONFIG_VAL | (1<<PWR_UP) };
+
+		// turn the PWR_UP high and PRIM_RX bit low for transmitting
+		RFwriteReg( CONFIG, writeDat, 1);
+ 51c:	32 e0       	ldi	r19, 0x02	; 2
+ 51e:	23 2e       	mov	r2, r19
+ 520:	31 2c       	mov	r3, r1
+ 522:	2c 0e       	add	r2, r28
+ 524:	3d 1e       	adc	r3, r29
+ 526:	20 ea       	ldi	r18, 0xA0	; 160
+ 528:	42 2e       	mov	r4, r18
+ 52a:	2f e0       	ldi	r18, 0x0F	; 15
+ 52c:	52 2e       	mov	r5, r18
+		// delay so we have time to receive an ACK response
+		_delay_ms(4);
+		
+		// temp variable to store our STATUS register state
+		char tempStatus[1] = {0x00};
+		RFreadReg(STATUS,tempStatus,1);
+ 52e:	90 e4       	ldi	r25, 0x40	; 64
+ 530:	69 2e       	mov	r6, r25
+ 532:	9f e1       	ldi	r25, 0x1F	; 31
+ 534:	79 2e       	mov	r7, r25
+ 536:	83 e0       	ldi	r24, 0x03	; 3
+ 538:	88 2e       	mov	r8, r24
+ 53a:	91 2c       	mov	r9, r1
+ 53c:	8c 0e       	add	r8, r28
+ 53e:	9d 1e       	adc	r9, r29
+ 540:	40 c0       	rjmp	.+128    	; 0x5c2 <RFtransmitUntil+0xe6>
+
+	
+	// repeat transmission until the TX bit goes high (verifies receipt) or we've tried txTries times
+	while( (!success) &&  (txAttempt < txTries)  ){
+
+		RFflushTXBuffer();
+ 542:	0e 94 44 02 	call	0x488	; 0x488 <RFflushTXBuffer>
+		
+		// clear the TX transmission bit
+		tempWrite[0] = (1<<TX_DS);
+ 546:	80 e2       	ldi	r24, 0x20	; 32
+ 548:	89 83       	std	Y+1, r24	; 0x01
+		RFwriteReg(STATUS, tempWrite, 1);
+ 54a:	87 e0       	ldi	r24, 0x07	; 7
+ 54c:	b7 01       	movw	r22, r14
+ 54e:	41 e0       	ldi	r20, 0x01	; 1
+ 550:	50 e0       	ldi	r21, 0x00	; 0
+ 552:	0e 94 f3 01 	call	0x3e6	; 0x3e6 <RFwriteReg>
+
+		// increment the attempt counter
+		txAttempt++; 		
+		
+		// set up the destination transmit address
+		RFwriteReg(TX_ADDR,destAddr,5);
+ 556:	80 e1       	ldi	r24, 0x10	; 16
+ 558:	b6 01       	movw	r22, r12
+ 55a:	45 e0       	ldi	r20, 0x05	; 5
+ 55c:	50 e0       	ldi	r21, 0x00	; 0
+ 55e:	0e 94 f3 01 	call	0x3e6	; 0x3e6 <RFwriteReg>
+
+		// set up the destination recive address for auto-acknowledgement
+		RFwriteReg(RX_ADDR_P0,destAddr,5);
+ 562:	8a e0       	ldi	r24, 0x0A	; 10
+ 564:	b6 01       	movw	r22, r12
+ 566:	45 e0       	ldi	r20, 0x05	; 5
+ 568:	50 e0       	ldi	r21, 0x00	; 0
+ 56a:	0e 94 f3 01 	call	0x3e6	; 0x3e6 <RFwriteReg>
+
+		// setup our write data to configure the chip into TX mode
+		char writeDat[1] = { CONFIG_VAL | (1<<PWR_UP) };
+ 56e:	8a e3       	ldi	r24, 0x3A	; 58
+ 570:	8a 83       	std	Y+2, r24	; 0x02
+
+		// turn the PWR_UP high and PRIM_RX bit low for transmitting
+		RFwriteReg( CONFIG, writeDat, 1);
+ 572:	80 e0       	ldi	r24, 0x00	; 0
+ 574:	b1 01       	movw	r22, r2
+ 576:	41 e0       	ldi	r20, 0x01	; 1
+ 578:	50 e0       	ldi	r21, 0x00	; 0
+ 57a:	0e 94 f3 01 	call	0x3e6	; 0x3e6 <RFwriteReg>
+
+		//write data to TX register for outputting
+		RFfillTransferBuffer(txDat,PACKET_SIZE);
+ 57e:	60 91 3c 01 	lds	r22, 0x013C
+ 582:	c5 01       	movw	r24, r10
+ 584:	70 e0       	ldi	r23, 0x00	; 0
+ 586:	0e 94 0b 02 	call	0x416	; 0x416 <RFfillTransferBuffer>
+
+		// turn pin CE high
+		PORT_CE |= (1<<P_RF_CE);
+ 58a:	28 9a       	sbi	0x05, 0	; 5
+ 58c:	c2 01       	movw	r24, r4
+ 58e:	01 97       	sbiw	r24, 0x01	; 1
+ 590:	f1 f7       	brne	.-4      	; 0x58e <RFtransmitUntil+0xb2>
+
+		// wait 2 millisecond to make sure transfer fires
+		_delay_ms(2);
+
+		// end transmission by pulling CE low
+		PORT_CE &= ~(1<<P_RF_CE);
+ 592:	28 98       	cbi	0x05, 0	; 5
+ 594:	c3 01       	movw	r24, r6
+ 596:	01 97       	sbiw	r24, 0x01	; 1
+ 598:	f1 f7       	brne	.-4      	; 0x596 <RFtransmitUntil+0xba>
+		
+		// delay so we have time to receive an ACK response
+		_delay_ms(4);
+		
+		// temp variable to store our STATUS register state
+		char tempStatus[1] = {0x00};
+ 59a:	1b 82       	std	Y+3, r1	; 0x03
+		RFreadReg(STATUS,tempStatus,1);
+ 59c:	87 e0       	ldi	r24, 0x07	; 7
+ 59e:	b4 01       	movw	r22, r8
+ 5a0:	41 e0       	ldi	r20, 0x01	; 1
+ 5a2:	50 e0       	ldi	r21, 0x00	; 0
+ 5a4:	0e 94 24 02 	call	0x448	; 0x448 <RFreadReg>
+
+		// check for acknowledgement from the receiving node
+		//success = tempStatus[0];
+		success = ( tempStatus[0] & (1<<TX_DS));
+ 5a8:	1b 81       	ldd	r17, Y+3	; 0x03
+ 5aa:	10 72       	andi	r17, 0x20	; 32
+
+		// clear any MAX_RT bits transmission bit
+		tempWrite[0] = (1<<MAX_RT);
+ 5ac:	80 e1       	ldi	r24, 0x10	; 16
+ 5ae:	89 83       	std	Y+1, r24	; 0x01
+		RFwriteReg(STATUS, tempWrite, 1);	
+ 5b0:	87 e0       	ldi	r24, 0x07	; 7
+ 5b2:	b7 01       	movw	r22, r14
+ 5b4:	41 e0       	ldi	r20, 0x01	; 1
+ 5b6:	50 e0       	ldi	r21, 0x00	; 0
+ 5b8:	0e 94 f3 01 	call	0x3e6	; 0x3e6 <RFwriteReg>
+	// take out of receiving mode
+	RFstopReceiving();
+
+	
+	// repeat transmission until the TX bit goes high (verifies receipt) or we've tried txTries times
+	while( (!success) &&  (txAttempt < txTries)  ){
+ 5bc:	11 23       	and	r17, r17
+ 5be:	39 f4       	brne	.+14     	; 0x5ce <RFtransmitUntil+0xf2>
+		tempWrite[0] = (1<<TX_DS);
+		RFwriteReg(STATUS, tempWrite, 1);
+
+
+		// increment the attempt counter
+		txAttempt++; 		
+ 5c0:	0f 5f       	subi	r16, 0xFF	; 255
+	// take out of receiving mode
+	RFstopReceiving();
+
+	
+	// repeat transmission until the TX bit goes high (verifies receipt) or we've tried txTries times
+	while( (!success) &&  (txAttempt < txTries)  ){
+ 5c2:	8c 81       	ldd	r24, Y+4	; 0x04
+ 5c4:	08 17       	cp	r16, r24
+ 5c6:	08 f4       	brcc	.+2      	; 0x5ca <RFtransmitUntil+0xee>
+ 5c8:	bc cf       	rjmp	.-136    	; 0x542 <RFtransmitUntil+0x66>
+ 5ca:	10 e0       	ldi	r17, 0x00	; 0
+ 5cc:	08 c0       	rjmp	.+16     	; 0x5de <RFtransmitUntil+0x102>
+		RFwriteReg(STATUS, tempWrite, 1);	
+	}
+		
+	// if the TX bit is high clear the TX transmission bit
+	if(success){
+		tempWrite[0] =  (1<<TX_DS);
+ 5ce:	80 e2       	ldi	r24, 0x20	; 32
+ 5d0:	89 83       	std	Y+1, r24	; 0x01
+		RFwriteReg(STATUS, tempWrite, 1);
+ 5d2:	87 e0       	ldi	r24, 0x07	; 7
+ 5d4:	b7 01       	movw	r22, r14
+ 5d6:	41 e0       	ldi	r20, 0x01	; 1
+ 5d8:	50 e0       	ldi	r21, 0x00	; 0
+ 5da:	0e 94 f3 01 	call	0x3e6	; 0x3e6 <RFwriteReg>
+	}
+
+	// turn receiving mode back on 
+	RFstartReceiving();
+ 5de:	0e 94 54 02 	call	0x4a8	; 0x4a8 <RFstartReceiving>
+ 5e2:	81 2f       	mov	r24, r17
+ 5e4:	11 11       	cpse	r17, r1
+ 5e6:	81 e0       	ldi	r24, 0x01	; 1
+		return 1;
+	}
+	else{
+		return 0;
+	}
+}
+ 5e8:	0f 90       	pop	r0
+ 5ea:	0f 90       	pop	r0
+ 5ec:	0f 90       	pop	r0
+ 5ee:	0f 90       	pop	r0
+ 5f0:	cf 91       	pop	r28
+ 5f2:	df 91       	pop	r29
+ 5f4:	1f 91       	pop	r17
+ 5f6:	0f 91       	pop	r16
+ 5f8:	ff 90       	pop	r15
+ 5fa:	ef 90       	pop	r14
+ 5fc:	df 90       	pop	r13
+ 5fe:	cf 90       	pop	r12
+ 600:	bf 90       	pop	r11
+ 602:	af 90       	pop	r10
+ 604:	9f 90       	pop	r9
+ 606:	8f 90       	pop	r8
+ 608:	7f 90       	pop	r7
+ 60a:	6f 90       	pop	r6
+ 60c:	5f 90       	pop	r5
+ 60e:	4f 90       	pop	r4
+ 610:	3f 90       	pop	r3
+ 612:	2f 90       	pop	r2
+ 614:	08 95       	ret
+
+00000616 <RFtransmit>:
+
+
+// transmit txDat wirelessly and leave the chip in receive mode when done. Function only fires 1 packet and does not check if data was received.
+void RFtransmit( char* txDat, char* destAddr){
+	RFtransmitUntil(txDat,destAddr,1);
+ 616:	41 e0       	ldi	r20, 0x01	; 1
+ 618:	0e 94 6e 02 	call	0x4dc	; 0x4dc <RFtransmitUntil>
+}
+ 61c:	08 95       	ret
+
+0000061e <RFRXdataReady>:
+
+
+int RFRXdataReady(){
+ 61e:	df 93       	push	r29
+ 620:	cf 93       	push	r28
+ 622:	0f 92       	push	r0
+ 624:	cd b7       	in	r28, 0x3d	; 61
+ 626:	de b7       	in	r29, 0x3e	; 62
+	// dummy write data
+	char retDat[1] = {0xFF};
+ 628:	8f ef       	ldi	r24, 0xFF	; 255
+ 62a:	89 83       	std	Y+1, r24	; 0x01
+
+	RFreadReg(STATUS,retDat,1);
+ 62c:	87 e0       	ldi	r24, 0x07	; 7
+ 62e:	be 01       	movw	r22, r28
+ 630:	6f 5f       	subi	r22, 0xFF	; 255
+ 632:	7f 4f       	sbci	r23, 0xFF	; 255
+ 634:	41 e0       	ldi	r20, 0x01	; 1
+ 636:	50 e0       	ldi	r21, 0x00	; 0
+ 638:	0e 94 24 02 	call	0x448	; 0x448 <RFreadReg>
+ 63c:	29 81       	ldd	r18, Y+1	; 0x01
+ 63e:	30 e0       	ldi	r19, 0x00	; 0
+ 640:	46 e0       	ldi	r20, 0x06	; 6
+ 642:	36 95       	lsr	r19
+ 644:	27 95       	ror	r18
+ 646:	4a 95       	dec	r20
+ 648:	e1 f7       	brne	.-8      	; 0x642 <RFRXdataReady+0x24>
+ 64a:	21 70       	andi	r18, 0x01	; 1
+ 64c:	30 70       	andi	r19, 0x00	; 0
+
+	else{
+		return 0;
+	}
+
+}
+ 64e:	c9 01       	movw	r24, r18
+ 650:	0f 90       	pop	r0
+ 652:	cf 91       	pop	r28
+ 654:	df 91       	pop	r29
+ 656:	08 95       	ret
+
+00000658 <RFRXbufferEmpty>:
+
+
+int RFRXbufferEmpty(){
+ 658:	df 93       	push	r29
+ 65a:	cf 93       	push	r28
+ 65c:	0f 92       	push	r0
+ 65e:	cd b7       	in	r28, 0x3d	; 61
+ 660:	de b7       	in	r29, 0x3e	; 62
+	// dummy write data
+	char retDat[1] = {0xFF};
+ 662:	8f ef       	ldi	r24, 0xFF	; 255
+ 664:	89 83       	std	Y+1, r24	; 0x01
+
+	RFreadReg(STATUS,retDat,1);
+ 666:	87 e0       	ldi	r24, 0x07	; 7
+ 668:	be 01       	movw	r22, r28
+ 66a:	6f 5f       	subi	r22, 0xFF	; 255
+ 66c:	7f 4f       	sbci	r23, 0xFF	; 255
+ 66e:	41 e0       	ldi	r20, 0x01	; 1
+ 670:	50 e0       	ldi	r21, 0x00	; 0
+ 672:	0e 94 24 02 	call	0x448	; 0x448 <RFreadReg>
+ 676:	89 81       	ldd	r24, Y+1	; 0x01
+ 678:	28 2f       	mov	r18, r24
+ 67a:	30 e0       	ldi	r19, 0x00	; 0
+ 67c:	2e 70       	andi	r18, 0x0E	; 14
+ 67e:	30 70       	andi	r19, 0x00	; 0
+ 680:	21 15       	cp	r18, r1
+ 682:	31 05       	cpc	r19, r1
+ 684:	11 f0       	breq	.+4      	; 0x68a <RFRXbufferEmpty+0x32>
+ 686:	21 e0       	ldi	r18, 0x01	; 1
+ 688:	30 e0       	ldi	r19, 0x00	; 0
+	}
+
+	else{
+		return 0;
+	}
+}
+ 68a:	c9 01       	movw	r24, r18
+ 68c:	0f 90       	pop	r0
+ 68e:	cf 91       	pop	r28
+ 690:	df 91       	pop	r29
+ 692:	08 95       	ret
+
+00000694 <RFreadRXFIFO>:
+
+// read data out of the receive FIFO and turn off the data-ready flag RX_DR if the buffer is empty
+// this function stores the previous value of the CONFIG register, which indicated whether we were transmitting or receiving prior to this function call, and restores this state after reading
+// NOTE: it is not possible to receive or transmit new packets while readings, all packets will be lost during this time
+void RFreadRXFIFO( char* retDat){
+ 694:	df 93       	push	r29
+ 696:	cf 93       	push	r28
+ 698:	0f 92       	push	r0
+ 69a:	cd b7       	in	r28, 0x3d	; 61
+ 69c:	de b7       	in	r29, 0x3e	; 62
+ 69e:	fc 01       	movw	r30, r24
+
+// take the chip out of receiving mode
+void RFstopReceiving(){
+
+	// turn pin CE low
+	PORT_CE &= ~(1<<P_RF_CE);
+ 6a0:	28 98       	cbi	0x05, 0	; 5
+void RFreadRXFIFO( char* retDat){
+	// take out of receiving mode
+	RFstopReceiving();
+
+	// dummy write data
+	retDat[0] = 0xFF;
+ 6a2:	8f ef       	ldi	r24, 0xFF	; 255
+ 6a4:	80 83       	st	Z, r24
+
+	// turn the CS channel low to begin transmission
+	PORT_CS &= ~(1<<P_RF_CS);
+ 6a6:	47 98       	cbi	0x08, 7	; 8
+
+	// send 1 byte out the spi port that indicates we want to read the RX FIFO
+	SPDR = R_RX_PAYLOAD;
+ 6a8:	81 e6       	ldi	r24, 0x61	; 97
+ 6aa:	8e bd       	out	0x2e, r24	; 46
+
+	// wait for transmission to finish
+	while(!(SPSR & (1<<SPIF) ) );
+ 6ac:	0d b4       	in	r0, 0x2d	; 45
+ 6ae:	07 fe       	sbrs	r0, 7
+ 6b0:	fd cf       	rjmp	.-6      	; 0x6ac <RFreadRXFIFO+0x18>
+ 6b2:	20 e0       	ldi	r18, 0x00	; 0
+ 6b4:	30 e0       	ldi	r19, 0x00	; 0
+ 6b6:	09 c0       	rjmp	.+18     	; 0x6ca <RFreadRXFIFO+0x36>
+
+	// read the number of bytes we want to read out to the RX buffer
+	int i;
+	for(i = 0; i < PACKET_SIZE; i++){
+		// read 1 byte out the spi port
+		SPDR = retDat[i];
+ 6b8:	80 81       	ld	r24, Z
+ 6ba:	8e bd       	out	0x2e, r24	; 46
+
+		// wait for transmission to finish
+		while(!(SPSR & (1<<SPIF) ) );
+ 6bc:	0d b4       	in	r0, 0x2d	; 45
+ 6be:	07 fe       	sbrs	r0, 7
+ 6c0:	fd cf       	rjmp	.-6      	; 0x6bc <RFreadRXFIFO+0x28>
+
+		// store the returned data
+		retDat[i] = SPDR;
+ 6c2:	8e b5       	in	r24, 0x2e	; 46
+ 6c4:	81 93       	st	Z+, r24
+	// wait for transmission to finish
+	while(!(SPSR & (1<<SPIF) ) );
+
+	// read the number of bytes we want to read out to the RX buffer
+	int i;
+	for(i = 0; i < PACKET_SIZE; i++){
+ 6c6:	2f 5f       	subi	r18, 0xFF	; 255
+ 6c8:	3f 4f       	sbci	r19, 0xFF	; 255
+ 6ca:	80 91 3c 01 	lds	r24, 0x013C
+ 6ce:	90 e0       	ldi	r25, 0x00	; 0
+ 6d0:	28 17       	cp	r18, r24
+ 6d2:	39 07       	cpc	r19, r25
+ 6d4:	8c f3       	brlt	.-30     	; 0x6b8 <RFreadRXFIFO+0x24>
+		retDat[i] = SPDR;
+	}
+
+
+	// turn the CS channel high to end transmission
+	PORT_CS |= (1<<P_RF_CS);
+ 6d6:	47 9a       	sbi	0x08, 7	; 8
+ 6d8:	80 ea       	ldi	r24, 0xA0	; 160
+ 6da:	9f e0       	ldi	r25, 0x0F	; 15
+ 6dc:	01 97       	sbiw	r24, 0x01	; 1
+ 6de:	f1 f7       	brne	.-4      	; 0x6dc <RFreadRXFIFO+0x48>
+
+	_delay_ms(2);
+
+	// if there is no new data ready to be read then turn the RX_DR data ready pin low
+	if(RFRXbufferEmpty()){
+ 6e0:	0e 94 2c 03 	call	0x658	; 0x658 <RFRXbufferEmpty>
+ 6e4:	89 2b       	or	r24, r25
+ 6e6:	51 f0       	breq	.+20     	; 0x6fc <RFreadRXFIFO+0x68>
+		char writeDat[1] = { (1<<RX_DR) };
+ 6e8:	80 e4       	ldi	r24, 0x40	; 64
+ 6ea:	89 83       	std	Y+1, r24	; 0x01
+		RFwriteReg(STATUS,writeDat,1);
+ 6ec:	87 e0       	ldi	r24, 0x07	; 7
+ 6ee:	be 01       	movw	r22, r28
+ 6f0:	6f 5f       	subi	r22, 0xFF	; 255
+ 6f2:	7f 4f       	sbci	r23, 0xFF	; 255
+ 6f4:	41 e0       	ldi	r20, 0x01	; 1
+ 6f6:	50 e0       	ldi	r21, 0x00	; 0
+ 6f8:	0e 94 f3 01 	call	0x3e6	; 0x3e6 <RFwriteReg>
+	}
+
+	// put back in receiving mode
+	RFstartReceiving();
+ 6fc:	0e 94 54 02 	call	0x4a8	; 0x4a8 <RFstartReceiving>
+}
+ 700:	0f 90       	pop	r0
+ 702:	cf 91       	pop	r28
+ 704:	df 91       	pop	r29
+ 706:	08 95       	ret
+
+00000708 <RFRXbufferFull>:
+
+
+int RFRXbufferFull(){
+ 708:	df 93       	push	r29
+ 70a:	cf 93       	push	r28
+ 70c:	0f 92       	push	r0
+ 70e:	cd b7       	in	r28, 0x3d	; 61
+ 710:	de b7       	in	r29, 0x3e	; 62
+	// dummy write data
+	char retDat[1] = {0xFF};
+ 712:	8f ef       	ldi	r24, 0xFF	; 255
+ 714:	89 83       	std	Y+1, r24	; 0x01
+
+	RFreadReg(FIFO_STATUS,retDat,1);
+ 716:	87 e1       	ldi	r24, 0x17	; 23
+ 718:	be 01       	movw	r22, r28
+ 71a:	6f 5f       	subi	r22, 0xFF	; 255
+ 71c:	7f 4f       	sbci	r23, 0xFF	; 255
+ 71e:	41 e0       	ldi	r20, 0x01	; 1
+ 720:	50 e0       	ldi	r21, 0x00	; 0
+ 722:	0e 94 24 02 	call	0x448	; 0x448 <RFreadReg>
+ 726:	29 81       	ldd	r18, Y+1	; 0x01
+ 728:	30 e0       	ldi	r19, 0x00	; 0
+ 72a:	36 95       	lsr	r19
+ 72c:	27 95       	ror	r18
+ 72e:	21 70       	andi	r18, 0x01	; 1
+ 730:	30 70       	andi	r19, 0x00	; 0
+	if(retDat[0] & (1<<RX_FULL)){
+		return 1;
+	}else{
+		return 0;
+	}
+}
+ 732:	c9 01       	movw	r24, r18
+ 734:	0f 90       	pop	r0
+ 736:	cf 91       	pop	r28
+ 738:	df 91       	pop	r29
+ 73a:	08 95       	ret
+
+0000073c <RFreceive>:
+
+
+// clear out the FIFO and return the last received packet
+void RFreceive(char * buffer){
+ 73c:	cf 93       	push	r28
+ 73e:	df 93       	push	r29
+ 740:	ec 01       	movw	r28, r24
+ 742:	03 c0       	rjmp	.+6      	; 0x74a <RFreceive+0xe>
+	while(RFRXdataReady()){
+		RFreadRXFIFO(buffer);
+ 744:	ce 01       	movw	r24, r28
+ 746:	0e 94 4a 03 	call	0x694	; 0x694 <RFreadRXFIFO>
+}
+
+
+// clear out the FIFO and return the last received packet
+void RFreceive(char * buffer){
+	while(RFRXdataReady()){
+ 74a:	0e 94 0f 03 	call	0x61e	; 0x61e <RFRXdataReady>
+ 74e:	89 2b       	or	r24, r25
+ 750:	c9 f7       	brne	.-14     	; 0x744 <RFreceive+0x8>
+		RFreadRXFIFO(buffer);
+	}
+}
+ 752:	df 91       	pop	r29
+ 754:	cf 91       	pop	r28
+ 756:	08 95       	ret
+
+00000758 <RFsetup>:
+
+
+// function to setup the rf chip registers for communication and boot it up in receiving mode
+void RFsetup(char * recvAddr, char packet_size){
+ 758:	ef 92       	push	r14
+ 75a:	ff 92       	push	r15
+ 75c:	0f 93       	push	r16
+ 75e:	1f 93       	push	r17
+ 760:	df 93       	push	r29
+ 762:	cf 93       	push	r28
+ 764:	0f 92       	push	r0
+ 766:	cd b7       	in	r28, 0x3d	; 61
+ 768:	de b7       	in	r29, 0x3e	; 62
+ 76a:	7c 01       	movw	r14, r24
+	PACKET_SIZE = packet_size;
+ 76c:	60 93 3c 01 	sts	0x013C, r22
+ 770:	88 ee       	ldi	r24, 0xE8	; 232
+ 772:	93 e0       	ldi	r25, 0x03	; 3
+ 774:	28 ec       	ldi	r18, 0xC8	; 200
+ 776:	30 e0       	ldi	r19, 0x00	; 0
+ 778:	f9 01       	movw	r30, r18
+ 77a:	31 97       	sbiw	r30, 0x01	; 1
+ 77c:	f1 f7       	brne	.-4      	; 0x77a <RFsetup+0x22>
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 77e:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 780:	d9 f7       	brne	.-10     	; 0x778 <RFsetup+0x20>
+	_delay_ms(100);
+	
+	//setup the SPI port for use with the 24L01 chip
+	SPIsetup();
+ 782:	0e 94 df 01 	call	0x3be	; 0x3be <SPIsetup>
+
+	//setup the RF CE and CS pins as outputs
+	
+	DDR_RF_CS|=(1<<DDR_P_RF_CS);
+ 786:	3f 9a       	sbi	0x07, 7	; 7
+
+	DDR_RF_CE |=(1<<DDR_P_RF_CE);
+ 788:	20 9a       	sbi	0x04, 0	; 4
+
+	//set the config register up
+	char writeDat[1] = {CONFIG_VAL};
+ 78a:	88 e3       	ldi	r24, 0x38	; 56
+ 78c:	89 83       	std	Y+1, r24	; 0x01
+	RFwriteReg(CONFIG,writeDat,1);
+ 78e:	80 e0       	ldi	r24, 0x00	; 0
+ 790:	8e 01       	movw	r16, r28
+ 792:	0f 5f       	subi	r16, 0xFF	; 255
+ 794:	1f 4f       	sbci	r17, 0xFF	; 255
+ 796:	b8 01       	movw	r22, r16
+ 798:	41 e0       	ldi	r20, 0x01	; 1
+ 79a:	50 e0       	ldi	r21, 0x00	; 0
+ 79c:	0e 94 f3 01 	call	0x3e6	; 0x3e6 <RFwriteReg>
+
+	//enable PACKET_SIZE byte collection on pipe 1
+	writeDat[0]  = PACKET_SIZE;
+ 7a0:	80 91 3c 01 	lds	r24, 0x013C
+ 7a4:	89 83       	std	Y+1, r24	; 0x01
+	RFwriteReg(RX_PW_P1,writeDat,1);
+ 7a6:	82 e1       	ldi	r24, 0x12	; 18
+ 7a8:	b8 01       	movw	r22, r16
+ 7aa:	41 e0       	ldi	r20, 0x01	; 1
+ 7ac:	50 e0       	ldi	r21, 0x00	; 0
+ 7ae:	0e 94 f3 01 	call	0x3e6	; 0x3e6 <RFwriteReg>
+
+	//turn on auto acknowledgement on first two pipes
+	writeDat[0] = 0x03;
+ 7b2:	83 e0       	ldi	r24, 0x03	; 3
+ 7b4:	89 83       	std	Y+1, r24	; 0x01
+	RFwriteReg(EN_AA,writeDat,1);
+ 7b6:	81 e0       	ldi	r24, 0x01	; 1
+ 7b8:	b8 01       	movw	r22, r16
+ 7ba:	41 e0       	ldi	r20, 0x01	; 1
+ 7bc:	50 e0       	ldi	r21, 0x00	; 0
+ 7be:	0e 94 f3 01 	call	0x3e6	; 0x3e6 <RFwriteReg>
+
+	//turn off auto retransmit
+	writeDat[0] = 0x00;
+ 7c2:	19 82       	std	Y+1, r1	; 0x01
+	RFwriteReg(SETUP_RETR,writeDat,1);		
+ 7c4:	84 e0       	ldi	r24, 0x04	; 4
+ 7c6:	b8 01       	movw	r22, r16
+ 7c8:	41 e0       	ldi	r20, 0x01	; 1
+ 7ca:	50 e0       	ldi	r21, 0x00	; 0
+ 7cc:	0e 94 f3 01 	call	0x3e6	; 0x3e6 <RFwriteReg>
+	//setup address size as 5 bytes (probably deafult setup is already OK)
+	//writeDat[0] = 0x03;
+	//RFwriteReg(SETUP_AW,writeDat,1);	
+
+	// write receive address to pipe1
+	RFsetRxAddr(recvAddr, 5);
+ 7d0:	c7 01       	movw	r24, r14
+ 7d2:	65 e0       	ldi	r22, 0x05	; 5
+ 7d4:	70 e0       	ldi	r23, 0x00	; 0
+ 7d6:	0e 94 3d 02 	call	0x47a	; 0x47a <RFsetRxAddr>
+
+	// turn the receiver on
+	RFstartReceiving();
+ 7da:	0e 94 54 02 	call	0x4a8	; 0x4a8 <RFstartReceiving>
+}
+ 7de:	0f 90       	pop	r0
+ 7e0:	cf 91       	pop	r28
+ 7e2:	df 91       	pop	r29
+ 7e4:	1f 91       	pop	r17
+ 7e6:	0f 91       	pop	r16
+ 7e8:	ff 90       	pop	r15
+ 7ea:	ef 90       	pop	r14
+ 7ec:	08 95       	ret
+
+000007ee <init_wyvern>:
+Returns:  None
+**************************************************************************/
+void init_wyvern(void)
+{
+	// Setup Wyvern Systems
+	init_uc();		//UC
+ 7ee:	0e 94 7f 00 	call	0xfe	; 0xfe <init_uc>
+	init_uart();	// Serial  Communication
+ 7f2:	0e 94 8f 00 	call	0x11e	; 0x11e <init_uart>
+	init_pwm();		// Motor PWM Control
+ 7f6:	0e 94 45 01 	call	0x28a	; 0x28a <init_pwm>
+	RFsetup(local, sizeof(packet_t));	// RF
+ 7fa:	8d e1       	ldi	r24, 0x1D	; 29
+ 7fc:	91 e0       	ldi	r25, 0x01	; 1
+ 7fe:	62 e0       	ldi	r22, 0x02	; 2
+ 800:	0e 94 ac 03 	call	0x758	; 0x758 <RFsetup>
+	set(PCICR,PCIE0); // enable pin-change interrupts
+	set(PCMSK0, PCINT0); // demask PCINT5
+	*/
+
+	// Enable Interrupts
+	sei();
+ 804:	78 94       	sei
+}
+ 806:	08 95       	ret
+
+00000808 <main>:
+
+
+/*************************************************************************
+Function: main()
+**************************************************************************/
+int main(void){
+ 808:	cf 93       	push	r28
+ 80a:	df 93       	push	r29
+	int com = 0;
+	init_wyvern();
+ 80c:	0e 94 f7 03 	call	0x7ee	; 0x7ee <init_wyvern>
+	TransmitString("Controller Initialized\n\r");
+ 810:	80 e0       	ldi	r24, 0x00	; 0
+ 812:	91 e0       	ldi	r25, 0x01	; 1
+ 814:	0e 94 1d 01 	call	0x23a	; 0x23a <TransmitString>
+	LED_green_on();
+ 818:	72 98       	cbi	0x0e, 2	; 14
+ 81a:	c0 e0       	ldi	r28, 0x00	; 0
+ 81c:	d0 e0       	ldi	r29, 0x00	; 0
+
+	for( ; ; ){
+		outgoing.command = com++ % 100;
+ 81e:	ce 01       	movw	r24, r28
+ 820:	64 e6       	ldi	r22, 0x64	; 100
+ 822:	70 e0       	ldi	r23, 0x00	; 0
+ 824:	0e 94 23 04 	call	0x846	; 0x846 <__divmodhi4>
+ 828:	90 93 40 01 	sts	0x0140, r25
+ 82c:	80 93 3f 01 	sts	0x013F, r24
+ 830:	21 96       	adiw	r28, 0x01	; 1
+		LED_red_on();
+ 832:	76 98       	cbi	0x0e, 6	; 14
+		RFtransmitUntil((char*) &outgoing,wyv00,10);
+ 834:	8f e3       	ldi	r24, 0x3F	; 63
+ 836:	91 e0       	ldi	r25, 0x01	; 1
+ 838:	62 e2       	ldi	r22, 0x22	; 34
+ 83a:	71 e0       	ldi	r23, 0x01	; 1
+ 83c:	4a e0       	ldi	r20, 0x0A	; 10
+ 83e:	0e 94 6e 02 	call	0x4dc	; 0x4dc <RFtransmitUntil>
+		LED_red_off();
+ 842:	76 9a       	sbi	0x0e, 6	; 14
+ 844:	ec cf       	rjmp	.-40     	; 0x81e <main+0x16>
+
+00000846 <__divmodhi4>:
+ 846:	97 fb       	bst	r25, 7
+ 848:	09 2e       	mov	r0, r25
+ 84a:	07 26       	eor	r0, r23
+ 84c:	0a d0       	rcall	.+20     	; 0x862 <__divmodhi4_neg1>
+ 84e:	77 fd       	sbrc	r23, 7
+ 850:	04 d0       	rcall	.+8      	; 0x85a <__divmodhi4_neg2>
+ 852:	0c d0       	rcall	.+24     	; 0x86c <__udivmodhi4>
+ 854:	06 d0       	rcall	.+12     	; 0x862 <__divmodhi4_neg1>
+ 856:	00 20       	and	r0, r0
+ 858:	1a f4       	brpl	.+6      	; 0x860 <__divmodhi4_exit>
+
+0000085a <__divmodhi4_neg2>:
+ 85a:	70 95       	com	r23
+ 85c:	61 95       	neg	r22
+ 85e:	7f 4f       	sbci	r23, 0xFF	; 255
+
+00000860 <__divmodhi4_exit>:
+ 860:	08 95       	ret
+
+00000862 <__divmodhi4_neg1>:
+ 862:	f6 f7       	brtc	.-4      	; 0x860 <__divmodhi4_exit>
+ 864:	90 95       	com	r25
+ 866:	81 95       	neg	r24
+ 868:	9f 4f       	sbci	r25, 0xFF	; 255
+ 86a:	08 95       	ret
+
+0000086c <__udivmodhi4>:
+ 86c:	aa 1b       	sub	r26, r26
+ 86e:	bb 1b       	sub	r27, r27
+ 870:	51 e1       	ldi	r21, 0x11	; 17
+ 872:	07 c0       	rjmp	.+14     	; 0x882 <__udivmodhi4_ep>
+
+00000874 <__udivmodhi4_loop>:
+ 874:	aa 1f       	adc	r26, r26
+ 876:	bb 1f       	adc	r27, r27
+ 878:	a6 17       	cp	r26, r22
+ 87a:	b7 07       	cpc	r27, r23
+ 87c:	10 f0       	brcs	.+4      	; 0x882 <__udivmodhi4_ep>
+ 87e:	a6 1b       	sub	r26, r22
+ 880:	b7 0b       	sbc	r27, r23
+
+00000882 <__udivmodhi4_ep>:
+ 882:	88 1f       	adc	r24, r24
+ 884:	99 1f       	adc	r25, r25
+ 886:	5a 95       	dec	r21
+ 888:	a9 f7       	brne	.-22     	; 0x874 <__udivmodhi4_loop>
+ 88a:	80 95       	com	r24
+ 88c:	90 95       	com	r25
+ 88e:	bc 01       	movw	r22, r24
+ 890:	cd 01       	movw	r24, r26
+ 892:	08 95       	ret
+
+00000894 <_exit>:
+ 894:	f8 94       	cli
+
+00000896 <__stop_program>:
+ 896:	ff cf       	rjmp	.-2      	; 0x896 <__stop_program>

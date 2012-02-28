@@ -1,0 +1,72 @@
+% R.A.V.E.N. Quadrotor
+% Wii IR Camera Visualizer
+% William Etter (EE '11) and Paul Martin (EE '11)
+
+% INFO
+% This script reads the serial data output from the microcontroller and
+% visually plots the infrared points as seen by the Wii Remote IR Camera
+
+%% Setup
+clear;
+clc;
+close all;
+%% Open USB and select device
+ports = instrhwinfo('serial');
+if length(ports.AvailableSerialPorts) < 1
+    error('No Serial Ports Available');
+else
+    PORT = ports.AvailableSerialPorts{1};
+end
+    
+wiiSerial = serial(PORT);
+set(wiiSerial,'Baudrate',115200);
+set(wiiSerial,'Timeout',5);
+
+%% Open Serial Port
+disp('Open Port');
+fopen(wiiSerial);
+%% Set Up Figure
+f1 = figure('Name','Wii IR Camera');
+axis([0 1023 0 1023])
+hold on;
+blob1 = plot(-1,-1,'ob','MarkerEdgeColor','b','MarkerFaceColor','b',...
+    'MarkerSize',7);
+blob2 = plot(-1,-1,'og','MarkerEdgeColor','g','MarkerFaceColor','g',...
+    'MarkerSize',7);
+blob3 = plot(-1,-1,'or','MarkerEdgeColor','r','MarkerFaceColor','r',...
+    'MarkerSize',7);
+blob4 = plot(-1,-1,'oy','MarkerEdgeColor','y','MarkerFaceColor','y',...
+    'MarkerSize',7);
+set(get(f1,'CurrentAxes'),'Color',[0 0 0]);
+
+%% Main Loop
+while(1)
+    pause(.05);
+    if(wiiSerial.BytesAvailable)
+        st = fgetl(wiiSerial);
+        sts = regexp(st,'\,','split');
+        x1 = str2num(char(sts(1)));
+        y1 = 1023-str2num(char(sts(2)));
+        x2 = str2num(char(sts(3)));
+        y2 = 1023-str2num(char(sts(4)));
+        x3 = str2num(char(sts(5)));
+        y3 = 1023- str2num(char(sts(6)));
+        x4 = str2num(char(sts(7)));
+        y4 = str2num(char(sts(8)));
+        set(blob1,'XData',x1);
+        set(blob1,'YData',y1);
+        set(blob2,'XData',x2);
+        set(blob2,'YData',y2);
+        set(blob3,'XData',x3);
+        set(blob3,'YData',y3);
+        set(blob4,'XData',x4);
+        set(blob4,'YData',y4);
+    end
+end
+
+
+
+
+
+
+    

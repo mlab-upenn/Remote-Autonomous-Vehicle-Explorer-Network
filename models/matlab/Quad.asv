@@ -1,0 +1,250 @@
+classdef Quad
+    % A quadrotor unit
+    
+    properties
+        parent % quad obj
+        x % meters
+        y % meters
+        z % meters
+        roll  % degrees
+        pitch % degrees
+        yaw   % degrees
+        roll_des  % degrees
+        pitch_des % degrees
+        yaw_des   % degrees
+        velX % m/s
+        velY % m/s
+        velZ % m/s
+        velX_des % m/s
+        velY_des % m/s
+        velZ_des % m/s
+        accX % m/s^2
+        accY % m/s^2
+        accZ % m/s^2
+        % - simulated RF data -
+        rf_velX
+        rf_velY
+        rf_velZ
+        rf_alt
+        rf_yaw
+        rf_pitch
+        rf_roll
+        armLength % meters
+        FOV % field of view, degrees
+    end
+    
+    methods
+        % constructor
+        function obj = Quad(x,y,z,roll,pitch,yaw,armLength)
+            obj.parent = 0;
+            obj.x = x;
+            obj.y = y;
+            obj.z = z;
+            obj.roll = roll;
+            obj.pitch = pitch;
+            obj.yaw = yaw;
+            obj.roll_des = roll;
+            obj.pitch_des = pitch;
+            obj.yaw_des = yaw;
+            obj.armLength = armLength;
+            obj.velX = 0;
+            obj.velY = 0;
+            obj.velZ = 0;
+            obj.velX_des = 0;
+            obj.velY_des = 0;
+            obj.velZ_des = 0;
+            obj.accX = 0;
+            obj.accY = 0;
+            obj.accZ = 0;
+            obj.rf_velX = 0;
+            obj.rf_velY = 0;
+            obj.rf_velZ = 0;
+            obj.rf_alt = 0;
+            obj.rf_yaw = 0;
+            obj.rf_pitch = 0;
+            obj.rf_roll = 0;
+            obj.FOV = 55;
+        end
+        
+        % return x,y,z coordinates in world frame of a specified motor
+        function coord = motorLoc(obj,mot)
+            switch(mot)
+                case 1
+                    coord = [obj.x;obj.y;obj.z] + obj.WRB*[obj.armLength;0;0];
+                case 2
+                    coord = [obj.x;obj.y;obj.z] + obj.WRB*[0;obj.armLength;0];
+                case 3
+                    coord = [obj.x;obj.y;obj.z] + obj.WRB*[-obj.armLength;0;0];
+                case 4
+                    coord = [obj.x;obj.y;obj.z] + obj.WRB*[0;-obj.armLength;0];
+                otherwise
+                    error('must specify an integer between 1 and 4');
+            end
+        end
+        % world coordinates to body coordinates
+        function BRW = BRW(obj)
+            phi = pi*obj.roll/180;
+            theta = pi*obj.pitch/180;
+            psi = pi*obj.yaw/180;
+            
+            BRW = [ cos(psi)*cos(theta) - sin(phi)*sin(psi)*sin(theta), cos(theta)*sin(psi) + cos(psi)*sin(phi)*sin(theta), -cos(phi)*sin(theta);...
+                -cos(phi)*sin(psi),  cos(phi)*cos(psi),  sin(phi);...
+                cos(psi)*sin(theta) + cos(theta)*sin(phi)*sin(psi), sin(psi)*sin(theta) - cos(psi)*cos(theta)*sin(phi),  cos(phi)*cos(theta)];
+        end
+        % body coordinates to world coordinates
+        function WRB = WRB(obj)
+            WRB = obj.BRW';
+        end
+        % return x,y,z of forward-facing camera vector
+        function coord = cameraVector(obj)
+            coord = [obj.x;obj.y;obj.z] + obj.WRB*[1.5*obj.armLength;0;0];
+        end
+        % return up-facing camera vector from origin
+        function vect = cameraUpVector(obj)
+            vect = obj.WRB*[0;0;obj.armLength];
+        end
+        % draw sphere representing body
+        function drawBody(obj)
+            diameter = 0.15; % 15 cm
+            [X,Y,Z] = sphere();
+            X = X*diameter + obj.x;
+            Y = Y*diameter + obj.y;
+            Z = Z*diameter + obj.z;
+            surf(X,Y,Z);
+        end
+        % draw arms
+        function drawArms(obj)
+            r = 0.05; % 5 cm radius
+            n = 10; % granularity
+            [X,Y,Z] = cylinder2P(r,n,obj.motorLoc(1)',obj.motorLoc(3)');
+            surf(X,Y,Z);
+            [X,Y,Z] = cylinder2P(r,n,obj.motorLoc(2)',obj.motorLoc(4)');
+            surf(X,Y,Z);
+        end
+        % draw fiducial
+        function drawFiducial(obj)
+            coord = obj.motorLoc(3);
+            radiusF = 0.1;
+            X = coord(1);
+            Y = coord(2);
+            Z = coord(3);
+            [xF,yF,zF] = sphere(20);
+            hF = surf(radiusF*xF+X,radiusF*yF+Y,radiusF*zF+Z);
+            set(hF,'FaceColor',[1 0 0]);
+        end
+        % draw camera target
+        function drawCamera(obj)
+            coord = cameraVector(obj);
+            X = coord(1); Y = coord(2); Z = coord(3);
+            text(X,Y,Z,'*','HorizontalAlignment','center');
+        end
+        % set x velocity, acceleration
+        function obj = setXVel(obj,v,a)
+            obj.velX_des = v;
+            obj.accX = a;
+        end
+        % set y velocity, acceleration
+        function obj = setYVel(obj,v,a)
+            obj.velY_des = v;
+            obj.accY = a;
+        end
+        % set z velocity, acceleration
+        function obj = setZVel(obj,v,a)
+            obj.velZ_des = v;
+            obj.accZ = a;
+        end
+        % set desired yaw
+        function obj = setYaw(obj,ang)
+            obj.yaw_des = ang;
+        end
+        % set desired pitch
+        function obj = setPitch(obj,ang)
+            obj.pitch_des = ang;
+        end
+        % set desired roll
+        function obj = setRoll(obj,ang)
+            obj.roll_des = ang;
+        end
+        % receive simulated RF data
+        function obj = receiveSimulatedRF(obj,source)
+            obj.rf_velX = source.velX;
+            obj.rf_velY = source.velY;
+            obj.rf_velZ = source.velZ;
+            obj.rf_alt = source.z;
+            obj.rf_yaw = source.yaw;
+            obj.rf_pitch = source.pitch;
+            obj.rf_roll = source.roll;
+        end
+        % determine fiducial location in camera
+        function [x,y,h] = parseCamera(obj)
+            x = 0;
+            y = 0;
+            h = 0;
+            if obj.parent == 0
+                % not following anything
+                return;
+            end
+            
+            % define camera transform
+            Cx = [1 0 0; 0 cos(obj.FOV) - sin(obj.FOV); 0 sin(obj.FOV) cos(obj.FOV)];
+            Cy = [cos(obj.FOV) 0 sin(obj.FOV); 0 1 0; -sin(obj.FOV) 0 cos(obj.FOV)];
+            Cz = [cos(obj.FOV) -sin(obj.FOV) 0; sin(obj.FOV) cos(obj.FOV) 0; 0 0 1];
+            C = Cx*Cy*Cz;
+            AxCx = [obj.parent.x; obj.parent.y; obj.parent.z] - obj.cameraVector());
+            D = C*AxCx;
+            
+        end
+        % update parameters
+        function obj = update(obj, dT)
+            % damping factor
+            d = 0.5;
+            
+            % update coordinates
+            obj.x = obj.x+(dT*obj.velX);
+            obj.y = obj.y+(dT*obj.velY);
+            obj.z = obj.z+(dT*obj.velZ);
+            
+            % update x velocity
+            if(obj.velX_des > obj.velX)
+                obj.velX = obj.velX + (dT*obj.accX);
+                if(obj.velX_des <= obj.velX)
+                    obj.accX = obj.accX*d;
+                end
+            elseif(obj.velX_des < obj.velX)
+                obj.velX = obj.velX - (dT*obj.accX);
+                if(obj.velX_des >= obj.velX)
+                    obj.accX = obj.accX*d;
+                end
+            end
+            
+            % update y velocity
+            if(obj.velY_des > obj.velY)
+                obj.velY = obj.velY + (dT*obj.accY);
+                if(obj.velY_des <= obj.velY)
+                    obj.accY = obj.accY*d;
+                end
+            elseif(obj.velY_des < obj.velY)
+                obj.velY = obj.velY - (dT*obj.accY);
+                if(obj.velY_des >= obj.velY)
+                    obj.accY = obj.accY*d;
+                end
+            end
+            
+            % update z velocity
+            if(obj.velZ_des > obj.velZ)
+                obj.velZ = obj.velZ + (dT*obj.accZ);
+                if(obj.velZ_des <= obj.velZ)
+                    obj.accZ = obj.accZ*d;
+                end
+            elseif(obj.velZ_des < obj.velZ)
+                obj.velZ = obj.velZ - (dT*obj.accZ);
+                if(obj.velZ_des >= obj.velZ)
+                    obj.accZ = obj.accZ*d;
+                end
+            end
+            
+        end
+        
+    end
+end
+

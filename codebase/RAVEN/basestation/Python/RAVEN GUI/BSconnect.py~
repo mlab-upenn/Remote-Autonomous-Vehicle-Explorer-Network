@@ -1,0 +1,95 @@
+# R.A.V.E.N. base station connection interface and GUI
+# Authors: Paul Martin & William Etter
+# Last Modified: 03/09/11
+
+# -- Import Modules --
+import wx
+import wx.lib.plot as plot
+
+
+# -- Custom Frame --
+class TopFrame(wx.Frame):
+  
+    def __init__(self, parent, title):
+        super(TopFrame, self).__init__(parent, title=title, 
+            size=(1000, 800), pos=(20,20))
+
+        self.Bind(wx.EVT_MOVE, self.OnOpenSerial)
+
+        
+        # variables
+        self.com_status = 0
+        self.ir_coords = [(100,100),(200,100)]
+            
+        # 3 horizontal panels from top to bottom
+        self.pnl_1 = wx.Panel(self, id=-1)
+        self.ir_frame = wx.Frame(None, title="Perceived IR", size=(400,400), pos=(400,20))
+        pnl_vbox = wx.BoxSizer(wx.VERTICAL)   
+        
+        ###### MAIN FRAME #########
+        pnl_1_sizer = wx.GridBagSizer(4, 4)
+
+        ## -- Serial Buttons --
+        ser_box = wx.StaticBox(self.pnl_1, label="Serial Port");
+        ser_vbox = wx.StaticBoxSizer(ser_box,wx.VERTICAL)
+        self.open_but = wx.Button(self.pnl_1, label="Open")
+        self.close_but = wx.Button(self.pnl_1, label="Close")
+        ser_vbox.Add(self.open_but, flag=wx.LEFT|wx.RIGHT|wx.BOTTOM, border=5)
+        ser_vbox.Add(self.close_but, flag=wx.LEFT|wx.RIGHT, border=5)
+        #self.open_but.Bind(wx.EVT_BUTTON, self.OnOpenSerial)
+        
+        pnl_1_sizer.Add(ser_vbox, pos=(0,0), flag=wx.EXPAND|wx.TOP|wx.LEFT|wx.RIGHT|wx.BOTTOM, border=5) 
+        
+        ## -- Flight Mode --
+        mode_box = wx.StaticBox(self.pnl_1, label="Flight Mode")
+        mode_vbox = wx.StaticBoxSizer(mode_box, wx.VERTICAL)
+        mode_txt = wx.StaticText(self.pnl_1, label="OFFLINE")
+        mode_txt.SetForegroundColour(wx.Color(255,140,0))
+        mode_vbox.Add(mode_txt, flag=wx.LEFT|wx.RIGHT, border=5)
+        pnl_1_sizer.Add(mode_vbox, pos=(0,1), flag=wx.EXPAND|wx.ALL, border=5)
+        
+        ## -- Battery Information --
+        batt_box = wx.StaticBox(self.pnl_1, label="Battery Levels")
+        batt_vbox = wx.StaticBoxSizer(batt_box, wx.VERTICAL)
+        # leader
+        lead_bat = wx.StaticText(self.pnl_1, label="0")
+        lead_bat.SetForegroundColour('red')
+        batt_hbox1 = wx.BoxSizer(wx.HORIZONTAL)
+        batt_hbox1.Add(wx.StaticText(self.pnl_1, label="Leader   :"), flag=wx.LEFT|wx.RIGHT, border=5)
+        batt_hbox1.Add(lead_bat, flag=wx.LEFT|wx.RIGHT, border=5)
+        # follower
+        foll_bat = wx.StaticText(self.pnl_1, label="0")
+        foll_bat.SetForegroundColour('red')
+        batt_hbox2 = wx.BoxSizer(wx.HORIZONTAL)
+        batt_hbox2.Add(wx.StaticText(self.pnl_1, label="Follower :"), flag=wx.LEFT|wx.RIGHT, border=5)
+        batt_hbox2.Add(foll_bat, flag=wx.LEFT|wx.RIGHT, border=5)
+        # add to vbox and overall sizer
+        batt_vbox.Add(batt_hbox1, flag=wx.TOP|wx.BOTTOM, border=5)
+        batt_vbox.Add(batt_hbox2, flag=wx.TOP|wx.BOTTOM, border=5)
+        pnl_1_sizer.Add(batt_vbox, pos=(0,2), flag=wx.EXPAND|wx.ALL, border=5)
+        self.pnl_1.SetSizerAndFit(pnl_1_sizer)
+        pnl_vbox.Add(self.pnl_1)
+       
+        
+        ####### IR Camera  ##########
+        ir_canvas = plot.PlotCanvas(self.ir_frame, size=(400,400))
+        markers = plot.PolyMarker(self.ir_coords, legend='', colour='blue',marker='circle', size=2)
+        gc = plot.PlotGraphics([markers], 'IR Camera', 'X Axis', 'Y Axis')
+        ir_canvas.Draw(gc, xAxis=(0,1024), yAxis=(0,768))
+        self.ir_frame.Show()
+
+        # clean up
+        self.SetSizerAndFit(pnl_vbox)
+        self.Show()
+
+        ######### EVENTS ##########
+        def OnOpenSerial(self, event):
+            #mode_txt.SetLabel("clicked")
+            x, y = event.GetPosition()
+    
+# -- For Standalone Operation --
+if __name__ == '__main__':
+  
+    app = wx.App()
+    TopFrame(None, title='R.A.V.E.N. Base Station')
+    app.MainLoop()

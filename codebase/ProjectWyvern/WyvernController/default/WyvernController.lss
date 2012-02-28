@@ -1,0 +1,3105 @@
+
+WyvernController.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         000002c6  00800100  0000100c  000010a0  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         0000100c  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          0000043c  008003c6  008003c6  00001366  2**0
+                  ALLOC
+  3 .debug_aranges 00000020  00000000  00000000  00001366  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 00000365  00000000  00000000  00001386  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000d30  00000000  00000000  000016eb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000003e7  00000000  00000000  0000241b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000107b  00000000  00000000  00002802  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000002c0  00000000  00000000  00003880  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000004b5  00000000  00000000  00003b40  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000511  00000000  00000000  00003ff5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 000000f0  00000000  00000000  00004506  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+       0:	0c 94 56 00 	jmp	0xac	; 0xac <__ctors_end>
+       4:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+       8:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+       c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      10:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      14:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      18:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      1c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      20:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      24:	0c 94 56 05 	jmp	0xaac	; 0xaac <__vector_9>
+      28:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      2c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      30:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      34:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      38:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      3c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      40:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      44:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      48:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      4c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      50:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      54:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      58:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      5c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      60:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      64:	0c 94 ad 00 	jmp	0x15a	; 0x15a <__vector_25>
+      68:	0c 94 d2 00 	jmp	0x1a4	; 0x1a4 <__vector_26>
+      6c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      70:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      74:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      78:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      7c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      80:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      84:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      88:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      8c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      90:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      94:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      98:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      9c:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      a0:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      a4:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+      a8:	0c 94 73 00 	jmp	0xe6	; 0xe6 <__bad_interrupt>
+
+000000ac <__ctors_end>:
+      ac:	11 24       	eor	r1, r1
+      ae:	1f be       	out	0x3f, r1	; 63
+      b0:	cf ef       	ldi	r28, 0xFF	; 255
+      b2:	da e0       	ldi	r29, 0x0A	; 10
+      b4:	de bf       	out	0x3e, r29	; 62
+      b6:	cd bf       	out	0x3d, r28	; 61
+
+000000b8 <__do_copy_data>:
+      b8:	13 e0       	ldi	r17, 0x03	; 3
+      ba:	a0 e0       	ldi	r26, 0x00	; 0
+      bc:	b1 e0       	ldi	r27, 0x01	; 1
+      be:	ec e0       	ldi	r30, 0x0C	; 12
+      c0:	f0 e1       	ldi	r31, 0x10	; 16
+      c2:	02 c0       	rjmp	.+4      	; 0xc8 <.do_copy_data_start>
+
+000000c4 <.do_copy_data_loop>:
+      c4:	05 90       	lpm	r0, Z+
+      c6:	0d 92       	st	X+, r0
+
+000000c8 <.do_copy_data_start>:
+      c8:	a6 3c       	cpi	r26, 0xC6	; 198
+      ca:	b1 07       	cpc	r27, r17
+      cc:	d9 f7       	brne	.-10     	; 0xc4 <.do_copy_data_loop>
+
+000000ce <__do_clear_bss>:
+      ce:	18 e0       	ldi	r17, 0x08	; 8
+      d0:	a6 ec       	ldi	r26, 0xC6	; 198
+      d2:	b3 e0       	ldi	r27, 0x03	; 3
+      d4:	01 c0       	rjmp	.+2      	; 0xd8 <.do_clear_bss_start>
+
+000000d6 <.do_clear_bss_loop>:
+      d6:	1d 92       	st	X+, r1
+
+000000d8 <.do_clear_bss_start>:
+      d8:	a2 30       	cpi	r26, 0x02	; 2
+      da:	b1 07       	cpc	r27, r17
+      dc:	e1 f7       	brne	.-8      	; 0xd6 <.do_clear_bss_loop>
+      de:	0e 94 59 07 	call	0xeb2	; 0xeb2 <main>
+      e2:	0c 94 04 08 	jmp	0x1008	; 0x1008 <_exit>
+
+000000e6 <__bad_interrupt>:
+      e6:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ea <clockSet>:
+Purpose:  Sets clock to 8MHz
+Input:    None
+Returns:  None
+**************************************************************************/
+void clockSet(){
+	CLKPR = (1<<CLKPCE);
+      ea:	e1 e6       	ldi	r30, 0x61	; 97
+      ec:	f0 e0       	ldi	r31, 0x00	; 0
+      ee:	80 e8       	ldi	r24, 0x80	; 128
+      f0:	80 83       	st	Z, r24
+	CLKPR = 0;
+      f2:	10 82       	st	Z, r1
+}
+      f4:	08 95       	ret
+
+000000f6 <disableJTAG>:
+		  fortunately, all the other bits in MCUCR should be 0, so this is fine
+Input:    None
+Returns:  None
+**************************************************************************/
+void disableJTAG(){
+	MCUCR = (1 << JTD);
+      f6:	80 e8       	ldi	r24, 0x80	; 128
+      f8:	85 bf       	out	0x35, r24	; 53
+	MCUCR = (1 << JTD);
+      fa:	85 bf       	out	0x35, r24	; 53
+}
+      fc:	08 95       	ret
+
+000000fe <init_uc>:
+Purpose:  Sets clock to 8MHz
+Input:    None
+Returns:  None
+**************************************************************************/
+void clockSet(){
+	CLKPR = (1<<CLKPCE);
+      fe:	e1 e6       	ldi	r30, 0x61	; 97
+     100:	f0 e0       	ldi	r31, 0x00	; 0
+     102:	80 e8       	ldi	r24, 0x80	; 128
+     104:	80 83       	st	Z, r24
+	CLKPR = 0;
+     106:	10 82       	st	Z, r1
+void init_uc(){
+	// Set system clock to 8MHzs
+	clockSet();
+
+	// Set up Red and Green UC LED Ports
+	set(DDRE,2);
+     108:	6a 9a       	sbi	0x0d, 2	; 13
+	set(DDRE,6);
+     10a:	6e 9a       	sbi	0x0d, 6	; 13
+	set(PORTE,2);
+     10c:	72 9a       	sbi	0x0e, 2	; 14
+	set(PORTE,6);
+     10e:	76 9a       	sbi	0x0e, 6	; 14
+
+	// Set up Red, Green, Yellow, and Blue LEDs
+	set(DDRD,4);
+     110:	54 9a       	sbi	0x0a, 4	; 10
+	set(DDRD,5);
+     112:	55 9a       	sbi	0x0a, 5	; 10
+	set(DDRD,6);
+     114:	56 9a       	sbi	0x0a, 6	; 10
+	set(DDRD,7);
+     116:	57 9a       	sbi	0x0a, 7	; 10
+	set(PORTD,4);
+     118:	5c 9a       	sbi	0x0b, 4	; 11
+	set(PORTD,5);
+     11a:	5d 9a       	sbi	0x0b, 5	; 11
+	set(PORTD,6);
+     11c:	5e 9a       	sbi	0x0b, 6	; 11
+	set(PORTD,7);
+     11e:	5f 9a       	sbi	0x0b, 7	; 11
+		  fortunately, all the other bits in MCUCR should be 0, so this is fine
+Input:    None
+Returns:  None
+**************************************************************************/
+void disableJTAG(){
+	MCUCR = (1 << JTD);
+     120:	85 bf       	out	0x35, r24	; 53
+	MCUCR = (1 << JTD);
+     122:	85 bf       	out	0x35, r24	; 53
+	set(PORTD,6);
+	set(PORTD,7);
+
+	// Enable Pins F4-F7
+	disableJTAG();
+}
+     124:	08 95       	ret
+
+00000126 <init_uart>:
+**************************************************************************/
+void init_uart(void)
+{
+	//UCSR1A |= 0x02;  // Uncomment to set U2X1 = 1
+	// Set baudrate
+	UBRR1L = baud;
+     126:	80 91 b7 03 	lds	r24, 0x03B7
+     12a:	80 93 cc 00 	sts	0x00CC, r24
+	// Enable Rx and Tx
+	UCSR1B |=(1<<RXEN1)|(1<<TXEN1);
+     12e:	e9 ec       	ldi	r30, 0xC9	; 201
+     130:	f0 e0       	ldi	r31, 0x00	; 0
+     132:	80 81       	ld	r24, Z
+     134:	88 61       	ori	r24, 0x18	; 24
+     136:	80 83       	st	Z, r24
+	// Set to 8 bit tranmission, 1 stop bit
+	UCSR1C |=(1<<UMSEL11)|(1<<UCSZ10)|(1<<UCSZ11);
+     138:	aa ec       	ldi	r26, 0xCA	; 202
+     13a:	b0 e0       	ldi	r27, 0x00	; 0
+     13c:	8c 91       	ld	r24, X
+     13e:	86 68       	ori	r24, 0x86	; 134
+     140:	8c 93       	st	X, r24
+	// Enable USART Receive Complete Interrupt
+	UCSR1B |=(1<<RXCIE1);
+     142:	80 81       	ld	r24, Z
+     144:	80 68       	ori	r24, 0x80	; 128
+     146:	80 83       	st	Z, r24
+	// Flush receive buffer
+	UART_RxTail = 0;
+     148:	10 92 ca 05 	sts	0x05CA, r1
+	UART_RxHead = 0;
+     14c:	10 92 c9 05 	sts	0x05C9, r1
+	UART_TxTail = 0;
+     150:	10 92 cc 07 	sts	0x07CC, r1
+	UART_TxHead = 0;
+     154:	10 92 cb 07 	sts	0x07CB, r1
+}
+     158:	08 95       	ret
+
+0000015a <__vector_25>:
+		  Interrupt Vector 26
+Input:
+Returns:
+**************************************************************************/
+ISR(USART1_RX_vect)
+{
+     15a:	1f 92       	push	r1
+     15c:	0f 92       	push	r0
+     15e:	0f b6       	in	r0, 0x3f	; 63
+     160:	0f 92       	push	r0
+     162:	11 24       	eor	r1, r1
+     164:	8f 93       	push	r24
+     166:	9f 93       	push	r25
+     168:	ef 93       	push	r30
+     16a:	ff 93       	push	r31
+	unsigned char data;
+	unsigned char tmphead;
+	// Read the received data
+	data = UDR1;
+     16c:	90 91 ce 00 	lds	r25, 0x00CE
+	/// Calculate buffer index
+	tmphead = ( UART_RxHead + 1 ) & UART_RX_BUFFER_MASK;
+     170:	e0 91 c9 05 	lds	r30, 0x05C9
+     174:	ef 5f       	subi	r30, 0xFF	; 255
+	// Store new index
+	UART_RxHead = tmphead;
+     176:	e0 93 c9 05 	sts	0x05C9, r30
+	if ( tmphead == UART_RxTail )
+     17a:	80 91 ca 05 	lds	r24, 0x05CA
+     17e:	e8 17       	cp	r30, r24
+     180:	21 f4       	brne	.+8      	; 0x18a <__vector_25+0x30>
+Input:
+Returns:
+**************************************************************************/
+void uart_flush(void)
+{
+        UART_RxHead = UART_RxTail;
+     182:	80 91 ca 05 	lds	r24, 0x05CA
+     186:	80 93 c9 05 	sts	0x05C9, r24
+	{
+		//ERROR! Receive buffer overflow
+		uart_flush();
+	}
+	// Store received data in buffer
+	UART_RxBuf[tmphead] = data;
+     18a:	f0 e0       	ldi	r31, 0x00	; 0
+     18c:	e7 53       	subi	r30, 0x37	; 55
+     18e:	fc 4f       	sbci	r31, 0xFC	; 252
+     190:	90 83       	st	Z, r25
+}
+     192:	ff 91       	pop	r31
+     194:	ef 91       	pop	r30
+     196:	9f 91       	pop	r25
+     198:	8f 91       	pop	r24
+     19a:	0f 90       	pop	r0
+     19c:	0f be       	out	0x3f, r0	; 63
+     19e:	0f 90       	pop	r0
+     1a0:	1f 90       	pop	r1
+     1a2:	18 95       	reti
+
+000001a4 <__vector_26>:
+		  Interrupt Vector 27
+Input:
+Returns:
+**************************************************************************/
+ISR(USART1_UDRE_vect)
+{
+     1a4:	1f 92       	push	r1
+     1a6:	0f 92       	push	r0
+     1a8:	0f b6       	in	r0, 0x3f	; 63
+     1aa:	0f 92       	push	r0
+     1ac:	11 24       	eor	r1, r1
+     1ae:	8f 93       	push	r24
+     1b0:	9f 93       	push	r25
+     1b2:	ef 93       	push	r30
+     1b4:	ff 93       	push	r31
+	unsigned char tmptail;
+	// Check if all data is transmitted
+	if ( UART_TxHead != UART_TxTail )
+     1b6:	90 91 cb 07 	lds	r25, 0x07CB
+     1ba:	80 91 cc 07 	lds	r24, 0x07CC
+     1be:	98 17       	cp	r25, r24
+     1c0:	61 f0       	breq	.+24     	; 0x1da <__vector_26+0x36>
+	{
+		// Calculate buffer index
+		tmptail = ( UART_TxTail + 1 ) & UART_TX_BUFFER_MASK;
+     1c2:	e0 91 cc 07 	lds	r30, 0x07CC
+     1c6:	ef 5f       	subi	r30, 0xFF	; 255
+		// Store new index
+		UART_TxTail = tmptail;
+     1c8:	e0 93 cc 07 	sts	0x07CC, r30
+		// Start transmition
+		UDR1 = UART_TxBuf[tmptail];
+     1cc:	f0 e0       	ldi	r31, 0x00	; 0
+     1ce:	e5 53       	subi	r30, 0x35	; 53
+     1d0:	fa 4f       	sbci	r31, 0xFA	; 250
+     1d2:	80 81       	ld	r24, Z
+     1d4:	80 93 ce 00 	sts	0x00CE, r24
+     1d8:	05 c0       	rjmp	.+10     	; 0x1e4 <__vector_26+0x40>
+	}
+	else
+	{
+		// Disable UDRE interrupt
+		UCSR1B &= ~(1<<UDRIE);
+     1da:	80 91 c9 00 	lds	r24, 0x00C9
+     1de:	8f 7d       	andi	r24, 0xDF	; 223
+     1e0:	80 93 c9 00 	sts	0x00C9, r24
+	}
+}
+     1e4:	ff 91       	pop	r31
+     1e6:	ef 91       	pop	r30
+     1e8:	9f 91       	pop	r25
+     1ea:	8f 91       	pop	r24
+     1ec:	0f 90       	pop	r0
+     1ee:	0f be       	out	0x3f, r0	; 63
+     1f0:	0f 90       	pop	r0
+     1f2:	1f 90       	pop	r1
+     1f4:	18 95       	reti
+
+000001f6 <ReceiveByte>:
+**************************************************************************/
+unsigned char ReceiveByte(void)
+{
+	unsigned char tmptail;
+	// Wait for incoming data
+	while ( UART_RxHead == UART_RxTail );
+     1f6:	90 91 c9 05 	lds	r25, 0x05C9
+     1fa:	80 91 ca 05 	lds	r24, 0x05CA
+     1fe:	98 17       	cp	r25, r24
+     200:	d1 f3       	breq	.-12     	; 0x1f6 <ReceiveByte>
+	// Calculate buffer index
+	tmptail = ( UART_RxTail + 1 ) & UART_RX_BUFFER_MASK;
+     202:	e0 91 ca 05 	lds	r30, 0x05CA
+     206:	ef 5f       	subi	r30, 0xFF	; 255
+	// Store new index
+	UART_RxTail = tmptail;
+     208:	e0 93 ca 05 	sts	0x05CA, r30
+     20c:	f0 e0       	ldi	r31, 0x00	; 0
+     20e:	e7 53       	subi	r30, 0x37	; 55
+     210:	fc 4f       	sbci	r31, 0xFC	; 252
+	 // Return data
+	return UART_RxBuf[tmptail];
+}
+     212:	80 81       	ld	r24, Z
+     214:	08 95       	ret
+
+00000216 <TransmitByte>:
+		  Waits for free space if no room in buffer
+Input:    Data to transmit
+Returns:
+**************************************************************************/
+void TransmitByte(unsigned char data)
+{
+     216:	28 2f       	mov	r18, r24
+	unsigned char tmphead;
+	tmphead=0;
+	// Calculate buffer index
+	tmphead = ( UART_TxHead + 1 ) & UART_TX_BUFFER_MASK;
+     218:	90 91 cb 07 	lds	r25, 0x07CB
+     21c:	9f 5f       	subi	r25, 0xFF	; 255
+	// Wait for free space in buffer
+	while ( tmphead == UART_TxTail );
+     21e:	80 91 cc 07 	lds	r24, 0x07CC
+     222:	98 17       	cp	r25, r24
+     224:	e1 f3       	breq	.-8      	; 0x21e <TransmitByte+0x8>
+	// Store data in buffer
+	UART_TxBuf[tmphead] = data;
+     226:	e9 2f       	mov	r30, r25
+     228:	f0 e0       	ldi	r31, 0x00	; 0
+     22a:	e5 53       	subi	r30, 0x35	; 53
+     22c:	fa 4f       	sbci	r31, 0xFA	; 250
+     22e:	20 83       	st	Z, r18
+	// Store new index
+	UART_TxHead = tmphead;
+     230:	90 93 cb 07 	sts	0x07CB, r25
+	// Enable UDRE interrupt
+	UCSR1B |= (1<<UDRIE1);
+     234:	80 91 c9 00 	lds	r24, 0x00C9
+     238:	80 62       	ori	r24, 0x20	; 32
+     23a:	80 93 c9 00 	sts	0x00C9, r24
+}
+     23e:	08 95       	ret
+
+00000240 <TransmitString>:
+Purpose:  Transmit string to UART
+Input:    String to be transmitted
+Returns:
+**************************************************************************/
+void TransmitString(const char *s )
+{
+     240:	cf 93       	push	r28
+     242:	df 93       	push	r29
+     244:	ec 01       	movw	r28, r24
+     246:	03 c0       	rjmp	.+6      	; 0x24e <TransmitString+0xe>
+    while (*s)
+      TransmitByte(*s++);
+     248:	21 96       	adiw	r28, 0x01	; 1
+     24a:	0e 94 0b 01 	call	0x216	; 0x216 <TransmitByte>
+Input:    String to be transmitted
+Returns:
+**************************************************************************/
+void TransmitString(const char *s )
+{
+    while (*s)
+     24e:	88 81       	ld	r24, Y
+     250:	88 23       	and	r24, r24
+     252:	d1 f7       	brne	.-12     	; 0x248 <TransmitString+0x8>
+      TransmitByte(*s++);
+}
+     254:	df 91       	pop	r29
+     256:	cf 91       	pop	r28
+     258:	08 95       	ret
+
+0000025a <DataInReceiveBuffer>:
+Input:
+Returns:  Return 0 (FALSE) if Rx buffer is empty
+**************************************************************************/
+unsigned char DataInReceiveBuffer(void)
+{
+	return ( UART_RxHead != UART_RxTail );
+     25a:	90 91 c9 05 	lds	r25, 0x05C9
+     25e:	80 91 ca 05 	lds	r24, 0x05CA
+     262:	20 e0       	ldi	r18, 0x00	; 0
+     264:	98 13       	cpse	r25, r24
+     266:	21 e0       	ldi	r18, 0x01	; 1
+}
+     268:	82 2f       	mov	r24, r18
+     26a:	08 95       	ret
+
+0000026c <uart_available>:
+Input:
+Returns:  Integer number of bytes in the receive buffer
+**************************************************************************/
+int uart_available(void)
+{
+        return (UART_RX_BUFFER_MASK + UART_RxHead - UART_RxTail) % UART_RX_BUFFER_MASK;
+     26c:	80 91 c9 05 	lds	r24, 0x05C9
+     270:	20 91 ca 05 	lds	r18, 0x05CA
+     274:	90 e0       	ldi	r25, 0x00	; 0
+     276:	81 50       	subi	r24, 0x01	; 1
+     278:	9e 4f       	sbci	r25, 0xFE	; 254
+     27a:	82 1b       	sub	r24, r18
+     27c:	91 09       	sbc	r25, r1
+     27e:	6f ef       	ldi	r22, 0xFF	; 255
+     280:	71 e0       	ldi	r23, 0x01	; 1
+     282:	0e 94 ac 07 	call	0xf58	; 0xf58 <__divmodhi4>
+}
+     286:	08 95       	ret
+
+00000288 <uart_flush>:
+Input:
+Returns:
+**************************************************************************/
+void uart_flush(void)
+{
+        UART_RxHead = UART_RxTail;
+     288:	80 91 ca 05 	lds	r24, 0x05CA
+     28c:	80 93 c9 05 	sts	0x05C9, r24
+}
+     290:	08 95       	ret
+
+00000292 <init_pwm>:
+Returns:  None
+**************************************************************************/
+void init_pwm(void){
+	//////// SET TIME PRESCALER ////////
+	// Timer 1 - use system clock (system_clock/1)
+	clear(TCCR1B,CS10);
+     292:	e1 e8       	ldi	r30, 0x81	; 129
+     294:	f0 e0       	ldi	r31, 0x00	; 0
+     296:	80 81       	ld	r24, Z
+     298:	8e 7f       	andi	r24, 0xFE	; 254
+     29a:	80 83       	st	Z, r24
+	set(TCCR1B,CS11);
+     29c:	80 81       	ld	r24, Z
+     29e:	82 60       	ori	r24, 0x02	; 2
+     2a0:	80 83       	st	Z, r24
+	clear(TCCR1B,CS12);
+     2a2:	80 81       	ld	r24, Z
+     2a4:	8b 7f       	andi	r24, 0xFB	; 251
+     2a6:	80 83       	st	Z, r24
+
+	// Timer 3 - use system clock (system_clock/1)
+	clear(TCCR3B,CS30);
+     2a8:	a1 e9       	ldi	r26, 0x91	; 145
+     2aa:	b0 e0       	ldi	r27, 0x00	; 0
+     2ac:	8c 91       	ld	r24, X
+     2ae:	8e 7f       	andi	r24, 0xFE	; 254
+     2b0:	8c 93       	st	X, r24
+	set(TCCR3B,CS31);
+     2b2:	8c 91       	ld	r24, X
+     2b4:	82 60       	ori	r24, 0x02	; 2
+     2b6:	8c 93       	st	X, r24
+	clear(TCCR3B,CS32);
+     2b8:	8c 91       	ld	r24, X
+     2ba:	8b 7f       	andi	r24, 0xFB	; 251
+     2bc:	8c 93       	st	X, r24
+
+	//////// SET PWM MODE ////////
+	// Timer 1 - UP to ICR1 PWM Mode (Mode 14 - 16bit 65535)
+	set(TCCR1B,WGM13);
+     2be:	80 81       	ld	r24, Z
+     2c0:	80 61       	ori	r24, 0x10	; 16
+     2c2:	80 83       	st	Z, r24
+	set(TCCR1B,WGM12);
+     2c4:	80 81       	ld	r24, Z
+     2c6:	88 60       	ori	r24, 0x08	; 8
+     2c8:	80 83       	st	Z, r24
+	set(TCCR1A,WGM11);
+     2ca:	e0 e8       	ldi	r30, 0x80	; 128
+     2cc:	f0 e0       	ldi	r31, 0x00	; 0
+     2ce:	80 81       	ld	r24, Z
+     2d0:	82 60       	ori	r24, 0x02	; 2
+     2d2:	80 83       	st	Z, r24
+	clear(TCCR1A,WGM10);
+     2d4:	80 81       	ld	r24, Z
+     2d6:	8e 7f       	andi	r24, 0xFE	; 254
+     2d8:	80 83       	st	Z, r24
+	ICR1 = PWM_PERIOD;
+     2da:	20 91 b9 03 	lds	r18, 0x03B9
+     2de:	30 91 ba 03 	lds	r19, 0x03BA
+     2e2:	30 93 87 00 	sts	0x0087, r19
+     2e6:	20 93 86 00 	sts	0x0086, r18
+
+	// Timer 1 Channel A - clear at OCR1A, set at rollover
+	set(TCCR1A,COM1A1);
+     2ea:	80 81       	ld	r24, Z
+     2ec:	80 68       	ori	r24, 0x80	; 128
+     2ee:	80 83       	st	Z, r24
+	clear(TCCR1A,COM1A0);
+     2f0:	80 81       	ld	r24, Z
+     2f2:	8f 7b       	andi	r24, 0xBF	; 191
+     2f4:	80 83       	st	Z, r24
+	OCR1A = 0;
+     2f6:	10 92 89 00 	sts	0x0089, r1
+     2fa:	10 92 88 00 	sts	0x0088, r1
+
+	// Timer 1 Channel B - clear at OCR1B, set at rollover
+	set(TCCR1A,COM1B1);
+     2fe:	80 81       	ld	r24, Z
+     300:	80 62       	ori	r24, 0x20	; 32
+     302:	80 83       	st	Z, r24
+	clear(TCCR1A,COM1B0);
+     304:	80 81       	ld	r24, Z
+     306:	8f 7e       	andi	r24, 0xEF	; 239
+     308:	80 83       	st	Z, r24
+	OCR1B = 0;
+     30a:	10 92 8b 00 	sts	0x008B, r1
+     30e:	10 92 8a 00 	sts	0x008A, r1
+
+	// Timer 1 Channel C - clear at OCR1C, set at rollover
+	set(TCCR1A,COM1C1);
+     312:	80 81       	ld	r24, Z
+     314:	88 60       	ori	r24, 0x08	; 8
+     316:	80 83       	st	Z, r24
+	clear(TCCR1A,COM1C0);
+     318:	80 81       	ld	r24, Z
+     31a:	8b 7f       	andi	r24, 0xFB	; 251
+     31c:	80 83       	st	Z, r24
+	OCR1C = 0;
+     31e:	10 92 8d 00 	sts	0x008D, r1
+     322:	10 92 8c 00 	sts	0x008C, r1
+
+	// Timer 3 - UP to ICR3 PWM Mode (Mode 14 - 16bit 65535)
+	set(TCCR3B,WGM33);
+     326:	8c 91       	ld	r24, X
+     328:	80 61       	ori	r24, 0x10	; 16
+     32a:	8c 93       	st	X, r24
+	set(TCCR3B,WGM32);
+     32c:	8c 91       	ld	r24, X
+     32e:	88 60       	ori	r24, 0x08	; 8
+     330:	8c 93       	st	X, r24
+	set(TCCR3A,WGM31);
+     332:	e0 e9       	ldi	r30, 0x90	; 144
+     334:	f0 e0       	ldi	r31, 0x00	; 0
+     336:	80 81       	ld	r24, Z
+     338:	82 60       	ori	r24, 0x02	; 2
+     33a:	80 83       	st	Z, r24
+	clear(TCCR3A,WGM30);
+     33c:	80 81       	ld	r24, Z
+     33e:	8e 7f       	andi	r24, 0xFE	; 254
+     340:	80 83       	st	Z, r24
+	ICR3 = PWM_PERIOD;
+     342:	30 93 97 00 	sts	0x0097, r19
+     346:	20 93 96 00 	sts	0x0096, r18
+
+	// Timer 3 Channel A - clear at OCR3A, set at rollover
+	set(TCCR3A,COM3A1);
+     34a:	80 81       	ld	r24, Z
+     34c:	80 68       	ori	r24, 0x80	; 128
+     34e:	80 83       	st	Z, r24
+	clear(TCCR3A,COM3A0);
+     350:	80 81       	ld	r24, Z
+     352:	8f 7b       	andi	r24, 0xBF	; 191
+     354:	80 83       	st	Z, r24
+	OCR3A = 0;
+     356:	10 92 99 00 	sts	0x0099, r1
+     35a:	10 92 98 00 	sts	0x0098, r1
+
+	// Enable Timer 1 (B5,B6,B7) and Timer 3 (C6) Output
+	set(DDRB,5);
+     35e:	25 9a       	sbi	0x04, 5	; 4
+	set(DDRB,6);
+     360:	26 9a       	sbi	0x04, 6	; 4
+	set(DDRB,7);
+     362:	27 9a       	sbi	0x04, 7	; 4
+	set(DDRC,6);
+     364:	3e 9a       	sbi	0x07, 6	; 7
+}
+     366:	08 95       	ret
+
+00000368 <set_duty>:
+Input:    motor number, duty value
+Returns:  None
+**************************************************************************/
+void set_duty(unsigned int motornum,unsigned int duty){
+	// Prevent invalid Duty Cycle
+	if(duty>2000){
+     368:	27 e0       	ldi	r18, 0x07	; 7
+     36a:	61 3d       	cpi	r22, 0xD1	; 209
+     36c:	72 07       	cpc	r23, r18
+     36e:	18 f0       	brcs	.+6      	; 0x376 <set_duty+0xe>
+     370:	60 ed       	ldi	r22, 0xD0	; 208
+     372:	77 e0       	ldi	r23, 0x07	; 7
+     374:	06 c0       	rjmp	.+12     	; 0x382 <set_duty+0x1a>
+		duty = 2000;
+	}else if(duty<1000){
+     376:	23 e0       	ldi	r18, 0x03	; 3
+     378:	68 3e       	cpi	r22, 0xE8	; 232
+     37a:	72 07       	cpc	r23, r18
+     37c:	10 f4       	brcc	.+4      	; 0x382 <set_duty+0x1a>
+     37e:	68 ee       	ldi	r22, 0xE8	; 232
+     380:	73 e0       	ldi	r23, 0x03	; 3
+		duty = 1000;
+	}
+
+	switch(motornum){
+     382:	82 30       	cpi	r24, 0x02	; 2
+     384:	91 05       	cpc	r25, r1
+     386:	89 f0       	breq	.+34     	; 0x3aa <set_duty+0x42>
+     388:	83 30       	cpi	r24, 0x03	; 3
+     38a:	91 05       	cpc	r25, r1
+     38c:	18 f4       	brcc	.+6      	; 0x394 <set_duty+0x2c>
+     38e:	01 97       	sbiw	r24, 0x01	; 1
+     390:	d1 f4       	brne	.+52     	; 0x3c6 <set_duty+0x5e>
+     392:	06 c0       	rjmp	.+12     	; 0x3a0 <set_duty+0x38>
+     394:	83 30       	cpi	r24, 0x03	; 3
+     396:	91 05       	cpc	r25, r1
+     398:	69 f0       	breq	.+26     	; 0x3b4 <set_duty+0x4c>
+     39a:	04 97       	sbiw	r24, 0x04	; 4
+     39c:	a1 f4       	brne	.+40     	; 0x3c6 <set_duty+0x5e>
+     39e:	0f c0       	rjmp	.+30     	; 0x3be <set_duty+0x56>
+		case 1:
+			OCR1A = duty;
+     3a0:	70 93 89 00 	sts	0x0089, r23
+     3a4:	60 93 88 00 	sts	0x0088, r22
+     3a8:	08 95       	ret
+			break;
+		case 2:
+			OCR1B = duty;
+     3aa:	70 93 8b 00 	sts	0x008B, r23
+     3ae:	60 93 8a 00 	sts	0x008A, r22
+     3b2:	08 95       	ret
+			break;
+		case 3:
+			OCR1C = duty;
+     3b4:	70 93 8d 00 	sts	0x008D, r23
+     3b8:	60 93 8c 00 	sts	0x008C, r22
+     3bc:	08 95       	ret
+			break;
+		case 4:
+			OCR3A = duty;
+     3be:	70 93 99 00 	sts	0x0099, r23
+     3c2:	60 93 98 00 	sts	0x0098, r22
+     3c6:	08 95       	ret
+
+000003c8 <SPIsetup>:
+#define CONFIG_VAL (1<<EN_CRC) | (1<<MASK_TX_DS) | (1<<MASK_MAX_RT)
+
+// set up the spi port in master mode with the polarity options (etc.) that the 24L01 requires. Also set DDR of the CE pin of rf module.
+void SPIsetup(){
+	//Make sure Power Save didn't turn SPI off
+ 	PRR0 &= ~(1 << PRSPI);
+     3c8:	80 91 64 00 	lds	r24, 0x0064
+     3cc:	8b 7f       	andi	r24, 0xFB	; 251
+     3ce:	80 93 64 00 	sts	0x0064, r24
+
+	// Set MOSI and SCK and SS output, all others input. SS MUST be config. to output 
+	// Also configure the CE pin of the rf module as an output
+	DDR_SPI |= (1 << DD_MOSI) | (1<<DD_SCK) | (1<<DD_SS);
+     3d2:	84 b1       	in	r24, 0x04	; 4
+     3d4:	87 60       	ori	r24, 0x07	; 7
+     3d6:	84 b9       	out	0x04, r24	; 4
+
+	// Enable SPI, Master, set clock rate sys_clk/128
+	SPCR = (1<<SPE) | (1<<MSTR) | (1<<SPR1) | (1<<SPR0);
+     3d8:	83 e5       	ldi	r24, 0x53	; 83
+     3da:	8c bd       	out	0x2c, r24	; 44
+     3dc:	80 ed       	ldi	r24, 0xD0	; 208
+     3de:	97 e0       	ldi	r25, 0x07	; 7
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+     3e0:	28 ec       	ldi	r18, 0xC8	; 200
+     3e2:	30 e0       	ldi	r19, 0x00	; 0
+     3e4:	f9 01       	movw	r30, r18
+     3e6:	31 97       	sbiw	r30, 0x01	; 1
+     3e8:	f1 f7       	brne	.-4      	; 0x3e6 <SPIsetup+0x1e>
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+     3ea:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+     3ec:	d9 f7       	brne	.-10     	; 0x3e4 <SPIsetup+0x1c>
+
+	//PAUSE to let the wireless chip go through initialization 
+	_delay_ms(200);
+}
+     3ee:	08 95       	ret
+
+000003f0 <RFwriteReg>:
+Returns:  None
+**************************************************************************/
+void RFwriteReg(char writeReg, char* writeDat, int numBytes){
+
+	// turn the CS channel low to begin transmission
+	PORT_CS &= ~(1<<P_RF_CS);
+     3f0:	47 98       	cbi	0x08, 7	; 8
+
+	// send 1 byte out the spi port to request write of writeReg
+	// in order to do this we add 0x20 to our write register as per the format of the 23L01 datasheet
+	SPDR = W_REGISTER + writeReg;
+     3f2:	80 5e       	subi	r24, 0xE0	; 224
+     3f4:	8e bd       	out	0x2e, r24	; 46
+
+	// wait for transmission to finish
+	while(!(SPSR & (1<<SPIF) ) );
+     3f6:	0d b4       	in	r0, 0x2d	; 45
+     3f8:	07 fe       	sbrs	r0, 7
+     3fa:	fd cf       	rjmp	.-6      	; 0x3f6 <RFwriteReg+0x6>
+     3fc:	20 e0       	ldi	r18, 0x00	; 0
+     3fe:	30 e0       	ldi	r19, 0x00	; 0
+     400:	0a c0       	rjmp	.+20     	; 0x416 <RFwriteReg+0x26>
+	// write the number of bytes we want from writeDat
+	int i;
+	for(i = 0; i < numBytes; i++)
+	{
+		// send 1 byte out the spi port. this is the data we want to write to the RF chip
+		SPDR = writeDat[i];
+     402:	fb 01       	movw	r30, r22
+     404:	e2 0f       	add	r30, r18
+     406:	f3 1f       	adc	r31, r19
+     408:	80 81       	ld	r24, Z
+     40a:	8e bd       	out	0x2e, r24	; 46
+
+		// wait for transmission to finish
+		while(!(SPSR & (1<<SPIF) ) );
+     40c:	0d b4       	in	r0, 0x2d	; 45
+     40e:	07 fe       	sbrs	r0, 7
+     410:	fd cf       	rjmp	.-6      	; 0x40c <RFwriteReg+0x1c>
+	// wait for transmission to finish
+	while(!(SPSR & (1<<SPIF) ) );
+
+	// write the number of bytes we want from writeDat
+	int i;
+	for(i = 0; i < numBytes; i++)
+     412:	2f 5f       	subi	r18, 0xFF	; 255
+     414:	3f 4f       	sbci	r19, 0xFF	; 255
+     416:	24 17       	cp	r18, r20
+     418:	35 07       	cpc	r19, r21
+     41a:	9c f3       	brlt	.-26     	; 0x402 <RFwriteReg+0x12>
+		// wait for transmission to finish
+		while(!(SPSR & (1<<SPIF) ) );
+	}
+
+	// turn the CS channel high to end transmission
+	PORT_CS |= (1<<P_RF_CS);
+     41c:	47 9a       	sbi	0x08, 7	; 8
+}
+     41e:	08 95       	ret
+
+00000420 <RFfillTransferBuffer>:
+
+
+// function to fill the transfer (TX) buffer with data we wish to transmit wirelessly
+// txDat - an appropriately sized storage container containing the data we plan on pushing into the TX register
+// numBytes - the number of bytes to push in back. !! The txDat storage container must be at least this size in bytes (char's)
+void RFfillTransferBuffer( char* txDat, int numBytes ){
+     420:	ac 01       	movw	r20, r24
+	// turn the CS channel low to begin transmission
+	PORT_CS &= ~(1<<P_RF_CS);
+     422:	47 98       	cbi	0x08, 7	; 8
+
+	// send 1 byte out the spi port that indicates we want to fill the TX buffer
+	SPDR = W_TX_PAYLOAD;
+     424:	80 ea       	ldi	r24, 0xA0	; 160
+     426:	8e bd       	out	0x2e, r24	; 46
+
+	// wait for transmission to finish
+	while(!(SPSR & (1<<SPIF) ) );
+     428:	0d b4       	in	r0, 0x2d	; 45
+     42a:	07 fe       	sbrs	r0, 7
+     42c:	fd cf       	rjmp	.-6      	; 0x428 <RFfillTransferBuffer+0x8>
+     42e:	20 e0       	ldi	r18, 0x00	; 0
+     430:	30 e0       	ldi	r19, 0x00	; 0
+     432:	0a c0       	rjmp	.+20     	; 0x448 <RFfillTransferBuffer+0x28>
+	// write the number of bytes we want to write out to the TX buffer
+	int i;
+	for(i = 0; i < numBytes; i++)
+	{
+		// send 1 byte out the spi port. this is the data we want to write to the RF chip
+		SPDR = txDat[i];
+     434:	fa 01       	movw	r30, r20
+     436:	e2 0f       	add	r30, r18
+     438:	f3 1f       	adc	r31, r19
+     43a:	80 81       	ld	r24, Z
+     43c:	8e bd       	out	0x2e, r24	; 46
+
+		// wait for transmission to finish
+		while(!(SPSR & (1<<SPIF) ) );
+     43e:	0d b4       	in	r0, 0x2d	; 45
+     440:	07 fe       	sbrs	r0, 7
+     442:	fd cf       	rjmp	.-6      	; 0x43e <RFfillTransferBuffer+0x1e>
+	// wait for transmission to finish
+	while(!(SPSR & (1<<SPIF) ) );
+
+	// write the number of bytes we want to write out to the TX buffer
+	int i;
+	for(i = 0; i < numBytes; i++)
+     444:	2f 5f       	subi	r18, 0xFF	; 255
+     446:	3f 4f       	sbci	r19, 0xFF	; 255
+     448:	26 17       	cp	r18, r22
+     44a:	37 07       	cpc	r19, r23
+     44c:	9c f3       	brlt	.-26     	; 0x434 <RFfillTransferBuffer+0x14>
+		// wait for transmission to finish
+		while(!(SPSR & (1<<SPIF) ) );
+	}
+
+	// turn the CS channel high to end transmission
+	PORT_CS |= (1<<P_RF_CS);
+     44e:	47 9a       	sbi	0x08, 7	; 8
+}
+     450:	08 95       	ret
+
+00000452 <RFreadReg>:
+// retDat - an appropriately sized storage container for the data we plan on getting back
+// numBytes - the number of bytes to read back. !! The retDat storage container must be at least this size in bytes (char's)
+void RFreadReg(char readReg, char* retDat, int numBytes){
+
+	// turn the CS channel low to begin transmission
+	PORT_CS &= ~(1<<P_RF_CS);
+     452:	47 98       	cbi	0x08, 7	; 8
+
+	// send 1 byte out the spi port to request write of writeReg
+	SPDR = R_REGISTER + readReg;
+     454:	8e bd       	out	0x2e, r24	; 46
+
+	// wait for transmission to finish
+	while(!(SPSR & (1<<SPIF) ) );
+     456:	0d b4       	in	r0, 0x2d	; 45
+     458:	07 fe       	sbrs	r0, 7
+     45a:	fd cf       	rjmp	.-6      	; 0x456 <RFreadReg+0x4>
+     45c:	20 e0       	ldi	r18, 0x00	; 0
+     45e:	30 e0       	ldi	r19, 0x00	; 0
+
+	// read the number of bytes we intend to receive into retDat
+	int i;
+	for(i = 0; i < numBytes; i++){
+		// send 1 byte out the spi port. this is a dummy send just to read the incoming MISO data from our read request above
+		SPDR = 0xFF;
+     460:	9f ef       	ldi	r25, 0xFF	; 255
+     462:	0b c0       	rjmp	.+22     	; 0x47a <RFreadReg+0x28>
+     464:	9e bd       	out	0x2e, r25	; 46
+
+		// wait for transmission to finish
+		while(!(SPSR & (1<<SPIF) ) );
+     466:	0d b4       	in	r0, 0x2d	; 45
+     468:	07 fe       	sbrs	r0, 7
+     46a:	fd cf       	rjmp	.-6      	; 0x466 <RFreadReg+0x14>
+
+		// read off the contents of our return data that is in SPDR (the value we requested to read). This came from MISO
+		retDat[i] = SPDR;
+     46c:	8e b5       	in	r24, 0x2e	; 46
+     46e:	fb 01       	movw	r30, r22
+     470:	e2 0f       	add	r30, r18
+     472:	f3 1f       	adc	r31, r19
+     474:	80 83       	st	Z, r24
+	// wait for transmission to finish
+	while(!(SPSR & (1<<SPIF) ) );
+
+	// read the number of bytes we intend to receive into retDat
+	int i;
+	for(i = 0; i < numBytes; i++){
+     476:	2f 5f       	subi	r18, 0xFF	; 255
+     478:	3f 4f       	sbci	r19, 0xFF	; 255
+     47a:	24 17       	cp	r18, r20
+     47c:	35 07       	cpc	r19, r21
+     47e:	94 f3       	brlt	.-28     	; 0x464 <RFreadReg+0x12>
+		// read off the contents of our return data that is in SPDR (the value we requested to read). This came from MISO
+		retDat[i] = SPDR;
+	}
+
+	// turn the CS channel high to end transmission
+	PORT_CS |= (1<<P_RF_CS);
+     480:	47 9a       	sbi	0x08, 7	; 8
+}
+     482:	08 95       	ret
+
+00000484 <RFsetRxAddr>:
+
+
+// put the chip into receiving mode
+void RFsetRxAddr(char * recvAddr, int numBytes){
+     484:	9c 01       	movw	r18, r24
+     486:	ab 01       	movw	r20, r22
+	RFwriteReg(RX_ADDR_P1,recvAddr,numBytes);
+     488:	8b e0       	ldi	r24, 0x0B	; 11
+     48a:	b9 01       	movw	r22, r18
+     48c:	0e 94 f8 01 	call	0x3f0	; 0x3f0 <RFwriteReg>
+}
+     490:	08 95       	ret
+
+00000492 <RFflushTXBuffer>:
+
+// flush the tx buffer
+void RFflushTXBuffer(){
+
+	// turn the CS channel low to begin transmission
+	PORT_CS &= ~(1<<P_RF_CS);
+     492:	47 98       	cbi	0x08, 7	; 8
+
+	// send 1 byte out the spi port to request write of writeReg
+	SPDR = FLUSH_TX;
+     494:	81 ee       	ldi	r24, 0xE1	; 225
+     496:	8e bd       	out	0x2e, r24	; 46
+
+	// wait for transmission to finish
+	while(!(SPSR & (1<<SPIF) ) );
+     498:	0d b4       	in	r0, 0x2d	; 45
+     49a:	07 fe       	sbrs	r0, 7
+     49c:	fd cf       	rjmp	.-6      	; 0x498 <RFflushTXBuffer+0x6>
+
+	// turn the CS channel high to end transmission
+	PORT_CS |= (1<<P_RF_CS);
+     49e:	47 9a       	sbi	0x08, 7	; 8
+}
+     4a0:	08 95       	ret
+
+000004a2 <RFflushRXBuffer>:
+
+// flush the rx buffer
+void RFflushRXBuffer(){
+
+	// turn the CS channel low to begin transmission
+	PORT_CS &= ~(1<<P_RF_CS);
+     4a2:	47 98       	cbi	0x08, 7	; 8
+
+	// send 1 byte out the spi port to request write of writeReg
+	SPDR = FLUSH_RX;
+     4a4:	82 ee       	ldi	r24, 0xE2	; 226
+     4a6:	8e bd       	out	0x2e, r24	; 46
+
+	// wait for transmission to finish
+	while(!(SPSR & (1<<SPIF) ) );
+     4a8:	0d b4       	in	r0, 0x2d	; 45
+     4aa:	07 fe       	sbrs	r0, 7
+     4ac:	fd cf       	rjmp	.-6      	; 0x4a8 <RFflushRXBuffer+0x6>
+
+	// turn the CS channel high to end transmission
+	PORT_CS |= (1<<P_RF_CS);
+     4ae:	47 9a       	sbi	0x08, 7	; 8
+}
+     4b0:	08 95       	ret
+
+000004b2 <RFstartReceiving>:
+
+// put the chip into receiving mode
+void RFstartReceiving(){
+     4b2:	df 93       	push	r29
+     4b4:	cf 93       	push	r28
+     4b6:	0f 92       	push	r0
+     4b8:	cd b7       	in	r28, 0x3d	; 61
+     4ba:	de b7       	in	r29, 0x3e	; 62
+
+	char writeDat[1] = { CONFIG_VAL | (1<<PWR_UP) | (1<<PRIM_RX) };
+     4bc:	8b e3       	ldi	r24, 0x3B	; 59
+     4be:	89 83       	std	Y+1, r24	; 0x01
+
+	// turn the PWR_UP and PRIM_RX bits high
+	RFwriteReg( CONFIG, writeDat, 1);
+     4c0:	80 e0       	ldi	r24, 0x00	; 0
+     4c2:	be 01       	movw	r22, r28
+     4c4:	6f 5f       	subi	r22, 0xFF	; 255
+     4c6:	7f 4f       	sbci	r23, 0xFF	; 255
+     4c8:	41 e0       	ldi	r20, 0x01	; 1
+     4ca:	50 e0       	ldi	r21, 0x00	; 0
+     4cc:	0e 94 f8 01 	call	0x3f0	; 0x3f0 <RFwriteReg>
+     4d0:	80 ea       	ldi	r24, 0xA0	; 160
+     4d2:	9f e0       	ldi	r25, 0x0F	; 15
+     4d4:	01 97       	sbiw	r24, 0x01	; 1
+     4d6:	f1 f7       	brne	.-4      	; 0x4d4 <RFstartReceiving+0x22>
+
+	// wait a millisecond 
+	_delay_ms(2);
+
+	// turn pin CE high
+	PORT_CE |= (1<<P_RF_CE);
+     4d8:	28 9a       	sbi	0x05, 0	; 5
+}
+     4da:	0f 90       	pop	r0
+     4dc:	cf 91       	pop	r28
+     4de:	df 91       	pop	r29
+     4e0:	08 95       	ret
+
+000004e2 <RFstopReceiving>:
+
+// take the chip out of receiving mode
+void RFstopReceiving(){
+
+	// turn pin CE low
+	PORT_CE &= ~(1<<P_RF_CE);
+     4e2:	28 98       	cbi	0x05, 0	; 5
+}
+     4e4:	08 95       	ret
+
+000004e6 <RFtransmitUntil>:
+
+// transmit txDat wirelessly and repeat until we receive verification that the packet was received. Returns chip to receive state when done
+char RFtransmitUntil( char* txDat, char* destAddr, char txTries){
+     4e6:	2f 92       	push	r2
+     4e8:	3f 92       	push	r3
+     4ea:	4f 92       	push	r4
+     4ec:	5f 92       	push	r5
+     4ee:	6f 92       	push	r6
+     4f0:	7f 92       	push	r7
+     4f2:	8f 92       	push	r8
+     4f4:	9f 92       	push	r9
+     4f6:	af 92       	push	r10
+     4f8:	bf 92       	push	r11
+     4fa:	cf 92       	push	r12
+     4fc:	df 92       	push	r13
+     4fe:	ef 92       	push	r14
+     500:	ff 92       	push	r15
+     502:	0f 93       	push	r16
+     504:	1f 93       	push	r17
+     506:	df 93       	push	r29
+     508:	cf 93       	push	r28
+     50a:	00 d0       	rcall	.+0      	; 0x50c <RFtransmitUntil+0x26>
+     50c:	00 d0       	rcall	.+0      	; 0x50e <RFtransmitUntil+0x28>
+     50e:	cd b7       	in	r28, 0x3d	; 61
+     510:	de b7       	in	r29, 0x3e	; 62
+     512:	5c 01       	movw	r10, r24
+     514:	6b 01       	movw	r12, r22
+     516:	4c 83       	std	Y+4, r20	; 0x04
+
+	char txAttempt = 0;
+	char success = 0;
+	char tempWrite[1] = { 0x00 };
+     518:	19 82       	std	Y+1, r1	; 0x01
+
+// take the chip out of receiving mode
+void RFstopReceiving(){
+
+	// turn pin CE low
+	PORT_CE &= ~(1<<P_RF_CE);
+     51a:	28 98       	cbi	0x05, 0	; 5
+     51c:	00 e0       	ldi	r16, 0x00	; 0
+
+		RFflushTXBuffer();
+		
+		// clear the TX transmission bit
+		tempWrite[0] = (1<<TX_DS);
+		RFwriteReg(STATUS, tempWrite, 1);
+     51e:	7e 01       	movw	r14, r28
+     520:	08 94       	sec
+     522:	e1 1c       	adc	r14, r1
+     524:	f1 1c       	adc	r15, r1
+
+		// setup our write data to configure the chip into TX mode
+		char writeDat[1] = { CONFIG_VAL | (1<<PWR_UP) };
+
+		// turn the PWR_UP high and PRIM_RX bit low for transmitting
+		RFwriteReg( CONFIG, writeDat, 1);
+     526:	32 e0       	ldi	r19, 0x02	; 2
+     528:	23 2e       	mov	r2, r19
+     52a:	31 2c       	mov	r3, r1
+     52c:	2c 0e       	add	r2, r28
+     52e:	3d 1e       	adc	r3, r29
+     530:	20 ea       	ldi	r18, 0xA0	; 160
+     532:	42 2e       	mov	r4, r18
+     534:	2f e0       	ldi	r18, 0x0F	; 15
+     536:	52 2e       	mov	r5, r18
+		// delay so we have time to receive an ACK response
+		_delay_ms(4);
+		
+		// temp variable to store our STATUS register state
+		char tempStatus[1] = {0x00};
+		RFreadReg(STATUS,tempStatus,1);
+     538:	90 e4       	ldi	r25, 0x40	; 64
+     53a:	69 2e       	mov	r6, r25
+     53c:	9f e1       	ldi	r25, 0x1F	; 31
+     53e:	79 2e       	mov	r7, r25
+     540:	83 e0       	ldi	r24, 0x03	; 3
+     542:	88 2e       	mov	r8, r24
+     544:	91 2c       	mov	r9, r1
+     546:	8c 0e       	add	r8, r28
+     548:	9d 1e       	adc	r9, r29
+     54a:	40 c0       	rjmp	.+128    	; 0x5cc <RFtransmitUntil+0xe6>
+
+	
+	// repeat transmission until the TX bit goes high (verifies receipt) or we've tried txTries times
+	while( (!success) &&  (txAttempt < txTries)  ){
+
+		RFflushTXBuffer();
+     54c:	0e 94 49 02 	call	0x492	; 0x492 <RFflushTXBuffer>
+		
+		// clear the TX transmission bit
+		tempWrite[0] = (1<<TX_DS);
+     550:	80 e2       	ldi	r24, 0x20	; 32
+     552:	89 83       	std	Y+1, r24	; 0x01
+		RFwriteReg(STATUS, tempWrite, 1);
+     554:	87 e0       	ldi	r24, 0x07	; 7
+     556:	b7 01       	movw	r22, r14
+     558:	41 e0       	ldi	r20, 0x01	; 1
+     55a:	50 e0       	ldi	r21, 0x00	; 0
+     55c:	0e 94 f8 01 	call	0x3f0	; 0x3f0 <RFwriteReg>
+
+		// increment the attempt counter
+		txAttempt++; 		
+		
+		// set up the destination transmit address
+		RFwriteReg(TX_ADDR,destAddr,5);
+     560:	80 e1       	ldi	r24, 0x10	; 16
+     562:	b6 01       	movw	r22, r12
+     564:	45 e0       	ldi	r20, 0x05	; 5
+     566:	50 e0       	ldi	r21, 0x00	; 0
+     568:	0e 94 f8 01 	call	0x3f0	; 0x3f0 <RFwriteReg>
+
+		// set up the destination recive address for auto-acknowledgement
+		RFwriteReg(RX_ADDR_P0,destAddr,5);
+     56c:	8a e0       	ldi	r24, 0x0A	; 10
+     56e:	b6 01       	movw	r22, r12
+     570:	45 e0       	ldi	r20, 0x05	; 5
+     572:	50 e0       	ldi	r21, 0x00	; 0
+     574:	0e 94 f8 01 	call	0x3f0	; 0x3f0 <RFwriteReg>
+
+		// setup our write data to configure the chip into TX mode
+		char writeDat[1] = { CONFIG_VAL | (1<<PWR_UP) };
+     578:	8a e3       	ldi	r24, 0x3A	; 58
+     57a:	8a 83       	std	Y+2, r24	; 0x02
+
+		// turn the PWR_UP high and PRIM_RX bit low for transmitting
+		RFwriteReg( CONFIG, writeDat, 1);
+     57c:	80 e0       	ldi	r24, 0x00	; 0
+     57e:	b1 01       	movw	r22, r2
+     580:	41 e0       	ldi	r20, 0x01	; 1
+     582:	50 e0       	ldi	r21, 0x00	; 0
+     584:	0e 94 f8 01 	call	0x3f0	; 0x3f0 <RFwriteReg>
+
+		//write data to TX register for outputting
+		RFfillTransferBuffer(txDat,PACKET_SIZE);
+     588:	60 91 cd 07 	lds	r22, 0x07CD
+     58c:	c5 01       	movw	r24, r10
+     58e:	70 e0       	ldi	r23, 0x00	; 0
+     590:	0e 94 10 02 	call	0x420	; 0x420 <RFfillTransferBuffer>
+
+		// turn pin CE high
+		PORT_CE |= (1<<P_RF_CE);
+     594:	28 9a       	sbi	0x05, 0	; 5
+     596:	c2 01       	movw	r24, r4
+     598:	01 97       	sbiw	r24, 0x01	; 1
+     59a:	f1 f7       	brne	.-4      	; 0x598 <RFtransmitUntil+0xb2>
+
+		// wait 2 millisecond to make sure transfer fires
+		_delay_ms(2);
+
+		// end transmission by pulling CE low
+		PORT_CE &= ~(1<<P_RF_CE);
+     59c:	28 98       	cbi	0x05, 0	; 5
+     59e:	c3 01       	movw	r24, r6
+     5a0:	01 97       	sbiw	r24, 0x01	; 1
+     5a2:	f1 f7       	brne	.-4      	; 0x5a0 <RFtransmitUntil+0xba>
+		
+		// delay so we have time to receive an ACK response
+		_delay_ms(4);
+		
+		// temp variable to store our STATUS register state
+		char tempStatus[1] = {0x00};
+     5a4:	1b 82       	std	Y+3, r1	; 0x03
+		RFreadReg(STATUS,tempStatus,1);
+     5a6:	87 e0       	ldi	r24, 0x07	; 7
+     5a8:	b4 01       	movw	r22, r8
+     5aa:	41 e0       	ldi	r20, 0x01	; 1
+     5ac:	50 e0       	ldi	r21, 0x00	; 0
+     5ae:	0e 94 29 02 	call	0x452	; 0x452 <RFreadReg>
+
+		// check for acknowledgement from the receiving node
+		//success = tempStatus[0];
+		success = ( tempStatus[0] & (1<<TX_DS));
+     5b2:	1b 81       	ldd	r17, Y+3	; 0x03
+     5b4:	10 72       	andi	r17, 0x20	; 32
+
+		// clear any MAX_RT bits transmission bit
+		tempWrite[0] = (1<<MAX_RT);
+     5b6:	80 e1       	ldi	r24, 0x10	; 16
+     5b8:	89 83       	std	Y+1, r24	; 0x01
+		RFwriteReg(STATUS, tempWrite, 1);	
+     5ba:	87 e0       	ldi	r24, 0x07	; 7
+     5bc:	b7 01       	movw	r22, r14
+     5be:	41 e0       	ldi	r20, 0x01	; 1
+     5c0:	50 e0       	ldi	r21, 0x00	; 0
+     5c2:	0e 94 f8 01 	call	0x3f0	; 0x3f0 <RFwriteReg>
+	// take out of receiving mode
+	RFstopReceiving();
+
+	
+	// repeat transmission until the TX bit goes high (verifies receipt) or we've tried txTries times
+	while( (!success) &&  (txAttempt < txTries)  ){
+     5c6:	11 23       	and	r17, r17
+     5c8:	39 f4       	brne	.+14     	; 0x5d8 <RFtransmitUntil+0xf2>
+		tempWrite[0] = (1<<TX_DS);
+		RFwriteReg(STATUS, tempWrite, 1);
+
+
+		// increment the attempt counter
+		txAttempt++; 		
+     5ca:	0f 5f       	subi	r16, 0xFF	; 255
+	// take out of receiving mode
+	RFstopReceiving();
+
+	
+	// repeat transmission until the TX bit goes high (verifies receipt) or we've tried txTries times
+	while( (!success) &&  (txAttempt < txTries)  ){
+     5cc:	8c 81       	ldd	r24, Y+4	; 0x04
+     5ce:	08 17       	cp	r16, r24
+     5d0:	08 f4       	brcc	.+2      	; 0x5d4 <RFtransmitUntil+0xee>
+     5d2:	bc cf       	rjmp	.-136    	; 0x54c <RFtransmitUntil+0x66>
+     5d4:	10 e0       	ldi	r17, 0x00	; 0
+     5d6:	08 c0       	rjmp	.+16     	; 0x5e8 <RFtransmitUntil+0x102>
+		RFwriteReg(STATUS, tempWrite, 1);	
+	}
+		
+	// if the TX bit is high clear the TX transmission bit
+	if(success){
+		tempWrite[0] =  (1<<TX_DS);
+     5d8:	80 e2       	ldi	r24, 0x20	; 32
+     5da:	89 83       	std	Y+1, r24	; 0x01
+		RFwriteReg(STATUS, tempWrite, 1);
+     5dc:	87 e0       	ldi	r24, 0x07	; 7
+     5de:	b7 01       	movw	r22, r14
+     5e0:	41 e0       	ldi	r20, 0x01	; 1
+     5e2:	50 e0       	ldi	r21, 0x00	; 0
+     5e4:	0e 94 f8 01 	call	0x3f0	; 0x3f0 <RFwriteReg>
+	}
+
+	// turn receiving mode back on 
+	RFstartReceiving();
+     5e8:	0e 94 59 02 	call	0x4b2	; 0x4b2 <RFstartReceiving>
+     5ec:	81 2f       	mov	r24, r17
+     5ee:	11 11       	cpse	r17, r1
+     5f0:	81 e0       	ldi	r24, 0x01	; 1
+		return 1;
+	}
+	else{
+		return 0;
+	}
+}
+     5f2:	0f 90       	pop	r0
+     5f4:	0f 90       	pop	r0
+     5f6:	0f 90       	pop	r0
+     5f8:	0f 90       	pop	r0
+     5fa:	cf 91       	pop	r28
+     5fc:	df 91       	pop	r29
+     5fe:	1f 91       	pop	r17
+     600:	0f 91       	pop	r16
+     602:	ff 90       	pop	r15
+     604:	ef 90       	pop	r14
+     606:	df 90       	pop	r13
+     608:	cf 90       	pop	r12
+     60a:	bf 90       	pop	r11
+     60c:	af 90       	pop	r10
+     60e:	9f 90       	pop	r9
+     610:	8f 90       	pop	r8
+     612:	7f 90       	pop	r7
+     614:	6f 90       	pop	r6
+     616:	5f 90       	pop	r5
+     618:	4f 90       	pop	r4
+     61a:	3f 90       	pop	r3
+     61c:	2f 90       	pop	r2
+     61e:	08 95       	ret
+
+00000620 <RFtransmit>:
+
+
+// transmit txDat wirelessly and leave the chip in receive mode when done. Function only fires 1 packet and does not check if data was received.
+void RFtransmit( char* txDat, char* destAddr){
+	RFtransmitUntil(txDat,destAddr,1);
+     620:	41 e0       	ldi	r20, 0x01	; 1
+     622:	0e 94 73 02 	call	0x4e6	; 0x4e6 <RFtransmitUntil>
+}
+     626:	08 95       	ret
+
+00000628 <RFRXdataReady>:
+
+
+int RFRXdataReady(){
+     628:	df 93       	push	r29
+     62a:	cf 93       	push	r28
+     62c:	0f 92       	push	r0
+     62e:	cd b7       	in	r28, 0x3d	; 61
+     630:	de b7       	in	r29, 0x3e	; 62
+	// dummy write data
+	char retDat[1] = {0xFF};
+     632:	8f ef       	ldi	r24, 0xFF	; 255
+     634:	89 83       	std	Y+1, r24	; 0x01
+
+	RFreadReg(STATUS,retDat,1);
+     636:	87 e0       	ldi	r24, 0x07	; 7
+     638:	be 01       	movw	r22, r28
+     63a:	6f 5f       	subi	r22, 0xFF	; 255
+     63c:	7f 4f       	sbci	r23, 0xFF	; 255
+     63e:	41 e0       	ldi	r20, 0x01	; 1
+     640:	50 e0       	ldi	r21, 0x00	; 0
+     642:	0e 94 29 02 	call	0x452	; 0x452 <RFreadReg>
+     646:	29 81       	ldd	r18, Y+1	; 0x01
+     648:	30 e0       	ldi	r19, 0x00	; 0
+     64a:	46 e0       	ldi	r20, 0x06	; 6
+     64c:	36 95       	lsr	r19
+     64e:	27 95       	ror	r18
+     650:	4a 95       	dec	r20
+     652:	e1 f7       	brne	.-8      	; 0x64c <RFRXdataReady+0x24>
+     654:	21 70       	andi	r18, 0x01	; 1
+     656:	30 70       	andi	r19, 0x00	; 0
+
+	else{
+		return 0;
+	}
+
+}
+     658:	c9 01       	movw	r24, r18
+     65a:	0f 90       	pop	r0
+     65c:	cf 91       	pop	r28
+     65e:	df 91       	pop	r29
+     660:	08 95       	ret
+
+00000662 <RFRXbufferEmpty>:
+
+
+int RFRXbufferEmpty(){
+     662:	df 93       	push	r29
+     664:	cf 93       	push	r28
+     666:	0f 92       	push	r0
+     668:	cd b7       	in	r28, 0x3d	; 61
+     66a:	de b7       	in	r29, 0x3e	; 62
+	// dummy write data
+	char retDat[1] = {0xFF};
+     66c:	8f ef       	ldi	r24, 0xFF	; 255
+     66e:	89 83       	std	Y+1, r24	; 0x01
+
+	RFreadReg(STATUS,retDat,1);
+     670:	87 e0       	ldi	r24, 0x07	; 7
+     672:	be 01       	movw	r22, r28
+     674:	6f 5f       	subi	r22, 0xFF	; 255
+     676:	7f 4f       	sbci	r23, 0xFF	; 255
+     678:	41 e0       	ldi	r20, 0x01	; 1
+     67a:	50 e0       	ldi	r21, 0x00	; 0
+     67c:	0e 94 29 02 	call	0x452	; 0x452 <RFreadReg>
+     680:	89 81       	ldd	r24, Y+1	; 0x01
+     682:	28 2f       	mov	r18, r24
+     684:	30 e0       	ldi	r19, 0x00	; 0
+     686:	2e 70       	andi	r18, 0x0E	; 14
+     688:	30 70       	andi	r19, 0x00	; 0
+     68a:	21 15       	cp	r18, r1
+     68c:	31 05       	cpc	r19, r1
+     68e:	11 f0       	breq	.+4      	; 0x694 <RFRXbufferEmpty+0x32>
+     690:	21 e0       	ldi	r18, 0x01	; 1
+     692:	30 e0       	ldi	r19, 0x00	; 0
+	}
+
+	else{
+		return 0;
+	}
+}
+     694:	c9 01       	movw	r24, r18
+     696:	0f 90       	pop	r0
+     698:	cf 91       	pop	r28
+     69a:	df 91       	pop	r29
+     69c:	08 95       	ret
+
+0000069e <RFreadRXFIFO>:
+
+// read data out of the receive FIFO and turn off the data-ready flag RX_DR if the buffer is empty
+// this function stores the previous value of the CONFIG register, which indicated whether we were transmitting or receiving prior to this function call, and restores this state after reading
+// NOTE: it is not possible to receive or transmit new packets while readings, all packets will be lost during this time
+void RFreadRXFIFO( char* retDat){
+     69e:	df 93       	push	r29
+     6a0:	cf 93       	push	r28
+     6a2:	0f 92       	push	r0
+     6a4:	cd b7       	in	r28, 0x3d	; 61
+     6a6:	de b7       	in	r29, 0x3e	; 62
+     6a8:	fc 01       	movw	r30, r24
+
+// take the chip out of receiving mode
+void RFstopReceiving(){
+
+	// turn pin CE low
+	PORT_CE &= ~(1<<P_RF_CE);
+     6aa:	28 98       	cbi	0x05, 0	; 5
+void RFreadRXFIFO( char* retDat){
+	// take out of receiving mode
+	RFstopReceiving();
+
+	// dummy write data
+	retDat[0] = 0xFF;
+     6ac:	8f ef       	ldi	r24, 0xFF	; 255
+     6ae:	80 83       	st	Z, r24
+
+	// turn the CS channel low to begin transmission
+	PORT_CS &= ~(1<<P_RF_CS);
+     6b0:	47 98       	cbi	0x08, 7	; 8
+
+	// send 1 byte out the spi port that indicates we want to read the RX FIFO
+	SPDR = R_RX_PAYLOAD;
+     6b2:	81 e6       	ldi	r24, 0x61	; 97
+     6b4:	8e bd       	out	0x2e, r24	; 46
+
+	// wait for transmission to finish
+	while(!(SPSR & (1<<SPIF) ) );
+     6b6:	0d b4       	in	r0, 0x2d	; 45
+     6b8:	07 fe       	sbrs	r0, 7
+     6ba:	fd cf       	rjmp	.-6      	; 0x6b6 <RFreadRXFIFO+0x18>
+     6bc:	20 e0       	ldi	r18, 0x00	; 0
+     6be:	30 e0       	ldi	r19, 0x00	; 0
+     6c0:	09 c0       	rjmp	.+18     	; 0x6d4 <RFreadRXFIFO+0x36>
+
+	// read the number of bytes we want to read out to the RX buffer
+	int i;
+	for(i = 0; i < PACKET_SIZE; i++){
+		// read 1 byte out the spi port
+		SPDR = retDat[i];
+     6c2:	80 81       	ld	r24, Z
+     6c4:	8e bd       	out	0x2e, r24	; 46
+
+		// wait for transmission to finish
+		while(!(SPSR & (1<<SPIF) ) );
+     6c6:	0d b4       	in	r0, 0x2d	; 45
+     6c8:	07 fe       	sbrs	r0, 7
+     6ca:	fd cf       	rjmp	.-6      	; 0x6c6 <RFreadRXFIFO+0x28>
+
+		// store the returned data
+		retDat[i] = SPDR;
+     6cc:	8e b5       	in	r24, 0x2e	; 46
+     6ce:	81 93       	st	Z+, r24
+	// wait for transmission to finish
+	while(!(SPSR & (1<<SPIF) ) );
+
+	// read the number of bytes we want to read out to the RX buffer
+	int i;
+	for(i = 0; i < PACKET_SIZE; i++){
+     6d0:	2f 5f       	subi	r18, 0xFF	; 255
+     6d2:	3f 4f       	sbci	r19, 0xFF	; 255
+     6d4:	80 91 cd 07 	lds	r24, 0x07CD
+     6d8:	90 e0       	ldi	r25, 0x00	; 0
+     6da:	28 17       	cp	r18, r24
+     6dc:	39 07       	cpc	r19, r25
+     6de:	8c f3       	brlt	.-30     	; 0x6c2 <RFreadRXFIFO+0x24>
+		retDat[i] = SPDR;
+	}
+
+
+	// turn the CS channel high to end transmission
+	PORT_CS |= (1<<P_RF_CS);
+     6e0:	47 9a       	sbi	0x08, 7	; 8
+     6e2:	80 ea       	ldi	r24, 0xA0	; 160
+     6e4:	9f e0       	ldi	r25, 0x0F	; 15
+     6e6:	01 97       	sbiw	r24, 0x01	; 1
+     6e8:	f1 f7       	brne	.-4      	; 0x6e6 <RFreadRXFIFO+0x48>
+
+	_delay_ms(2);
+
+	// if there is no new data ready to be read then turn the RX_DR data ready pin low
+	if(RFRXbufferEmpty()){
+     6ea:	0e 94 31 03 	call	0x662	; 0x662 <RFRXbufferEmpty>
+     6ee:	89 2b       	or	r24, r25
+     6f0:	51 f0       	breq	.+20     	; 0x706 <RFreadRXFIFO+0x68>
+		char writeDat[1] = { (1<<RX_DR) };
+     6f2:	80 e4       	ldi	r24, 0x40	; 64
+     6f4:	89 83       	std	Y+1, r24	; 0x01
+		RFwriteReg(STATUS,writeDat,1);
+     6f6:	87 e0       	ldi	r24, 0x07	; 7
+     6f8:	be 01       	movw	r22, r28
+     6fa:	6f 5f       	subi	r22, 0xFF	; 255
+     6fc:	7f 4f       	sbci	r23, 0xFF	; 255
+     6fe:	41 e0       	ldi	r20, 0x01	; 1
+     700:	50 e0       	ldi	r21, 0x00	; 0
+     702:	0e 94 f8 01 	call	0x3f0	; 0x3f0 <RFwriteReg>
+	}
+
+	// put back in receiving mode
+	RFstartReceiving();
+     706:	0e 94 59 02 	call	0x4b2	; 0x4b2 <RFstartReceiving>
+}
+     70a:	0f 90       	pop	r0
+     70c:	cf 91       	pop	r28
+     70e:	df 91       	pop	r29
+     710:	08 95       	ret
+
+00000712 <RFRXbufferFull>:
+
+
+int RFRXbufferFull(){
+     712:	df 93       	push	r29
+     714:	cf 93       	push	r28
+     716:	0f 92       	push	r0
+     718:	cd b7       	in	r28, 0x3d	; 61
+     71a:	de b7       	in	r29, 0x3e	; 62
+	// dummy write data
+	char retDat[1] = {0xFF};
+     71c:	8f ef       	ldi	r24, 0xFF	; 255
+     71e:	89 83       	std	Y+1, r24	; 0x01
+
+	RFreadReg(FIFO_STATUS,retDat,1);
+     720:	87 e1       	ldi	r24, 0x17	; 23
+     722:	be 01       	movw	r22, r28
+     724:	6f 5f       	subi	r22, 0xFF	; 255
+     726:	7f 4f       	sbci	r23, 0xFF	; 255
+     728:	41 e0       	ldi	r20, 0x01	; 1
+     72a:	50 e0       	ldi	r21, 0x00	; 0
+     72c:	0e 94 29 02 	call	0x452	; 0x452 <RFreadReg>
+     730:	29 81       	ldd	r18, Y+1	; 0x01
+     732:	30 e0       	ldi	r19, 0x00	; 0
+     734:	36 95       	lsr	r19
+     736:	27 95       	ror	r18
+     738:	21 70       	andi	r18, 0x01	; 1
+     73a:	30 70       	andi	r19, 0x00	; 0
+	if(retDat[0] & (1<<RX_FULL)){
+		return 1;
+	}else{
+		return 0;
+	}
+}
+     73c:	c9 01       	movw	r24, r18
+     73e:	0f 90       	pop	r0
+     740:	cf 91       	pop	r28
+     742:	df 91       	pop	r29
+     744:	08 95       	ret
+
+00000746 <RFreceive>:
+
+
+// clear out the FIFO and return the last received packet
+void RFreceive(char * buffer){
+     746:	cf 93       	push	r28
+     748:	df 93       	push	r29
+     74a:	ec 01       	movw	r28, r24
+
+	clear(PCICR,PCIE0); // disable pin-change interrupts
+     74c:	80 91 68 00 	lds	r24, 0x0068
+     750:	8e 7f       	andi	r24, 0xFE	; 254
+     752:	80 93 68 00 	sts	0x0068, r24
+     756:	03 c0       	rjmp	.+6      	; 0x75e <RFreceive+0x18>
+
+	while(RFRXdataReady()){
+		RFreadRXFIFO(buffer);
+     758:	ce 01       	movw	r24, r28
+     75a:	0e 94 4f 03 	call	0x69e	; 0x69e <RFreadRXFIFO>
+// clear out the FIFO and return the last received packet
+void RFreceive(char * buffer){
+
+	clear(PCICR,PCIE0); // disable pin-change interrupts
+
+	while(RFRXdataReady()){
+     75e:	0e 94 14 03 	call	0x628	; 0x628 <RFRXdataReady>
+     762:	89 2b       	or	r24, r25
+     764:	c9 f7       	brne	.-14     	; 0x758 <RFreceive+0x12>
+		RFreadRXFIFO(buffer);
+	}
+
+	set(PCICR,PCIE0); // enable pin-change interrupts
+     766:	80 91 68 00 	lds	r24, 0x0068
+     76a:	81 60       	ori	r24, 0x01	; 1
+     76c:	80 93 68 00 	sts	0x0068, r24
+}
+     770:	df 91       	pop	r29
+     772:	cf 91       	pop	r28
+     774:	08 95       	ret
+
+00000776 <RFsetup>:
+
+
+// function to setup the rf chip registers for communication and boot it up in receiving mode
+void RFsetup(char * recvAddr, char packet_size){
+     776:	ef 92       	push	r14
+     778:	ff 92       	push	r15
+     77a:	0f 93       	push	r16
+     77c:	1f 93       	push	r17
+     77e:	df 93       	push	r29
+     780:	cf 93       	push	r28
+     782:	0f 92       	push	r0
+     784:	cd b7       	in	r28, 0x3d	; 61
+     786:	de b7       	in	r29, 0x3e	; 62
+     788:	7c 01       	movw	r14, r24
+	PACKET_SIZE = packet_size;
+     78a:	60 93 cd 07 	sts	0x07CD, r22
+     78e:	88 ee       	ldi	r24, 0xE8	; 232
+     790:	93 e0       	ldi	r25, 0x03	; 3
+     792:	28 ec       	ldi	r18, 0xC8	; 200
+     794:	30 e0       	ldi	r19, 0x00	; 0
+     796:	f9 01       	movw	r30, r18
+     798:	31 97       	sbiw	r30, 0x01	; 1
+     79a:	f1 f7       	brne	.-4      	; 0x798 <RFsetup+0x22>
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+     79c:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+     79e:	d9 f7       	brne	.-10     	; 0x796 <RFsetup+0x20>
+	_delay_ms(100);
+	
+	//setup the SPI port for use with the 24L01 chip
+	SPIsetup();
+     7a0:	0e 94 e4 01 	call	0x3c8	; 0x3c8 <SPIsetup>
+
+	//setup the RF CE and CS pins as outputs
+	
+	DDR_RF_CS|=(1<<DDR_P_RF_CS);
+     7a4:	3f 9a       	sbi	0x07, 7	; 7
+
+	DDR_RF_CE |=(1<<DDR_P_RF_CE);
+     7a6:	20 9a       	sbi	0x04, 0	; 4
+
+	//set the config register up
+	char writeDat[1] = {CONFIG_VAL};
+     7a8:	88 e3       	ldi	r24, 0x38	; 56
+     7aa:	89 83       	std	Y+1, r24	; 0x01
+	RFwriteReg(CONFIG,writeDat,1);
+     7ac:	80 e0       	ldi	r24, 0x00	; 0
+     7ae:	8e 01       	movw	r16, r28
+     7b0:	0f 5f       	subi	r16, 0xFF	; 255
+     7b2:	1f 4f       	sbci	r17, 0xFF	; 255
+     7b4:	b8 01       	movw	r22, r16
+     7b6:	41 e0       	ldi	r20, 0x01	; 1
+     7b8:	50 e0       	ldi	r21, 0x00	; 0
+     7ba:	0e 94 f8 01 	call	0x3f0	; 0x3f0 <RFwriteReg>
+
+	//enable PACKET_SIZE byte collection on pipe 1
+	writeDat[0]  = PACKET_SIZE;
+     7be:	80 91 cd 07 	lds	r24, 0x07CD
+     7c2:	89 83       	std	Y+1, r24	; 0x01
+	RFwriteReg(RX_PW_P1,writeDat,1);
+     7c4:	82 e1       	ldi	r24, 0x12	; 18
+     7c6:	b8 01       	movw	r22, r16
+     7c8:	41 e0       	ldi	r20, 0x01	; 1
+     7ca:	50 e0       	ldi	r21, 0x00	; 0
+     7cc:	0e 94 f8 01 	call	0x3f0	; 0x3f0 <RFwriteReg>
+
+	//turn on auto acknowledgement on first two pipes
+	writeDat[0] = 0x03;
+     7d0:	83 e0       	ldi	r24, 0x03	; 3
+     7d2:	89 83       	std	Y+1, r24	; 0x01
+	RFwriteReg(EN_AA,writeDat,1);
+     7d4:	81 e0       	ldi	r24, 0x01	; 1
+     7d6:	b8 01       	movw	r22, r16
+     7d8:	41 e0       	ldi	r20, 0x01	; 1
+     7da:	50 e0       	ldi	r21, 0x00	; 0
+     7dc:	0e 94 f8 01 	call	0x3f0	; 0x3f0 <RFwriteReg>
+
+	//turn off auto retransmit
+	writeDat[0] = 0x00;
+     7e0:	19 82       	std	Y+1, r1	; 0x01
+	RFwriteReg(SETUP_RETR,writeDat,1);		
+     7e2:	84 e0       	ldi	r24, 0x04	; 4
+     7e4:	b8 01       	movw	r22, r16
+     7e6:	41 e0       	ldi	r20, 0x01	; 1
+     7e8:	50 e0       	ldi	r21, 0x00	; 0
+     7ea:	0e 94 f8 01 	call	0x3f0	; 0x3f0 <RFwriteReg>
+	//setup address size as 5 bytes (probably deafult setup is already OK)
+	//writeDat[0] = 0x03;
+	//RFwriteReg(SETUP_AW,writeDat,1);	
+
+	// write receive address to pipe1
+	RFsetRxAddr(recvAddr, 5);
+     7ee:	c7 01       	movw	r24, r14
+     7f0:	65 e0       	ldi	r22, 0x05	; 5
+     7f2:	70 e0       	ldi	r23, 0x00	; 0
+     7f4:	0e 94 42 02 	call	0x484	; 0x484 <RFsetRxAddr>
+
+	// turn the receiver on
+	RFstartReceiving();
+     7f8:	0e 94 59 02 	call	0x4b2	; 0x4b2 <RFstartReceiving>
+}
+     7fc:	0f 90       	pop	r0
+     7fe:	cf 91       	pop	r28
+     800:	df 91       	pop	r29
+     802:	1f 91       	pop	r17
+     804:	0f 91       	pop	r16
+     806:	ff 90       	pop	r15
+     808:	ef 90       	pop	r14
+     80a:	08 95       	ret
+
+0000080c <init_adc>:
+Returns:  None
+**************************************************************************/
+void init_adc(void){
+	// ADC Multiplexer Selection Register
+	// Use Vcc, right justified
+	ADMUX |= (0<<REFS1)|(1<<REFS0)|(0<<ADLAR);
+     80c:	ec e7       	ldi	r30, 0x7C	; 124
+     80e:	f0 e0       	ldi	r31, 0x00	; 0
+     810:	80 81       	ld	r24, Z
+     812:	80 64       	ori	r24, 0x40	; 64
+     814:	80 83       	st	Z, r24
+	
+	// Digital Input Disable Register 0
+	// Used to disable digital input on ADC Channels
+	// Channels 0,1,4,5,6,7 (1=disabled)
+	// DIDR0 = [ADC7D,ADC6D,ADC5D,ADC4D, - , - , ADC1D, ADC0D]
+	DIDR0 |=0xF3;
+     816:	ee e7       	ldi	r30, 0x7E	; 126
+     818:	f0 e0       	ldi	r31, 0x00	; 0
+     81a:	80 81       	ld	r24, Z
+     81c:	83 6f       	ori	r24, 0xF3	; 243
+     81e:	80 83       	st	Z, r24
+
+	// ADC Control and Status Register A
+	// Turn on ADC,prescale ADC clock by 64 (8MHz/64 = 125kHz)
+	ADCSRA |=(1<<ADEN)|(1<<ADPS2)|(1<<ADPS1)|(0<<ADPS0);
+     820:	ea e7       	ldi	r30, 0x7A	; 122
+     822:	f0 e0       	ldi	r31, 0x00	; 0
+     824:	80 81       	ld	r24, Z
+     826:	86 68       	ori	r24, 0x86	; 134
+     828:	80 83       	st	Z, r24
+}
+     82a:	08 95       	ret
+
+0000082c <get_adc>:
+Function: 	get_adc()
+Purpose:  	Read a value from one of the 6 ADC values
+Input:		ADC Channel to obtain value on (0,1,4,5,6,7)
+Returns:	ADC Result
+**************************************************************************/
+uint16_t get_adc(unsigned int ADC_Channel){
+     82c:	9c 01       	movw	r18, r24
+	// Channel set with	ADMUX => (MUX4,MUX3,MUX2,MUX1,MUX0)
+
+	// Clear ADMUX Channel Select
+	ADMUX &=0xE0;
+     82e:	80 91 7c 00 	lds	r24, 0x007C
+     832:	80 7e       	andi	r24, 0xE0	; 224
+     834:	80 93 7c 00 	sts	0x007C, r24
+
+	switch(ADC_Channel){
+     838:	24 30       	cpi	r18, 0x04	; 4
+     83a:	31 05       	cpc	r19, r1
+     83c:	d9 f0       	breq	.+54     	; 0x874 <get_adc+0x48>
+     83e:	25 30       	cpi	r18, 0x05	; 5
+     840:	31 05       	cpc	r19, r1
+     842:	38 f4       	brcc	.+14     	; 0x852 <get_adc+0x26>
+     844:	21 15       	cp	r18, r1
+     846:	31 05       	cpc	r19, r1
+     848:	71 f0       	breq	.+28     	; 0x866 <get_adc+0x3a>
+     84a:	21 30       	cpi	r18, 0x01	; 1
+     84c:	31 05       	cpc	r19, r1
+     84e:	19 f5       	brne	.+70     	; 0x896 <get_adc+0x6a>
+     850:	0d c0       	rjmp	.+26     	; 0x86c <get_adc+0x40>
+     852:	26 30       	cpi	r18, 0x06	; 6
+     854:	31 05       	cpc	r19, r1
+     856:	b1 f0       	breq	.+44     	; 0x884 <get_adc+0x58>
+     858:	26 30       	cpi	r18, 0x06	; 6
+     85a:	31 05       	cpc	r19, r1
+     85c:	78 f0       	brcs	.+30     	; 0x87c <get_adc+0x50>
+     85e:	27 30       	cpi	r18, 0x07	; 7
+     860:	31 05       	cpc	r19, r1
+     862:	c9 f4       	brne	.+50     	; 0x896 <get_adc+0x6a>
+     864:	13 c0       	rjmp	.+38     	; 0x88c <get_adc+0x60>
+		case 0: 	// Channel 0 (00000)
+			ADMUX |=0x00;
+     866:	80 91 7c 00 	lds	r24, 0x007C
+     86a:	13 c0       	rjmp	.+38     	; 0x892 <get_adc+0x66>
+			break;
+		case 1:		// Channel 1 (00001)
+			ADMUX |=0x01;
+     86c:	80 91 7c 00 	lds	r24, 0x007C
+     870:	81 60       	ori	r24, 0x01	; 1
+     872:	0f c0       	rjmp	.+30     	; 0x892 <get_adc+0x66>
+			break;
+		case 4:		// Channel 4 (00100)
+			ADMUX |=0x04;
+     874:	80 91 7c 00 	lds	r24, 0x007C
+     878:	84 60       	ori	r24, 0x04	; 4
+     87a:	0b c0       	rjmp	.+22     	; 0x892 <get_adc+0x66>
+			break;
+		case 5:		// Channel 5 (00101)
+			ADMUX |=0x05;
+     87c:	80 91 7c 00 	lds	r24, 0x007C
+     880:	85 60       	ori	r24, 0x05	; 5
+     882:	07 c0       	rjmp	.+14     	; 0x892 <get_adc+0x66>
+			break;
+		case 6:		// Channel 6 (00110)
+			ADMUX |=0x06;
+     884:	80 91 7c 00 	lds	r24, 0x007C
+     888:	86 60       	ori	r24, 0x06	; 6
+     88a:	03 c0       	rjmp	.+6      	; 0x892 <get_adc+0x66>
+			break;
+		case 7:		// Channel 7 (00111)
+			ADMUX |=0x07;
+     88c:	80 91 7c 00 	lds	r24, 0x007C
+     890:	87 60       	ori	r24, 0x07	; 7
+     892:	80 93 7c 00 	sts	0x007C, r24
+		default:
+			break;
+	}
+
+	// Start converstion
+	set(ADCSRA,ADSC);
+     896:	80 91 7a 00 	lds	r24, 0x007A
+     89a:	80 64       	ori	r24, 0x40	; 64
+     89c:	80 93 7a 00 	sts	0x007A, r24
+
+	// Wait until complete
+	while(!(check(ADCSRA,ADIF))){
+     8a0:	80 91 7a 00 	lds	r24, 0x007A
+     8a4:	84 ff       	sbrs	r24, 4
+     8a6:	fc cf       	rjmp	.-8      	; 0x8a0 <get_adc+0x74>
+	}
+	
+	// Clear Flag
+	set(ADCSRA,ADIF);
+     8a8:	80 91 7a 00 	lds	r24, 0x007A
+     8ac:	80 61       	ori	r24, 0x10	; 16
+     8ae:	80 93 7a 00 	sts	0x007A, r24
+	// Obtain value
+	return ADC;
+     8b2:	20 91 78 00 	lds	r18, 0x0078
+     8b6:	30 91 79 00 	lds	r19, 0x0079
+}
+     8ba:	c9 01       	movw	r24, r18
+     8bc:	08 95       	ret
+
+000008be <get_ucTemp>:
+Input:		
+Returns:	ADC Temperature Sensor Result
+**************************************************************************/
+uint16_t get_ucTemp(){
+	// Save previous ADMUX settings
+	int oldADMUX = ADMUX;
+     8be:	90 91 7c 00 	lds	r25, 0x007C
+	
+	// Clear ADMUX Channel Select
+	ADMUX &= 0xE0;
+     8c2:	80 91 7c 00 	lds	r24, 0x007C
+     8c6:	80 7e       	andi	r24, 0xE0	; 224
+     8c8:	80 93 7c 00 	sts	0x007C, r24
+
+	// Set voltage refernce to internal 2.56V
+	ADMUX |= 0xC0;
+     8cc:	80 91 7c 00 	lds	r24, 0x007C
+     8d0:	80 6c       	ori	r24, 0xC0	; 192
+     8d2:	80 93 7c 00 	sts	0x007C, r24
+
+	// On-chip Temperature Sensor (11111)
+	ADMUX |= 0x1F;
+     8d6:	80 91 7c 00 	lds	r24, 0x007C
+     8da:	8f 61       	ori	r24, 0x1F	; 31
+     8dc:	80 93 7c 00 	sts	0x007C, r24
+	
+	// Start converstion
+	set(ADCSRA,ADSC);
+     8e0:	80 91 7a 00 	lds	r24, 0x007A
+     8e4:	80 64       	ori	r24, 0x40	; 64
+     8e6:	80 93 7a 00 	sts	0x007A, r24
+
+	// Wait until complete
+	while(!(check(ADCSRA,ADIF))){
+     8ea:	80 91 7a 00 	lds	r24, 0x007A
+     8ee:	84 ff       	sbrs	r24, 4
+     8f0:	fc cf       	rjmp	.-8      	; 0x8ea <get_ucTemp+0x2c>
+	}
+	
+	// Clear Flag
+	set(ADCSRA,ADIF);
+     8f2:	80 91 7a 00 	lds	r24, 0x007A
+     8f6:	80 61       	ori	r24, 0x10	; 16
+     8f8:	80 93 7a 00 	sts	0x007A, r24
+
+	// Read a second time
+	// Start converstion
+	set(ADCSRA,ADSC);
+     8fc:	80 91 7a 00 	lds	r24, 0x007A
+     900:	80 64       	ori	r24, 0x40	; 64
+     902:	80 93 7a 00 	sts	0x007A, r24
+
+	// Wait until complete
+	while(!(check(ADCSRA,ADIF))){
+     906:	80 91 7a 00 	lds	r24, 0x007A
+     90a:	84 ff       	sbrs	r24, 4
+     90c:	fc cf       	rjmp	.-8      	; 0x906 <get_ucTemp+0x48>
+	}
+	
+	// Clear Flag
+	set(ADCSRA,ADIF);
+     90e:	80 91 7a 00 	lds	r24, 0x007A
+     912:	80 61       	ori	r24, 0x10	; 16
+     914:	80 93 7a 00 	sts	0x007A, r24
+
+	// Return old ADMUX settings
+	ADMUX = oldADMUX;
+     918:	90 93 7c 00 	sts	0x007C, r25
+
+	// Obtain value
+	return ADC;
+     91c:	20 91 78 00 	lds	r18, 0x0078
+     920:	30 91 79 00 	lds	r19, 0x0079
+}
+     924:	c9 01       	movw	r24, r18
+     926:	08 95       	ret
+
+00000928 <printEmpty>:
+Function: printEmpty()
+Purpose:  Prints out a empty line to fill up the menu screen
+Input:    Number of empty lines to print
+Returns:  None
+**************************************************************************/
+void printEmpty(int num){
+     928:	0f 93       	push	r16
+     92a:	1f 93       	push	r17
+     92c:	cf 93       	push	r28
+     92e:	df 93       	push	r29
+     930:	8c 01       	movw	r16, r24
+     932:	c0 e0       	ldi	r28, 0x00	; 0
+     934:	d0 e0       	ldi	r29, 0x00	; 0
+     936:	05 c0       	rjmp	.+10     	; 0x942 <printEmpty+0x1a>
+	for(int i=0;i<num;i++){
+		TransmitString("\n\r");
+     938:	80 e0       	ldi	r24, 0x00	; 0
+     93a:	91 e0       	ldi	r25, 0x01	; 1
+     93c:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+Purpose:  Prints out a empty line to fill up the menu screen
+Input:    Number of empty lines to print
+Returns:  None
+**************************************************************************/
+void printEmpty(int num){
+	for(int i=0;i<num;i++){
+     940:	21 96       	adiw	r28, 0x01	; 1
+     942:	c0 17       	cp	r28, r16
+     944:	d1 07       	cpc	r29, r17
+     946:	c4 f3       	brlt	.-16     	; 0x938 <printEmpty+0x10>
+		TransmitString("\n\r");
+	}
+}
+     948:	df 91       	pop	r29
+     94a:	cf 91       	pop	r28
+     94c:	1f 91       	pop	r17
+     94e:	0f 91       	pop	r16
+     950:	08 95       	ret
+
+00000952 <printMenu>:
+Input:    Menu Screen to print
+Returns:  None
+**************************************************************************/
+void printMenu(){
+			
+	switch(menuScreen){
+     952:	80 91 c5 03 	lds	r24, 0x03C5
+     956:	82 36       	cpi	r24, 0x62	; 98
+     958:	a1 f1       	breq	.+104    	; 0x9c2 <printMenu+0x70>
+     95a:	83 36       	cpi	r24, 0x63	; 99
+     95c:	20 f4       	brcc	.+8      	; 0x966 <printMenu+0x14>
+     95e:	81 36       	cpi	r24, 0x61	; 97
+     960:	09 f0       	breq	.+2      	; 0x964 <printMenu+0x12>
+     962:	a3 c0       	rjmp	.+326    	; 0xaaa <printMenu+0x158>
+     964:	07 c0       	rjmp	.+14     	; 0x974 <printMenu+0x22>
+     966:	83 36       	cpi	r24, 0x63	; 99
+     968:	09 f4       	brne	.+2      	; 0x96c <printMenu+0x1a>
+     96a:	4e c0       	rjmp	.+156    	; 0xa08 <printMenu+0xb6>
+     96c:	84 36       	cpi	r24, 0x64	; 100
+     96e:	09 f0       	breq	.+2      	; 0x972 <printMenu+0x20>
+     970:	9c c0       	rjmp	.+312    	; 0xaaa <printMenu+0x158>
+     972:	83 c0       	rjmp	.+262    	; 0xa7a <printMenu+0x128>
+		case 'a': // Main Menu
+			TransmitString("~Wyvern Quadrotor Controller~\n\r");
+     974:	83 e0       	ldi	r24, 0x03	; 3
+     976:	91 e0       	ldi	r25, 0x01	; 1
+     978:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("s = START Quadrotor (Motor Spinup)\n\r");
+     97c:	83 e2       	ldi	r24, 0x23	; 35
+     97e:	91 e0       	ldi	r25, 0x01	; 1
+     980:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("SPACEBAR = EMERGENCY STOP\n\r");
+     984:	88 e4       	ldi	r24, 0x48	; 72
+     986:	91 e0       	ldi	r25, 0x01	; 1
+     988:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("r = Toggle On-board Red LED\n\r");
+     98c:	84 e6       	ldi	r24, 0x64	; 100
+     98e:	91 e0       	ldi	r25, 0x01	; 1
+     990:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("g = Toggle On-board Green LED\n\r");
+     994:	82 e8       	ldi	r24, 0x82	; 130
+     996:	91 e0       	ldi	r25, 0x01	; 1
+     998:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("d = Print Wyvern Telemetry Data\n\r");
+     99c:	82 ea       	ldi	r24, 0xA2	; 162
+     99e:	91 e0       	ldi	r25, 0x01	; 1
+     9a0:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("m = Motor Menu\n\r");
+     9a4:	84 ec       	ldi	r24, 0xC4	; 196
+     9a6:	91 e0       	ldi	r25, 0x01	; 1
+     9a8:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("p = PID Menu\n\r");
+     9ac:	85 ed       	ldi	r24, 0xD5	; 213
+     9ae:	91 e0       	ldi	r25, 0x01	; 1
+     9b0:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("j = Joystick Menu\n\r");
+     9b4:	84 ee       	ldi	r24, 0xE4	; 228
+     9b6:	91 e0       	ldi	r25, 0x01	; 1
+     9b8:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			printEmpty(6);
+     9bc:	86 e0       	ldi	r24, 0x06	; 6
+     9be:	90 e0       	ldi	r25, 0x00	; 0
+     9c0:	59 c0       	rjmp	.+178    	; 0xa74 <printMenu+0x122>
+			break;
+		case 'b': // Motor Menu
+			TransmitString("~Motor Menu~\n\r");
+     9c2:	88 ef       	ldi	r24, 0xF8	; 248
+     9c4:	91 e0       	ldi	r25, 0x01	; 1
+     9c6:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("s = START Quadrotor (Motor Spinup)\n\r");
+     9ca:	83 e2       	ldi	r24, 0x23	; 35
+     9cc:	91 e0       	ldi	r25, 0x01	; 1
+     9ce:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("SPACEBAR = EMERGENCY STOP\n\r");
+     9d2:	88 e4       	ldi	r24, 0x48	; 72
+     9d4:	91 e0       	ldi	r25, 0x01	; 1
+     9d6:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("= = Increase Thrust\n\r");
+     9da:	87 e0       	ldi	r24, 0x07	; 7
+     9dc:	92 e0       	ldi	r25, 0x02	; 2
+     9de:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("- = Decreaase Thrust\n\r");
+     9e2:	8d e1       	ldi	r24, 0x1D	; 29
+     9e4:	92 e0       	ldi	r25, 0x02	; 2
+     9e6:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("1,2,3,4 = Start Motor X\n\r");
+     9ea:	84 e3       	ldi	r24, 0x34	; 52
+     9ec:	92 e0       	ldi	r25, 0x02	; 2
+     9ee:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("m = Main Menu\n\r");
+     9f2:	8e e4       	ldi	r24, 0x4E	; 78
+     9f4:	92 e0       	ldi	r25, 0x02	; 2
+     9f6:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("p = PID Menu\n\r");
+     9fa:	85 ed       	ldi	r24, 0xD5	; 213
+     9fc:	91 e0       	ldi	r25, 0x01	; 1
+     9fe:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			printEmpty(7);
+     a02:	87 e0       	ldi	r24, 0x07	; 7
+     a04:	90 e0       	ldi	r25, 0x00	; 0
+     a06:	36 c0       	rjmp	.+108    	; 0xa74 <printMenu+0x122>
+			break;
+		case 'c': // Motor Menu
+			TransmitString("~PID Menu~\n\r");
+     a08:	8e e5       	ldi	r24, 0x5E	; 94
+     a0a:	92 e0       	ldi	r25, 0x02	; 2
+     a0c:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("s = START Quadrotor (Motor Spinup)\n\r");
+     a10:	83 e2       	ldi	r24, 0x23	; 35
+     a12:	91 e0       	ldi	r25, 0x01	; 1
+     a14:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("SPACEBAR = EMERGENCY STOP\n\r");
+     a18:	88 e4       	ldi	r24, 0x48	; 72
+     a1a:	91 e0       	ldi	r25, 0x01	; 1
+     a1c:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("= = Increase Thrust\n\r");
+     a20:	87 e0       	ldi	r24, 0x07	; 7
+     a22:	92 e0       	ldi	r25, 0x02	; 2
+     a24:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("- = Decreaase Thrust\n\r");
+     a28:	8d e1       	ldi	r24, 0x1D	; 29
+     a2a:	92 e0       	ldi	r25, 0x02	; 2
+     a2c:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("p = Increase P gain\n\r");
+     a30:	8b e6       	ldi	r24, 0x6B	; 107
+     a32:	92 e0       	ldi	r25, 0x02	; 2
+     a34:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("o = Decrease P gain\n\r");
+     a38:	81 e8       	ldi	r24, 0x81	; 129
+     a3a:	92 e0       	ldi	r25, 0x02	; 2
+     a3c:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("i = Increase PID BAND\n\r");
+     a40:	87 e9       	ldi	r24, 0x97	; 151
+     a42:	92 e0       	ldi	r25, 0x02	; 2
+     a44:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("u = Decrease PID BAND\n\r");
+     a48:	8f ea       	ldi	r24, 0xAF	; 175
+     a4a:	92 e0       	ldi	r25, 0x02	; 2
+     a4c:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("l = Increase D gain\n\r");
+     a50:	87 ec       	ldi	r24, 0xC7	; 199
+     a52:	92 e0       	ldi	r25, 0x02	; 2
+     a54:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("k = Decrease D gain\n\r");
+     a58:	8d ed       	ldi	r24, 0xDD	; 221
+     a5a:	92 e0       	ldi	r25, 0x02	; 2
+     a5c:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("d = Print out P gain and D gain\n\r");
+     a60:	83 ef       	ldi	r24, 0xF3	; 243
+     a62:	92 e0       	ldi	r25, 0x02	; 2
+     a64:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("m = Main Menu\n\r");
+     a68:	8e e4       	ldi	r24, 0x4E	; 78
+     a6a:	92 e0       	ldi	r25, 0x02	; 2
+     a6c:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			printEmpty(2);
+     a70:	82 e0       	ldi	r24, 0x02	; 2
+     a72:	90 e0       	ldi	r25, 0x00	; 0
+     a74:	0e 94 94 04 	call	0x928	; 0x928 <printEmpty>
+     a78:	08 95       	ret
+			break;
+		case 'd': // Joystick Menu
+			TransmitString("~JoyStick Menu~\n\r");
+     a7a:	85 e1       	ldi	r24, 0x15	; 21
+     a7c:	93 e0       	ldi	r25, 0x03	; 3
+     a7e:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("s = START Quadrotor (Motor Spinup)\n\r");
+     a82:	83 e2       	ldi	r24, 0x23	; 35
+     a84:	91 e0       	ldi	r25, 0x01	; 1
+     a86:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("SPACEBAR = EMERGENCY STOP\n\r");
+     a8a:	88 e4       	ldi	r24, 0x48	; 72
+     a8c:	91 e0       	ldi	r25, 0x01	; 1
+     a8e:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("d = Print out Joystick Data\n\r");
+     a92:	87 e2       	ldi	r24, 0x27	; 39
+     a94:	93 e0       	ldi	r25, 0x03	; 3
+     a96:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			TransmitString("m = Main Menu\n\r");
+     a9a:	8e e4       	ldi	r24, 0x4E	; 78
+     a9c:	92 e0       	ldi	r25, 0x02	; 2
+     a9e:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+			printEmpty(10);
+     aa2:	8a e0       	ldi	r24, 0x0A	; 10
+     aa4:	90 e0       	ldi	r25, 0x00	; 0
+     aa6:	0e 94 94 04 	call	0x928	; 0x928 <printEmpty>
+     aaa:	08 95       	ret
+
+00000aac <__vector_9>:
+// ===========================================================
+
+/*************************************************************************
+Interrupt Subroutines (ISRs)
+**************************************************************************/
+ISR(PCINT0_vect){
+     aac:	1f 92       	push	r1
+     aae:	0f 92       	push	r0
+     ab0:	0f b6       	in	r0, 0x3f	; 63
+     ab2:	0f 92       	push	r0
+     ab4:	11 24       	eor	r1, r1
+     ab6:	2f 93       	push	r18
+     ab8:	3f 93       	push	r19
+     aba:	4f 93       	push	r20
+     abc:	5f 93       	push	r21
+     abe:	6f 93       	push	r22
+     ac0:	7f 93       	push	r23
+     ac2:	8f 93       	push	r24
+     ac4:	9f 93       	push	r25
+     ac6:	af 93       	push	r26
+     ac8:	bf 93       	push	r27
+     aca:	ef 93       	push	r30
+     acc:	ff 93       	push	r31
+	if(!check(PINB,4)){
+     ace:	1c 99       	sbic	0x03, 4	; 3
+     ad0:	08 c0       	rjmp	.+16     	; 0xae2 <__vector_9+0x36>
+		LED_yellow_toggle();
+     ad2:	8b b1       	in	r24, 0x0b	; 11
+     ad4:	90 e4       	ldi	r25, 0x40	; 64
+     ad6:	89 27       	eor	r24, r25
+     ad8:	8b b9       	out	0x0b, r24	; 11
+		// a wireless packet was received
+		RFreceive((char*) &incoming);
+     ada:	8e ec       	ldi	r24, 0xCE	; 206
+     adc:	97 e0       	ldi	r25, 0x07	; 7
+     ade:	0e 94 a3 03 	call	0x746	; 0x746 <RFreceive>
+	}
+}
+     ae2:	ff 91       	pop	r31
+     ae4:	ef 91       	pop	r30
+     ae6:	bf 91       	pop	r27
+     ae8:	af 91       	pop	r26
+     aea:	9f 91       	pop	r25
+     aec:	8f 91       	pop	r24
+     aee:	7f 91       	pop	r23
+     af0:	6f 91       	pop	r22
+     af2:	5f 91       	pop	r21
+     af4:	4f 91       	pop	r20
+     af6:	3f 91       	pop	r19
+     af8:	2f 91       	pop	r18
+     afa:	0f 90       	pop	r0
+     afc:	0f be       	out	0x3f, r0	; 63
+     afe:	0f 90       	pop	r0
+     b00:	1f 90       	pop	r1
+     b02:	18 95       	reti
+
+00000b04 <init_wyvern>:
+Input:    None
+Returns:  None
+**************************************************************************/
+void init_wyvern(void){
+	// Setup Wyvern Systems
+	init_uc();		//UC
+     b04:	0e 94 7f 00 	call	0xfe	; 0xfe <init_uc>
+	init_uart();	// Serial  Communication
+     b08:	0e 94 93 00 	call	0x126	; 0x126 <init_uart>
+	//init_pwm();		// Motor PWM Control
+	init_adc();			// ADC
+     b0c:	0e 94 06 04 	call	0x80c	; 0x80c <init_adc>
+	// Setup Wyvern RF
+	RFsetup(local,max(sizeof(packet_com_t),sizeof(packet_inf_t)));
+     b10:	8b eb       	ldi	r24, 0xBB	; 187
+     b12:	93 e0       	ldi	r25, 0x03	; 3
+     b14:	67 e1       	ldi	r22, 0x17	; 23
+     b16:	0e 94 bb 03 	call	0x776	; 0x776 <RFsetup>
+	set(PCICR,PCIE0); // enable pin-change interrupts
+     b1a:	80 91 68 00 	lds	r24, 0x0068
+     b1e:	81 60       	ori	r24, 0x01	; 1
+     b20:	80 93 68 00 	sts	0x0068, r24
+	PCMSK0 =0x00;
+     b24:	10 92 6b 00 	sts	0x006B, r1
+	set(PCMSK0, PCINT4); // demask PCINT4
+     b28:	80 91 6b 00 	lds	r24, 0x006B
+     b2c:	80 61       	ori	r24, 0x10	; 16
+     b2e:	80 93 6b 00 	sts	0x006B, r24
+	//set(TCCR0B,CS01);
+	//clear(TCCR0B,CS00);	// Timer0 Clock = System Clock/1024
+	//set(TIMSK0,TOIE0);	// Enable Timer0 Overflow Interrupt
+
+	// Enable Global Interrupts
+	sei();
+     b32:	78 94       	sei
+
+	// Force RF Interrupt (Pin Change Interrupt Channel 4) to run once
+	clear(PORTB,4);
+     b34:	2c 98       	cbi	0x05, 4	; 5
+	if(RFRXdataReady()){
+     b36:	0e 94 14 03 	call	0x628	; 0x628 <RFRXdataReady>
+     b3a:	89 2b       	or	r24, r25
+     b3c:	21 f0       	breq	.+8      	; 0xb46 <init_wyvern+0x42>
+     	RFreceive((char*) &incoming);
+     b3e:	8e ec       	ldi	r24, 0xCE	; 206
+     b40:	97 e0       	ldi	r25, 0x07	; 7
+     b42:	0e 94 a3 03 	call	0x746	; 0x746 <RFreceive>
+	}
+
+	incoming.battery = 150;
+     b46:	86 e9       	ldi	r24, 0x96	; 150
+     b48:	90 e0       	ldi	r25, 0x00	; 0
+     b4a:	90 93 d7 07 	sts	0x07D7, r25
+     b4e:	80 93 d6 07 	sts	0x07D6, r24
+}
+     b52:	08 95       	ret
+
+00000b54 <controllerTransmit>:
+Input:    None
+Returns:  None
+**************************************************************************/
+void controllerTransmit(void){
+	// LED_ucred_toggle();
+	RFtransmitUntil((char*) &outgoing,wyv00,1);
+     b54:	89 ef       	ldi	r24, 0xF9	; 249
+     b56:	97 e0       	ldi	r25, 0x07	; 7
+     b58:	60 ec       	ldi	r22, 0xC0	; 192
+     b5a:	73 e0       	ldi	r23, 0x03	; 3
+     b5c:	41 e0       	ldi	r20, 0x01	; 1
+     b5e:	0e 94 73 02 	call	0x4e6	; 0x4e6 <RFtransmitUntil>
+}
+     b62:	08 95       	ret
+
+00000b64 <getJoystick>:
+Returns:  None
+**************************************************************************/
+void getJoystick(void){
+	int adcval;
+	// get right X (Roll) F1
+	adcval = 512-get_adc(1);
+     b64:	81 e0       	ldi	r24, 0x01	; 1
+     b66:	90 e0       	ldi	r25, 0x00	; 0
+     b68:	0e 94 16 04 	call	0x82c	; 0x82c <get_adc>
+     b6c:	20 e0       	ldi	r18, 0x00	; 0
+     b6e:	32 e0       	ldi	r19, 0x02	; 2
+     b70:	28 1b       	sub	r18, r24
+     b72:	39 0b       	sbc	r19, r25
+	if(adcval > -4 && adcval <4){
+     b74:	c9 01       	movw	r24, r18
+     b76:	03 96       	adiw	r24, 0x03	; 3
+     b78:	07 97       	sbiw	r24, 0x07	; 7
+     b7a:	28 f4       	brcc	.+10     	; 0xb86 <getJoystick+0x22>
+		outgoing.roll = 0;
+     b7c:	10 92 fd 07 	sts	0x07FD, r1
+     b80:	10 92 fc 07 	sts	0x07FC, r1
+     b84:	04 c0       	rjmp	.+8      	; 0xb8e <getJoystick+0x2a>
+	}else{
+		outgoing.roll = adcval;
+     b86:	30 93 fd 07 	sts	0x07FD, r19
+     b8a:	20 93 fc 07 	sts	0x07FC, r18
+	}
+	
+	// get right Y (Pitch) F0
+	adcval = get_adc(0) - 512;
+     b8e:	80 e0       	ldi	r24, 0x00	; 0
+     b90:	90 e0       	ldi	r25, 0x00	; 0
+     b92:	0e 94 16 04 	call	0x82c	; 0x82c <get_adc>
+     b96:	9c 01       	movw	r18, r24
+     b98:	20 50       	subi	r18, 0x00	; 0
+     b9a:	32 40       	sbci	r19, 0x02	; 2
+	if(adcval > -4 && adcval <4){
+     b9c:	c9 01       	movw	r24, r18
+     b9e:	03 96       	adiw	r24, 0x03	; 3
+     ba0:	07 97       	sbiw	r24, 0x07	; 7
+     ba2:	28 f4       	brcc	.+10     	; 0xbae <getJoystick+0x4a>
+		outgoing.pitch = 0;
+     ba4:	10 92 fb 07 	sts	0x07FB, r1
+     ba8:	10 92 fa 07 	sts	0x07FA, r1
+     bac:	04 c0       	rjmp	.+8      	; 0xbb6 <getJoystick+0x52>
+	}else{
+		outgoing.pitch = adcval;
+     bae:	30 93 fb 07 	sts	0x07FB, r19
+     bb2:	20 93 fa 07 	sts	0x07FA, r18
+	}
+
+	// get left X (Yaw) F5
+	adcval = 512-get_adc(5);
+     bb6:	85 e0       	ldi	r24, 0x05	; 5
+     bb8:	90 e0       	ldi	r25, 0x00	; 0
+     bba:	0e 94 16 04 	call	0x82c	; 0x82c <get_adc>
+     bbe:	20 e0       	ldi	r18, 0x00	; 0
+     bc0:	32 e0       	ldi	r19, 0x02	; 2
+     bc2:	28 1b       	sub	r18, r24
+     bc4:	39 0b       	sbc	r19, r25
+	if(adcval > -4 && adcval <4){
+     bc6:	c9 01       	movw	r24, r18
+     bc8:	03 96       	adiw	r24, 0x03	; 3
+     bca:	07 97       	sbiw	r24, 0x07	; 7
+     bcc:	28 f4       	brcc	.+10     	; 0xbd8 <getJoystick+0x74>
+		outgoing.yaw = 0;
+     bce:	10 92 ff 07 	sts	0x07FF, r1
+     bd2:	10 92 fe 07 	sts	0x07FE, r1
+     bd6:	04 c0       	rjmp	.+8      	; 0xbe0 <getJoystick+0x7c>
+	}else{
+		outgoing.yaw = adcval;
+     bd8:	30 93 ff 07 	sts	0x07FF, r19
+     bdc:	20 93 fe 07 	sts	0x07FE, r18
+	}
+	// get left Y (Throttle) F4
+	adcval = get_adc(4);
+     be0:	84 e0       	ldi	r24, 0x04	; 4
+     be2:	90 e0       	ldi	r25, 0x00	; 0
+     be4:	0e 94 16 04 	call	0x82c	; 0x82c <get_adc>
+     be8:	9c 01       	movw	r18, r24
+	if(adcval > 512){
+     bea:	82 e0       	ldi	r24, 0x02	; 2
+     bec:	21 30       	cpi	r18, 0x01	; 1
+     bee:	38 07       	cpc	r19, r24
+     bf0:	3c f0       	brlt	.+14     	; 0xc00 <getJoystick+0x9c>
+		outgoing.throttle = adcval-512;
+     bf2:	20 50       	subi	r18, 0x00	; 0
+     bf4:	32 40       	sbci	r19, 0x02	; 2
+     bf6:	30 93 01 08 	sts	0x0801, r19
+     bfa:	20 93 00 08 	sts	0x0800, r18
+     bfe:	08 95       	ret
+	}else{
+		outgoing.throttle = 0;
+     c00:	10 92 01 08 	sts	0x0801, r1
+     c04:	10 92 00 08 	sts	0x0800, r1
+     c08:	08 95       	ret
+
+00000c0a <TransmitInt>:
+Purpose:  Transmit integer to UART
+Input:    Integer to be transmitted
+Returns:
+**************************************************************************/
+void TransmitInt(int i )
+{
+     c0a:	0f 93       	push	r16
+     c0c:	1f 93       	push	r17
+     c0e:	df 93       	push	r29
+     c10:	cf 93       	push	r28
+     c12:	cd b7       	in	r28, 0x3d	; 61
+     c14:	de b7       	in	r29, 0x3e	; 62
+     c16:	28 97       	sbiw	r28, 0x08	; 8
+     c18:	0f b6       	in	r0, 0x3f	; 63
+     c1a:	f8 94       	cli
+     c1c:	de bf       	out	0x3e, r29	; 62
+     c1e:	0f be       	out	0x3f, r0	; 63
+     c20:	cd bf       	out	0x3d, r28	; 61
+	char s[8];
+	itoa(i,s,10);
+     c22:	8e 01       	movw	r16, r28
+     c24:	0f 5f       	subi	r16, 0xFF	; 255
+     c26:	1f 4f       	sbci	r17, 0xFF	; 255
+     c28:	b8 01       	movw	r22, r16
+     c2a:	4a e0       	ldi	r20, 0x0A	; 10
+     c2c:	50 e0       	ldi	r21, 0x00	; 0
+     c2e:	0e 94 d3 07 	call	0xfa6	; 0xfa6 <itoa>
+	TransmitString(s);
+     c32:	c8 01       	movw	r24, r16
+     c34:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+}
+     c38:	28 96       	adiw	r28, 0x08	; 8
+     c3a:	0f b6       	in	r0, 0x3f	; 63
+     c3c:	f8 94       	cli
+     c3e:	de bf       	out	0x3e, r29	; 62
+     c40:	0f be       	out	0x3f, r0	; 63
+     c42:	cd bf       	out	0x3d, r28	; 61
+     c44:	cf 91       	pop	r28
+     c46:	df 91       	pop	r29
+     c48:	1f 91       	pop	r17
+     c4a:	0f 91       	pop	r16
+     c4c:	08 95       	ret
+
+00000c4e <controllerCommand>:
+Purpose:  Commands to run on the Wyvern Controller
+Input:    Command characters
+Returns:  None
+**************************************************************************/
+void controllerCommand(char inputcommand){
+	switch(menuScreen){
+     c4e:	90 91 c5 03 	lds	r25, 0x03C5
+     c52:	92 36       	cpi	r25, 0x62	; 98
+     c54:	09 f4       	brne	.+2      	; 0xc58 <controllerCommand+0xa>
+     c56:	63 c0       	rjmp	.+198    	; 0xd1e <controllerCommand+0xd0>
+     c58:	93 36       	cpi	r25, 0x63	; 99
+     c5a:	20 f4       	brcc	.+8      	; 0xc64 <controllerCommand+0x16>
+     c5c:	91 36       	cpi	r25, 0x61	; 97
+     c5e:	09 f0       	breq	.+2      	; 0xc62 <controllerCommand+0x14>
+     c60:	27 c1       	rjmp	.+590    	; 0xeb0 <controllerCommand+0x262>
+     c62:	07 c0       	rjmp	.+14     	; 0xc72 <controllerCommand+0x24>
+     c64:	93 36       	cpi	r25, 0x63	; 99
+     c66:	09 f4       	brne	.+2      	; 0xc6a <controllerCommand+0x1c>
+     c68:	80 c0       	rjmp	.+256    	; 0xd6a <controllerCommand+0x11c>
+     c6a:	94 36       	cpi	r25, 0x64	; 100
+     c6c:	09 f0       	breq	.+2      	; 0xc70 <controllerCommand+0x22>
+     c6e:	20 c1       	rjmp	.+576    	; 0xeb0 <controllerCommand+0x262>
+     c70:	d8 c0       	rjmp	.+432    	; 0xe22 <controllerCommand+0x1d4>
+		case 'a': // Menu Screen A (Main Menu)
+			switch(inputcommand){
+     c72:	8d 36       	cpi	r24, 0x6D	; 109
+     c74:	09 f4       	brne	.+2      	; 0xc78 <controllerCommand+0x2a>
+     c76:	4f c0       	rjmp	.+158    	; 0xd16 <controllerCommand+0xc8>
+     c78:	8e 36       	cpi	r24, 0x6E	; 110
+     c7a:	80 f4       	brcc	.+32     	; 0xc9c <controllerCommand+0x4e>
+     c7c:	87 36       	cpi	r24, 0x67	; 103
+     c7e:	09 f4       	brne	.+2      	; 0xc82 <controllerCommand+0x34>
+     c80:	dc c0       	rjmp	.+440    	; 0xe3a <controllerCommand+0x1ec>
+     c82:	88 36       	cpi	r24, 0x68	; 104
+     c84:	38 f4       	brcc	.+14     	; 0xc94 <controllerCommand+0x46>
+     c86:	80 32       	cpi	r24, 0x20	; 32
+     c88:	09 f4       	brne	.+2      	; 0xc8c <controllerCommand+0x3e>
+     c8a:	d7 c0       	rjmp	.+430    	; 0xe3a <controllerCommand+0x1ec>
+     c8c:	84 36       	cpi	r24, 0x64	; 100
+     c8e:	09 f0       	breq	.+2      	; 0xc92 <controllerCommand+0x44>
+     c90:	0f c1       	rjmp	.+542    	; 0xeb0 <controllerCommand+0x262>
+     c92:	3a c0       	rjmp	.+116    	; 0xd08 <controllerCommand+0xba>
+     c94:	8a 36       	cpi	r24, 0x6A	; 106
+     c96:	09 f0       	breq	.+2      	; 0xc9a <controllerCommand+0x4c>
+     c98:	0b c1       	rjmp	.+534    	; 0xeb0 <controllerCommand+0x262>
+     c9a:	3f c0       	rjmp	.+126    	; 0xd1a <controllerCommand+0xcc>
+     c9c:	82 37       	cpi	r24, 0x72	; 114
+     c9e:	09 f4       	brne	.+2      	; 0xca2 <controllerCommand+0x54>
+     ca0:	cc c0       	rjmp	.+408    	; 0xe3a <controllerCommand+0x1ec>
+     ca2:	83 37       	cpi	r24, 0x73	; 115
+     ca4:	09 f4       	brne	.+2      	; 0xca8 <controllerCommand+0x5a>
+     ca6:	c9 c0       	rjmp	.+402    	; 0xe3a <controllerCommand+0x1ec>
+     ca8:	80 37       	cpi	r24, 0x70	; 112
+     caa:	09 f0       	breq	.+2      	; 0xcae <controllerCommand+0x60>
+     cac:	01 c1       	rjmp	.+514    	; 0xeb0 <controllerCommand+0x262>
+     cae:	5b c0       	rjmp	.+182    	; 0xd66 <controllerCommand+0x118>
+					outgoing.command = inputcommand;
+					break;
+				case 'd': // Print out telemetry data
+					// PRINT OUT VALUES CONTINUOUSLY
+					while(!(DataInReceiveBuffer())){
+							TransmitString("Yaw = ");
+     cb0:	85 e4       	ldi	r24, 0x45	; 69
+     cb2:	93 e0       	ldi	r25, 0x03	; 3
+     cb4:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+							TransmitInt(incoming.yaw);
+     cb8:	80 91 ce 07 	lds	r24, 0x07CE
+     cbc:	90 91 cf 07 	lds	r25, 0x07CF
+     cc0:	0e 94 05 06 	call	0xc0a	; 0xc0a <TransmitInt>
+							TransmitString("   Pitch = ");
+     cc4:	8c e4       	ldi	r24, 0x4C	; 76
+     cc6:	93 e0       	ldi	r25, 0x03	; 3
+     cc8:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+							TransmitInt(incoming.pitch);
+     ccc:	80 91 d0 07 	lds	r24, 0x07D0
+     cd0:	90 91 d1 07 	lds	r25, 0x07D1
+     cd4:	0e 94 05 06 	call	0xc0a	; 0xc0a <TransmitInt>
+							TransmitString("   Roll = ");
+     cd8:	88 e5       	ldi	r24, 0x58	; 88
+     cda:	93 e0       	ldi	r25, 0x03	; 3
+     cdc:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+							TransmitInt(incoming.roll);
+     ce0:	80 91 d2 07 	lds	r24, 0x07D2
+     ce4:	90 91 d3 07 	lds	r25, 0x07D3
+     ce8:	0e 94 05 06 	call	0xc0a	; 0xc0a <TransmitInt>
+							TransmitString("   Battery = ");
+     cec:	83 e6       	ldi	r24, 0x63	; 99
+     cee:	93 e0       	ldi	r25, 0x03	; 3
+     cf0:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+							TransmitInt(incoming.battery);
+     cf4:	80 91 d6 07 	lds	r24, 0x07D6
+     cf8:	90 91 d7 07 	lds	r25, 0x07D7
+     cfc:	0e 94 05 06 	call	0xc0a	; 0xc0a <TransmitInt>
+							TransmitString("\n\r");
+     d00:	80 e0       	ldi	r24, 0x00	; 0
+     d02:	91 e0       	ldi	r25, 0x01	; 1
+     d04:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+Input:
+Returns:  Return 0 (FALSE) if Rx buffer is empty
+**************************************************************************/
+unsigned char DataInReceiveBuffer(void)
+{
+	return ( UART_RxHead != UART_RxTail );
+     d08:	90 91 c9 05 	lds	r25, 0x05C9
+     d0c:	80 91 ca 05 	lds	r24, 0x05CA
+					//TransmitString("Toggling Green LED");
+					outgoing.command = inputcommand;
+					break;
+				case 'd': // Print out telemetry data
+					// PRINT OUT VALUES CONTINUOUSLY
+					while(!(DataInReceiveBuffer())){
+     d10:	98 17       	cp	r25, r24
+     d12:	71 f2       	breq	.-100    	; 0xcb0 <controllerCommand+0x62>
+     d14:	08 95       	ret
+							TransmitInt(incoming.battery);
+							TransmitString("\n\r");
+					}
+					break;
+				case 'm': // Go to Motor Menu (MenuScreen = 'b');
+					menuScreen = 'b';
+     d16:	82 e6       	ldi	r24, 0x62	; 98
+     d18:	81 c0       	rjmp	.+258    	; 0xe1c <controllerCommand+0x1ce>
+					break;
+				case 'p': // Go to PID Menu (MenuScreen = 'c');
+					menuScreen = 'c';
+					break;
+				case 'j': // Go to Joystick Menu (MenuScreen = 'd');
+					menuScreen = 'd';
+     d1a:	84 e6       	ldi	r24, 0x64	; 100
+     d1c:	7f c0       	rjmp	.+254    	; 0xe1c <controllerCommand+0x1ce>
+				default:
+					break;
+			}
+			break;
+		case 'b': // Menu Screen B (Motor Menu)
+			switch(inputcommand){
+     d1e:	84 33       	cpi	r24, 0x34	; 52
+     d20:	09 f4       	brne	.+2      	; 0xd24 <controllerCommand+0xd6>
+     d22:	8b c0       	rjmp	.+278    	; 0xe3a <controllerCommand+0x1ec>
+     d24:	85 33       	cpi	r24, 0x35	; 53
+     d26:	98 f4       	brcc	.+38     	; 0xd4e <controllerCommand+0x100>
+     d28:	81 33       	cpi	r24, 0x31	; 49
+     d2a:	09 f4       	brne	.+2      	; 0xd2e <controllerCommand+0xe0>
+     d2c:	86 c0       	rjmp	.+268    	; 0xe3a <controllerCommand+0x1ec>
+     d2e:	82 33       	cpi	r24, 0x32	; 50
+     d30:	38 f4       	brcc	.+14     	; 0xd40 <controllerCommand+0xf2>
+     d32:	80 32       	cpi	r24, 0x20	; 32
+     d34:	09 f4       	brne	.+2      	; 0xd38 <controllerCommand+0xea>
+     d36:	81 c0       	rjmp	.+258    	; 0xe3a <controllerCommand+0x1ec>
+     d38:	8d 32       	cpi	r24, 0x2D	; 45
+     d3a:	09 f0       	breq	.+2      	; 0xd3e <controllerCommand+0xf0>
+     d3c:	b9 c0       	rjmp	.+370    	; 0xeb0 <controllerCommand+0x262>
+     d3e:	7d c0       	rjmp	.+250    	; 0xe3a <controllerCommand+0x1ec>
+     d40:	82 33       	cpi	r24, 0x32	; 50
+     d42:	09 f4       	brne	.+2      	; 0xd46 <controllerCommand+0xf8>
+     d44:	7a c0       	rjmp	.+244    	; 0xe3a <controllerCommand+0x1ec>
+     d46:	83 33       	cpi	r24, 0x33	; 51
+     d48:	09 f0       	breq	.+2      	; 0xd4c <controllerCommand+0xfe>
+     d4a:	b2 c0       	rjmp	.+356    	; 0xeb0 <controllerCommand+0x262>
+     d4c:	76 c0       	rjmp	.+236    	; 0xe3a <controllerCommand+0x1ec>
+     d4e:	80 37       	cpi	r24, 0x70	; 112
+     d50:	51 f0       	breq	.+20     	; 0xd66 <controllerCommand+0x118>
+     d52:	81 37       	cpi	r24, 0x71	; 113
+     d54:	08 f0       	brcs	.+2      	; 0xd58 <controllerCommand+0x10a>
+     d56:	6f c0       	rjmp	.+222    	; 0xe36 <controllerCommand+0x1e8>
+     d58:	8d 33       	cpi	r24, 0x3D	; 61
+     d5a:	09 f4       	brne	.+2      	; 0xd5e <controllerCommand+0x110>
+     d5c:	6e c0       	rjmp	.+220    	; 0xe3a <controllerCommand+0x1ec>
+     d5e:	8d 36       	cpi	r24, 0x6D	; 109
+     d60:	09 f0       	breq	.+2      	; 0xd64 <controllerCommand+0x116>
+     d62:	a6 c0       	rjmp	.+332    	; 0xeb0 <controllerCommand+0x262>
+     d64:	5a c0       	rjmp	.+180    	; 0xe1a <controllerCommand+0x1cc>
+					break;
+				case 'm': // Return to Menu Screen 'a' (Main Menu)
+					menuScreen = 'a';
+					break;
+				case 'p': // Go to Menu Screen 'c' (PID Menu)
+					menuScreen = 'c';
+     d66:	83 e6       	ldi	r24, 0x63	; 99
+     d68:	59 c0       	rjmp	.+178    	; 0xe1c <controllerCommand+0x1ce>
+				default:
+					break;
+			}
+			break;
+		case 'c': // Menu Screen C (PID Menu)
+			switch(inputcommand){
+     d6a:	8c 36       	cpi	r24, 0x6C	; 108
+     d6c:	09 f4       	brne	.+2      	; 0xd70 <controllerCommand+0x122>
+     d6e:	65 c0       	rjmp	.+202    	; 0xe3a <controllerCommand+0x1ec>
+     d70:	8d 36       	cpi	r24, 0x6D	; 109
+     d72:	b0 f4       	brcc	.+44     	; 0xda0 <controllerCommand+0x152>
+     d74:	84 36       	cpi	r24, 0x64	; 100
+     d76:	09 f4       	brne	.+2      	; 0xd7a <controllerCommand+0x12c>
+     d78:	49 c0       	rjmp	.+146    	; 0xe0c <controllerCommand+0x1be>
+     d7a:	85 36       	cpi	r24, 0x65	; 101
+     d7c:	50 f4       	brcc	.+20     	; 0xd92 <controllerCommand+0x144>
+     d7e:	8d 32       	cpi	r24, 0x2D	; 45
+     d80:	09 f4       	brne	.+2      	; 0xd84 <controllerCommand+0x136>
+     d82:	5b c0       	rjmp	.+182    	; 0xe3a <controllerCommand+0x1ec>
+     d84:	8d 33       	cpi	r24, 0x3D	; 61
+     d86:	09 f4       	brne	.+2      	; 0xd8a <controllerCommand+0x13c>
+     d88:	58 c0       	rjmp	.+176    	; 0xe3a <controllerCommand+0x1ec>
+     d8a:	80 32       	cpi	r24, 0x20	; 32
+     d8c:	09 f0       	breq	.+2      	; 0xd90 <controllerCommand+0x142>
+     d8e:	90 c0       	rjmp	.+288    	; 0xeb0 <controllerCommand+0x262>
+     d90:	19 c0       	rjmp	.+50     	; 0xdc4 <controllerCommand+0x176>
+     d92:	89 36       	cpi	r24, 0x69	; 105
+     d94:	09 f4       	brne	.+2      	; 0xd98 <controllerCommand+0x14a>
+     d96:	51 c0       	rjmp	.+162    	; 0xe3a <controllerCommand+0x1ec>
+     d98:	8b 36       	cpi	r24, 0x6B	; 107
+     d9a:	09 f0       	breq	.+2      	; 0xd9e <controllerCommand+0x150>
+     d9c:	89 c0       	rjmp	.+274    	; 0xeb0 <controllerCommand+0x262>
+     d9e:	4d c0       	rjmp	.+154    	; 0xe3a <controllerCommand+0x1ec>
+     da0:	80 37       	cpi	r24, 0x70	; 112
+     da2:	09 f4       	brne	.+2      	; 0xda6 <controllerCommand+0x158>
+     da4:	4a c0       	rjmp	.+148    	; 0xe3a <controllerCommand+0x1ec>
+     da6:	81 37       	cpi	r24, 0x71	; 113
+     da8:	30 f4       	brcc	.+12     	; 0xdb6 <controllerCommand+0x168>
+     daa:	8d 36       	cpi	r24, 0x6D	; 109
+     dac:	b1 f1       	breq	.+108    	; 0xe1a <controllerCommand+0x1cc>
+     dae:	8f 36       	cpi	r24, 0x6F	; 111
+     db0:	09 f0       	breq	.+2      	; 0xdb4 <controllerCommand+0x166>
+     db2:	7e c0       	rjmp	.+252    	; 0xeb0 <controllerCommand+0x262>
+     db4:	42 c0       	rjmp	.+132    	; 0xe3a <controllerCommand+0x1ec>
+     db6:	83 37       	cpi	r24, 0x73	; 115
+     db8:	09 f4       	brne	.+2      	; 0xdbc <controllerCommand+0x16e>
+     dba:	3f c0       	rjmp	.+126    	; 0xe3a <controllerCommand+0x1ec>
+     dbc:	85 37       	cpi	r24, 0x75	; 117
+     dbe:	09 f0       	breq	.+2      	; 0xdc2 <controllerCommand+0x174>
+     dc0:	77 c0       	rjmp	.+238    	; 0xeb0 <controllerCommand+0x262>
+     dc2:	3b c0       	rjmp	.+118    	; 0xe3a <controllerCommand+0x1ec>
+				case 's' : // Start Quadrotor
+					outgoing.command = inputcommand;
+					break;
+				case ' ': // Emergency Stop
+					outgoing.command = inputcommand;
+     dc4:	80 e2       	ldi	r24, 0x20	; 32
+     dc6:	39 c0       	rjmp	.+114    	; 0xe3a <controllerCommand+0x1ec>
+					outgoing.command = inputcommand;
+					break;
+				case 'd': // Print out Gain Data
+					// PRINT OUT VALUES CONTINUOUSLY
+					while(!(DataInReceiveBuffer())){
+							TransmitString("P_gyr = ");
+     dc8:	81 e7       	ldi	r24, 0x71	; 113
+     dca:	93 e0       	ldi	r25, 0x03	; 3
+     dcc:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+							TransmitInt(incoming.p);
+     dd0:	80 91 d8 07 	lds	r24, 0x07D8
+     dd4:	90 91 d9 07 	lds	r25, 0x07D9
+     dd8:	0e 94 05 06 	call	0xc0a	; 0xc0a <TransmitInt>
+							TransmitString("   D_gyr = ");
+     ddc:	8a e7       	ldi	r24, 0x7A	; 122
+     dde:	93 e0       	ldi	r25, 0x03	; 3
+     de0:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+							TransmitInt(incoming.d);
+     de4:	80 91 dc 07 	lds	r24, 0x07DC
+     de8:	90 91 dd 07 	lds	r25, 0x07DD
+     dec:	0e 94 05 06 	call	0xc0a	; 0xc0a <TransmitInt>
+							TransmitString("   PID BAND = ");
+     df0:	86 e8       	ldi	r24, 0x86	; 134
+     df2:	93 e0       	ldi	r25, 0x03	; 3
+     df4:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+							TransmitInt(incoming.pidband);
+     df8:	80 91 de 07 	lds	r24, 0x07DE
+     dfc:	90 91 df 07 	lds	r25, 0x07DF
+     e00:	0e 94 05 06 	call	0xc0a	; 0xc0a <TransmitInt>
+							TransmitString("\n\r");
+     e04:	80 e0       	ldi	r24, 0x00	; 0
+     e06:	91 e0       	ldi	r25, 0x01	; 1
+     e08:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+     e0c:	90 91 c9 05 	lds	r25, 0x05C9
+     e10:	80 91 ca 05 	lds	r24, 0x05CA
+				case 'k':
+					outgoing.command = inputcommand;
+					break;
+				case 'd': // Print out Gain Data
+					// PRINT OUT VALUES CONTINUOUSLY
+					while(!(DataInReceiveBuffer())){
+     e14:	98 17       	cp	r25, r24
+     e16:	c1 f2       	breq	.-80     	; 0xdc8 <controllerCommand+0x17a>
+     e18:	08 95       	ret
+							TransmitInt(incoming.pidband);
+							TransmitString("\n\r");
+					}
+					break;
+				case 'm': // Return to Menu Screen 'a' (Main Menu)
+					menuScreen = 'a';
+     e1a:	81 e6       	ldi	r24, 0x61	; 97
+     e1c:	80 93 c5 03 	sts	0x03C5, r24
+     e20:	08 95       	ret
+				default:
+					break;
+			}
+			break;
+		case 'd': // Menu Screen D (Joystick Menu)
+			switch(inputcommand){
+     e22:	8d 36       	cpi	r24, 0x6D	; 109
+     e24:	09 f4       	brne	.+2      	; 0xe28 <controllerCommand+0x1da>
+     e26:	41 c0       	rjmp	.+130    	; 0xeaa <controllerCommand+0x25c>
+     e28:	8e 36       	cpi	r24, 0x6E	; 110
+     e2a:	28 f4       	brcc	.+10     	; 0xe36 <controllerCommand+0x1e8>
+     e2c:	80 32       	cpi	r24, 0x20	; 32
+     e2e:	29 f0       	breq	.+10     	; 0xe3a <controllerCommand+0x1ec>
+     e30:	84 36       	cpi	r24, 0x64	; 100
+     e32:	f1 f5       	brne	.+124    	; 0xeb0 <controllerCommand+0x262>
+     e34:	33 c0       	rjmp	.+102    	; 0xe9c <controllerCommand+0x24e>
+     e36:	83 37       	cpi	r24, 0x73	; 115
+     e38:	d9 f5       	brne	.+118    	; 0xeb0 <controllerCommand+0x262>
+				case 's': // Start Quadrotor
+					outgoing.command = inputcommand;
+					break;
+				case ' ': // Emergency Stop
+					outgoing.command = inputcommand;
+     e3a:	80 93 f9 07 	sts	0x07F9, r24
+     e3e:	08 95       	ret
+					break;
+				case 'd': // Print out Joystick Data
+					// PRINT OUT VALUES CONTINUOUSLY
+					while(!(DataInReceiveBuffer())){
+							getJoystick();
+     e40:	0e 94 b2 05 	call	0xb64	; 0xb64 <getJoystick>
+							TransmitString("Pitch = ");
+     e44:	85 e9       	ldi	r24, 0x95	; 149
+     e46:	93 e0       	ldi	r25, 0x03	; 3
+     e48:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+							TransmitInt(outgoing.pitch);
+     e4c:	80 91 fa 07 	lds	r24, 0x07FA
+     e50:	90 91 fb 07 	lds	r25, 0x07FB
+     e54:	0e 94 05 06 	call	0xc0a	; 0xc0a <TransmitInt>
+							TransmitString("   Roll = ");
+     e58:	88 e5       	ldi	r24, 0x58	; 88
+     e5a:	93 e0       	ldi	r25, 0x03	; 3
+     e5c:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+							TransmitInt(outgoing.roll);
+     e60:	80 91 fc 07 	lds	r24, 0x07FC
+     e64:	90 91 fd 07 	lds	r25, 0x07FD
+     e68:	0e 94 05 06 	call	0xc0a	; 0xc0a <TransmitInt>
+							TransmitString("   Yaw = ");
+     e6c:	8e e9       	ldi	r24, 0x9E	; 158
+     e6e:	93 e0       	ldi	r25, 0x03	; 3
+     e70:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+							TransmitInt(outgoing.yaw);
+     e74:	80 91 fe 07 	lds	r24, 0x07FE
+     e78:	90 91 ff 07 	lds	r25, 0x07FF
+     e7c:	0e 94 05 06 	call	0xc0a	; 0xc0a <TransmitInt>
+							TransmitString("   Throttle = ");
+     e80:	88 ea       	ldi	r24, 0xA8	; 168
+     e82:	93 e0       	ldi	r25, 0x03	; 3
+     e84:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+							TransmitInt(outgoing.throttle);
+     e88:	80 91 00 08 	lds	r24, 0x0800
+     e8c:	90 91 01 08 	lds	r25, 0x0801
+     e90:	0e 94 05 06 	call	0xc0a	; 0xc0a <TransmitInt>
+							TransmitString("\n\r");
+     e94:	80 e0       	ldi	r24, 0x00	; 0
+     e96:	91 e0       	ldi	r25, 0x01	; 1
+     e98:	0e 94 20 01 	call	0x240	; 0x240 <TransmitString>
+     e9c:	90 91 c9 05 	lds	r25, 0x05C9
+     ea0:	80 91 ca 05 	lds	r24, 0x05CA
+				case ' ': // Emergency Stop
+					outgoing.command = inputcommand;
+					break;
+				case 'd': // Print out Joystick Data
+					// PRINT OUT VALUES CONTINUOUSLY
+					while(!(DataInReceiveBuffer())){
+     ea4:	98 17       	cp	r25, r24
+     ea6:	61 f2       	breq	.-104    	; 0xe40 <controllerCommand+0x1f2>
+     ea8:	08 95       	ret
+							TransmitInt(outgoing.throttle);
+							TransmitString("\n\r");
+					}
+					break;
+				case 'm': // Return to Menu Screen 'a' (Main Menu)
+					menuScreen = 'a';
+     eaa:	81 e6       	ldi	r24, 0x61	; 97
+     eac:	80 93 c5 03 	sts	0x03C5, r24
+     eb0:	08 95       	ret
+
+00000eb2 <main>:
+*/
+
+/*************************************************************************
+Function: main()
+**************************************************************************/
+int main(void){
+     eb2:	df 92       	push	r13
+     eb4:	ef 92       	push	r14
+     eb6:	ff 92       	push	r15
+     eb8:	0f 93       	push	r16
+     eba:	1f 93       	push	r17
+     ebc:	cf 93       	push	r28
+     ebe:	df 93       	push	r29
+	init_wyvern();
+     ec0:	0e 94 82 05 	call	0xb04	; 0xb04 <init_wyvern>
+	LED_green_on();
+     ec4:	5d 98       	cbi	0x0b, 5	; 11
+	LED_ucgreen_on();
+     ec6:	72 98       	cbi	0x0e, 2	; 14
+	char input;
+	menuScreen = 'a';
+     ec8:	81 e6       	ldi	r24, 0x61	; 97
+     eca:	80 93 c5 03 	sts	0x03C5, r24
+	for( ; ; ){
+		printMenu();
+		input = '0';
+		outgoing.command = input;
+     ece:	e0 e3       	ldi	r30, 0x30	; 48
+     ed0:	de 2e       	mov	r13, r30
+     ed2:	c0 e1       	ldi	r28, 0x10	; 16
+     ed4:	d7 e2       	ldi	r29, 0x27	; 39
+		getJoystick();
+		controllerCommand(input);
+		controllerTransmit();
+		_delay_ms(5);
+	if(incoming.battery < 100){
+			LED_red_toggle();
+     ed6:	70 e1       	ldi	r23, 0x10	; 16
+     ed8:	e7 2e       	mov	r14, r23
+			LED_ucred_toggle();
+     eda:	00 e4       	ldi	r16, 0x40	; 64
+			LED_blue_toggle();
+			LED_yellow_toggle();
+			LED_green_toggle();
+     edc:	60 e2       	ldi	r22, 0x20	; 32
+     ede:	f6 2e       	mov	r15, r22
+	LED_green_on();
+	LED_ucgreen_on();
+	char input;
+	menuScreen = 'a';
+	for( ; ; ){
+		printMenu();
+     ee0:	0e 94 a9 04 	call	0x952	; 0x952 <printMenu>
+		input = '0';
+		outgoing.command = input;
+     ee4:	d0 92 f9 07 	sts	0x07F9, r13
+     ee8:	90 91 c9 05 	lds	r25, 0x05C9
+     eec:	80 91 ca 05 	lds	r24, 0x05CA
+		if(DataInReceiveBuffer()){
+     ef0:	98 17       	cp	r25, r24
+     ef2:	11 f4       	brne	.+4      	; 0xef8 <main+0x46>
+     ef4:	10 e3       	ldi	r17, 0x30	; 48
+     ef6:	0f c0       	rjmp	.+30     	; 0xf16 <main+0x64>
+**************************************************************************/
+unsigned char ReceiveByte(void)
+{
+	unsigned char tmptail;
+	// Wait for incoming data
+	while ( UART_RxHead == UART_RxTail );
+     ef8:	90 91 c9 05 	lds	r25, 0x05C9
+     efc:	80 91 ca 05 	lds	r24, 0x05CA
+     f00:	98 17       	cp	r25, r24
+     f02:	d1 f3       	breq	.-12     	; 0xef8 <main+0x46>
+	// Calculate buffer index
+	tmptail = ( UART_RxTail + 1 ) & UART_RX_BUFFER_MASK;
+     f04:	e0 91 ca 05 	lds	r30, 0x05CA
+     f08:	ef 5f       	subi	r30, 0xFF	; 255
+	// Store new index
+	UART_RxTail = tmptail;
+     f0a:	e0 93 ca 05 	sts	0x05CA, r30
+	 // Return data
+	return UART_RxBuf[tmptail];
+     f0e:	f0 e0       	ldi	r31, 0x00	; 0
+     f10:	e7 53       	subi	r30, 0x37	; 55
+     f12:	fc 4f       	sbci	r31, 0xFC	; 252
+     f14:	10 81       	ld	r17, Z
+			input = ReceiveByte();
+		}
+		getJoystick();
+     f16:	0e 94 b2 05 	call	0xb64	; 0xb64 <getJoystick>
+		controllerCommand(input);
+     f1a:	81 2f       	mov	r24, r17
+     f1c:	0e 94 27 06 	call	0xc4e	; 0xc4e <controllerCommand>
+		controllerTransmit();
+     f20:	0e 94 aa 05 	call	0xb54	; 0xb54 <controllerTransmit>
+     f24:	ce 01       	movw	r24, r28
+     f26:	01 97       	sbiw	r24, 0x01	; 1
+     f28:	f1 f7       	brne	.-4      	; 0xf26 <main+0x74>
+		_delay_ms(5);
+	if(incoming.battery < 100){
+     f2a:	80 91 d6 07 	lds	r24, 0x07D6
+     f2e:	90 91 d7 07 	lds	r25, 0x07D7
+     f32:	84 36       	cpi	r24, 0x64	; 100
+     f34:	91 05       	cpc	r25, r1
+     f36:	a4 f6       	brge	.-88     	; 0xee0 <main+0x2e>
+			LED_red_toggle();
+     f38:	8b b1       	in	r24, 0x0b	; 11
+     f3a:	8e 25       	eor	r24, r14
+     f3c:	8b b9       	out	0x0b, r24	; 11
+			LED_ucred_toggle();
+     f3e:	8e b1       	in	r24, 0x0e	; 14
+     f40:	80 27       	eor	r24, r16
+     f42:	8e b9       	out	0x0e, r24	; 14
+			LED_blue_toggle();
+     f44:	8b b1       	in	r24, 0x0b	; 11
+     f46:	80 58       	subi	r24, 0x80	; 128
+     f48:	8b b9       	out	0x0b, r24	; 11
+			LED_yellow_toggle();
+     f4a:	8b b1       	in	r24, 0x0b	; 11
+     f4c:	80 27       	eor	r24, r16
+     f4e:	8b b9       	out	0x0b, r24	; 11
+			LED_green_toggle();
+     f50:	8b b1       	in	r24, 0x0b	; 11
+     f52:	8f 25       	eor	r24, r15
+     f54:	8b b9       	out	0x0b, r24	; 11
+     f56:	c4 cf       	rjmp	.-120    	; 0xee0 <main+0x2e>
+
+00000f58 <__divmodhi4>:
+     f58:	97 fb       	bst	r25, 7
+     f5a:	09 2e       	mov	r0, r25
+     f5c:	07 26       	eor	r0, r23
+     f5e:	0a d0       	rcall	.+20     	; 0xf74 <__divmodhi4_neg1>
+     f60:	77 fd       	sbrc	r23, 7
+     f62:	04 d0       	rcall	.+8      	; 0xf6c <__divmodhi4_neg2>
+     f64:	0c d0       	rcall	.+24     	; 0xf7e <__udivmodhi4>
+     f66:	06 d0       	rcall	.+12     	; 0xf74 <__divmodhi4_neg1>
+     f68:	00 20       	and	r0, r0
+     f6a:	1a f4       	brpl	.+6      	; 0xf72 <__divmodhi4_exit>
+
+00000f6c <__divmodhi4_neg2>:
+     f6c:	70 95       	com	r23
+     f6e:	61 95       	neg	r22
+     f70:	7f 4f       	sbci	r23, 0xFF	; 255
+
+00000f72 <__divmodhi4_exit>:
+     f72:	08 95       	ret
+
+00000f74 <__divmodhi4_neg1>:
+     f74:	f6 f7       	brtc	.-4      	; 0xf72 <__divmodhi4_exit>
+     f76:	90 95       	com	r25
+     f78:	81 95       	neg	r24
+     f7a:	9f 4f       	sbci	r25, 0xFF	; 255
+     f7c:	08 95       	ret
+
+00000f7e <__udivmodhi4>:
+     f7e:	aa 1b       	sub	r26, r26
+     f80:	bb 1b       	sub	r27, r27
+     f82:	51 e1       	ldi	r21, 0x11	; 17
+     f84:	07 c0       	rjmp	.+14     	; 0xf94 <__udivmodhi4_ep>
+
+00000f86 <__udivmodhi4_loop>:
+     f86:	aa 1f       	adc	r26, r26
+     f88:	bb 1f       	adc	r27, r27
+     f8a:	a6 17       	cp	r26, r22
+     f8c:	b7 07       	cpc	r27, r23
+     f8e:	10 f0       	brcs	.+4      	; 0xf94 <__udivmodhi4_ep>
+     f90:	a6 1b       	sub	r26, r22
+     f92:	b7 0b       	sbc	r27, r23
+
+00000f94 <__udivmodhi4_ep>:
+     f94:	88 1f       	adc	r24, r24
+     f96:	99 1f       	adc	r25, r25
+     f98:	5a 95       	dec	r21
+     f9a:	a9 f7       	brne	.-22     	; 0xf86 <__udivmodhi4_loop>
+     f9c:	80 95       	com	r24
+     f9e:	90 95       	com	r25
+     fa0:	bc 01       	movw	r22, r24
+     fa2:	cd 01       	movw	r24, r26
+     fa4:	08 95       	ret
+
+00000fa6 <itoa>:
+     fa6:	fb 01       	movw	r30, r22
+     fa8:	9f 01       	movw	r18, r30
+     faa:	e8 94       	clt
+     fac:	42 30       	cpi	r20, 0x02	; 2
+     fae:	c4 f0       	brlt	.+48     	; 0xfe0 <itoa+0x3a>
+     fb0:	45 32       	cpi	r20, 0x25	; 37
+     fb2:	b4 f4       	brge	.+44     	; 0xfe0 <itoa+0x3a>
+     fb4:	4a 30       	cpi	r20, 0x0A	; 10
+     fb6:	29 f4       	brne	.+10     	; 0xfc2 <itoa+0x1c>
+     fb8:	97 fb       	bst	r25, 7
+     fba:	1e f4       	brtc	.+6      	; 0xfc2 <itoa+0x1c>
+     fbc:	90 95       	com	r25
+     fbe:	81 95       	neg	r24
+     fc0:	9f 4f       	sbci	r25, 0xFF	; 255
+     fc2:	64 2f       	mov	r22, r20
+     fc4:	77 27       	eor	r23, r23
+     fc6:	0e 94 bf 07 	call	0xf7e	; 0xf7e <__udivmodhi4>
+     fca:	80 5d       	subi	r24, 0xD0	; 208
+     fcc:	8a 33       	cpi	r24, 0x3A	; 58
+     fce:	0c f0       	brlt	.+2      	; 0xfd2 <itoa+0x2c>
+     fd0:	89 5d       	subi	r24, 0xD9	; 217
+     fd2:	81 93       	st	Z+, r24
+     fd4:	cb 01       	movw	r24, r22
+     fd6:	00 97       	sbiw	r24, 0x00	; 0
+     fd8:	a1 f7       	brne	.-24     	; 0xfc2 <itoa+0x1c>
+     fda:	16 f4       	brtc	.+4      	; 0xfe0 <itoa+0x3a>
+     fdc:	5d e2       	ldi	r21, 0x2D	; 45
+     fde:	51 93       	st	Z+, r21
+     fe0:	10 82       	st	Z, r1
+     fe2:	c9 01       	movw	r24, r18
+     fe4:	0c 94 f4 07 	jmp	0xfe8	; 0xfe8 <strrev>
+
+00000fe8 <strrev>:
+     fe8:	dc 01       	movw	r26, r24
+     fea:	fc 01       	movw	r30, r24
+     fec:	67 2f       	mov	r22, r23
+     fee:	71 91       	ld	r23, Z+
+     ff0:	77 23       	and	r23, r23
+     ff2:	e1 f7       	brne	.-8      	; 0xfec <strrev+0x4>
+     ff4:	32 97       	sbiw	r30, 0x02	; 2
+     ff6:	04 c0       	rjmp	.+8      	; 0x1000 <strrev+0x18>
+     ff8:	7c 91       	ld	r23, X
+     ffa:	6d 93       	st	X+, r22
+     ffc:	70 83       	st	Z, r23
+     ffe:	62 91       	ld	r22, -Z
+    1000:	ae 17       	cp	r26, r30
+    1002:	bf 07       	cpc	r27, r31
+    1004:	c8 f3       	brcs	.-14     	; 0xff8 <strrev+0x10>
+    1006:	08 95       	ret
+
+00001008 <_exit>:
+    1008:	f8 94       	cli
+
+0000100a <__stop_program>:
+    100a:	ff cf       	rjmp	.-2      	; 0x100a <__stop_program>

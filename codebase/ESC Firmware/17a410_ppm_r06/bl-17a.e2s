@@ -1,0 +1,12 @@
+#------ START --------
+#Programming sequence
+SELECTDEVICE ATmega8
+CLEARBUFFER
+LOAD-PROG bl-17a.hex
+
+PAUSE "Connect and powerup the circuit, are you ready?"
+
+ERASE-ALL
+WRITE&VERIFY-ALL
+
+

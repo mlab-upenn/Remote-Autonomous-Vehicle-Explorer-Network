@@ -1,0 +1,21 @@
+function sID = openXBee()
+ports = instrhwinfo('serial');
+if length(ports.AvailableSerialPorts) < 1
+    error('no serial ports available');
+else
+    disp('choosing first available port...');
+    PORT = ports.AvailableSerialPorts{1};
+end
+
+%% Opening first available serial port
+sXbee = serial(PORT);
+disp('changing serial baudrate to 115200...');
+set(sXbee,'BaudRate',115200);
+set(sXbee,'Timeout',3);
+set(sXbee,'Terminator',13);
+sXbee.ReadAsyncMode = 'continuous';
+
+disp('<< openning serial communication >>');
+fopen(sXbee);
+
+end

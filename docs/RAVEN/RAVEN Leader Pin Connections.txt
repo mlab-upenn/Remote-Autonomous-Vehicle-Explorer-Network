@@ -1,0 +1,107 @@
+PORTA:
+0 (22)- NA
+1 (23)- NA
+2 (24)- NA
+3 (25)- NA
+4 (26)- NA
+5 (27)- NA
+6 (28)- NA
+7 (29)- NA
+
+PORTB:
+0 (53 SS)- Status LED Common Anode
+1 (52 SCK)- NA
+2 (51 MOSI)- NA
+3 (50 MISO)- NA
+4 (10 PWM)- Status LED Red Cathode
+5 (11 PWM)- Status LED Green Cathode
+6 (12 PWM)- NA (RC Output)
+7 (13 PWM)- NA (RC Output)
+
+PORTC:
+0 (37)- Front IR Sensor Ground
+1 (36)- Back IR Sensor Ground
+2 (35)- Left IR Sensor Ground
+3 (34)- Right IR Sensor Ground
+4 (33)- Up IR Sensor Ground
+5 (32)- Headlight LED Switch (connected to Transistor)
+6 (31)-
+7 (30)- (Used with pressure sensor)
+
+PORTD:
+0 (21 SCL)-
+1 (20 SDA)-
+2 (19 RX1)- (GPS?)
+3 (18 TX1)- (GPS?)
+4 (17)-
+5 (16)- NA
+6 (15)- NA
+7 (14)- NA
+
+PORTE:
+0 (0 RX0)-
+1 (1 TX0)-
+2 ()- NA
+3 (5 PWM)-
+4 (2 PWM)- NA (RC Output)
+5 (3 PWM)- NA (RC Output)
+6 ()- NA
+7 ()- NA
+
+PORTF:
+0 (ADC0)- Front IR Sensor Signal
+1 (ADC1)- Back IR Sensor Signal
+2 (ADC2)- Left IR Sensor Signal
+3 (ADC3)- Right IR Sensor Signal
+4 (ADC4)- Up IR Sensor Signal
+5 (ADC5)-
+6 (ADC6)-
+7 (ADC7)-
+
+PORTG:
+0 (41)-
+1 (40)-
+2 (39)-
+3 ()- NA
+4 ()- NA
+5 (4)- NA (MUX)
+
+PORTH:
+0 (17 RX2)- IMU Serial RX
+1 (16 TX2)- IMU Serial TX
+2 (XCK2)- NA(?)
+3 (6 PWM)- 
+4 (7 PWM)- NA (RC Output)
+5 (8 PWM)- NA (RC Output)
+6 (9)- Status LED Blue Cathode
+7 (NA)-
+
+PORTJ:
+0 (15 RX3)- XBee Serial RX
+1 (14 TX3)- XBee Serial TX
+2 ()- NA
+3 ()- NA
+4 ()- NA
+5 ()- NA
+6 ()- NA
+7 ()- NA
+
+PORTK:
+0 (ADC8)-
+1 (ADC9)-
+2 (ADC10)-
+3 (ADC11)-
+4 (ADC12)-
+5 (ADC13)-
+6 (ADC14)-
+7 (ADC15)-  Battery Sensor
+
+PORTL:
+0 (49)-
+1 (48)-
+2 (47)-
+3 (46 PWM)- 
+4 (45 PWM)- NA (RC Output)
+5 (44 PWM)- NA (RC Output)
+6 (43)-
+7 (42)-

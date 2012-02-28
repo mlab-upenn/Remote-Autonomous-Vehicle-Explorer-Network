@@ -1,0 +1,116 @@
+%this is script to run the quadrotor simulator
+
+clear all
+close all
+
+x = zeros(12,1);
+%Initial Conditions
+x(1) = 0; %x
+x(2) = 0; %y
+x(3) = 0; %z
+x(4) = 0; %xdot
+x(5) = 0; %ydot
+x(6) = 0; %zdot
+x(7) = 0.0; %phi, roll
+x(8) = 0.0; %theta, pitch
+x(9) = 0.0; %psi, yaw
+x(10) = 0; %p
+x(11) = 0; %q
+x(12) = 0; %r
+
+L = 0.20; %m
+
+endtime = 3.0; %end of simulation in seconds
+deltat = .001; %time step of numerical integration 0.0005
+n = round(endtime/deltat); %number of time steps
+xsave = zeros(12,n); %state history
+time = zeros(1,n); %time
+
+figure(1);
+hold on;
+scrsz = get(0, 'ScreenSize');
+set(1, 'Position', [20 50 scrsz(3)/2 scrsz(3)/2]);
+axis([-50 50 -50 50 0 50]);
+set(gca, 'CameraPosition', [1 -1 1], 'CameraTarget', [0 0 0], 'CameraUpVector', [0 0 1], 'CameraViewAngle', 45, 'Projection', 'perspective');
+
+%step through the simulation
+pause();
+for i= 1:n
+    axis([-1 1 -1 1 0 1]);
+    set(gca, 'CameraPosition', [1 -1 1], 'CameraTarget', [0 0 0]);
+    xlabel('X');ylabel('Y');zlabel('Z');
+    grid on;
+    hold on;
+    
+    phi = x(7);theta = x(8); psi = x(9);
+    BRW = [ cos(psi)*cos(theta) - sin(phi)*sin(psi)*sin(theta), cos(theta)*sin(psi) + cos(psi)*sin(phi)*sin(theta), -cos(phi)*sin(theta);...
+        -cos(phi)*sin(psi),  cos(phi)*cos(psi),  sin(phi);...
+        cos(psi)*sin(theta) + cos(theta)*sin(phi)*sin(psi), sin(psi)*sin(theta) - cos(psi)*cos(theta)*sin(phi),  cos(phi)*cos(theta)];
+    WRB = BRW';
+    
+    m1 = [x(1);x(2);x(3)] + WRB*[L;0;0];
+    m2 = [x(1);x(2);x(3)] + WRB*[0;L;0];
+    m3 = [x(1);x(2);x(3)] + WRB*[-L;0;0];
+    m4 = [x(1);x(2);x(3)] + WRB*[0;-L;0];
+    
+    scatter3(x(1),x(2),x(3),50,[0.5 0 0],'filled');
+    scatter3(x(1),x(2),0,50,[0.5 0.5 0.5],'filled');
+    text(m1(1),m1(2),m1(3),'1');
+    text(m2(1),m2(2),m2(3),'2');
+    text(m3(1),m3(2),m3(3),'3');
+    text(m4(1),m4(2),m4(3),'4');
+    
+    plot3([m1(1) m3(1)],[m1(2) m3(2)],[m1(3) m3(3)],'LineWidth',2);
+    plot3([m2(1) m4(1)],[m2(2) m4(2)],[m2(3) m4(3)],'LineWidth',2);
+    
+    t = (i-1)*deltat; time(i) = t;
+    xsave(:,i) = quadstep3d(x,t,deltat); %step by deltat
+    x = xsave(:,i);
+    pause(0.001);
+    hold off;
+    clf(1);
+end
+
+
+%now plot some stuff
+% figure(1)
+% subplot(311)
+% hold on
+% plot(time,xsave(1,:),'r.')
+% ylabel('x position')
+% subplot(312)
+% hold on
+% plot(time,xsave(2,:),'g.')
+% ylabel('y position')
+% subplot(313)
+% hold on
+% plot(time,xsave(3,:),'b.')
+% ylabel('z position')
+% 
+% figure(2)
+% subplot(311)
+% hold on
+% plot(time,xsave(4,:),'r.')
+% ylabel('x velocity')
+% subplot(312)
+% hold on
+% plot(time,xsave(5,:),'g.')
+% ylabel('y velocity')
+% subplot(313)
+% hold on
+% plot(time,xsave(6,:),'b.')
+% ylabel('z velocity')
+% 
+% figure(3)
+% subplot(311)
+% hold on
+% plot(time,xsave(7,:),'r.')
+% ylabel('roll')
+% subplot(312)
+% hold on
+% plot(time,xsave(8,:),'g.')
+% ylabel('pitch')
+% subplot(313)
+% hold on
+% plot(time,xsave(9,:),'b.')
+% ylabel('yaw')

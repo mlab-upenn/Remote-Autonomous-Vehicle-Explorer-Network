@@ -1,0 +1,13 @@
+#------ START --------
+#Programming sequence
+SELECTDEVICE ATmega8
+CLEARBUFFER
+LOAD-PROG tp-18a.hex
+
+PAUSE "Connect and powerup the circuit, are you ready?"
+READ-CALIBRATION 0x21FF DATA 3     # <EEProm 8Mhz
+
+ERASE-ALL
+WRITE&VERIFY-ALL
+
+
